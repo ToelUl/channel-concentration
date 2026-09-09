@@ -1,0 +1,7 @@
+include LICENSE CITATION.cff THIRD_PARTY_NOTICES.md README.md
+recursive-include src/cc_repro/_resources *
+recursive-include src/cc_repro/_data *.json
+recursive-include tests *.py
+recursive-include docs *.md
+recursive-include provenance *.json
+global-exclude __pycache__ *.py[cod]

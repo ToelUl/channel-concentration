@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Cite the numerical evidence release and its manifest SHA256. Software-specific citation files are included with each version."
+title: "Channel Concentration numerical evidence baseline"
+type: dataset
+authors:
+  - family-names: Lee
+    given-names: Qian-Rui
+  - family-names: Wang
+    given-names: Daw-Wei
+version: 2026.09.09-rc1
+repository-code: "https://github.com/ToelUl/channel-concentration"
+url: "https://github.com/ToelUl/channel-concentration"
+license: MIT
+abstract: "Scoped numerical evidence baseline with Potts producer 0.5.0.dev0, NNN producer 0.5.1.dev0, and reader 0.5.2.dev0. Full manuscript acceptance remains open. No DOI is asserted."

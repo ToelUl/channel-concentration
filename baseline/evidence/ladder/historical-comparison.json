@@ -1,0 +1,50 @@
+[
+  {
+    "L": 12,
+    "current_interval": [
+      0.8751257827422886,
+      0.875125785831014
+    ],
+    "current_width": 3.0887253865685697e-09,
+    "historical_interval": [
+      0.8751257827422886,
+      0.875125785831014
+    ],
+    "historical_receipt_sha256": "08021ba1f5e9f085eefba09dca4dc2ccf3ad1c9b666f3d853efc6fd2f436d161",
+    "historical_width": 3.0887253865685697e-09,
+    "intervals_overlap": true,
+    "role": "descriptive reference comparison; acceptance uses frozen original gates"
+  },
+  {
+    "L": 13,
+    "current_interval": [
+      0.8720475132035371,
+      0.872047516381817
+    ],
+    "current_width": 3.178279861515421e-09,
+    "historical_interval": [
+      0.8720475132035371,
+      0.872047516381817
+    ],
+    "historical_receipt_sha256": "c3c28864986adff6c6602461836a5b6d849c3df96909fc497b35f683d1e65e30",
+    "historical_width": 3.178279861515421e-09,
+    "intervals_overlap": true,
+    "role": "descriptive reference comparison; acceptance uses frozen original gates"
+  },
+  {
+    "L": 14,
+    "current_interval": [
+      0.8694880646676919,
+      0.8694880681179885
+    ],
+    "current_width": 3.450296603979553e-09,
+    "historical_interval": [
+      0.8694880646676919,
+      0.8694880681179885
+    ],
+    "historical_receipt_sha256": "04d33a0f9b6eb1a083dbc07bfeff029cf17140e9c38442aaa303a110c306482b",
+    "historical_width": 3.450296603979553e-09,
+    "intervals_overlap": true,
+    "role": "descriptive reference comparison; acceptance uses frozen original gates"
+  }
+]

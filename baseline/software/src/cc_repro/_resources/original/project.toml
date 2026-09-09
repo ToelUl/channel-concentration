@@ -1,0 +1,17 @@
+# Public computation I/O profile; historical execution authority is not imported.
+[project]
+name = "cc-repro-public-computation"
+version = "0.4.0.dev0"
+[packaging]
+schema = "channel-concentration-packaging-policy/1.0"
+[authority]
+pinned_environment_qualification = "SEE_CURRENT_VERIFICATION_REPORT"
+new_scientific_compute = "USER_SELECTED_COMMAND; NOT_HISTORICAL_AUTHORITY"
+[lineage.immediate_parent]
+archive_name = "cc-repro-postprocess-candidate-0.3.zip"
+sha256 = "72749f3d72aa6f6251eb8f8838cd7f16d14e993eb18d16d02a8070c80c0a90b6"
+[qualification]
+successor_environment = "NOT_A_HISTORICAL_QUALIFICATION"
+primary = "NOT_CLAIMED"
+replicate = "NOT_CLAIMED"
+cross_role_equivalence = "NOT_CLAIMED"

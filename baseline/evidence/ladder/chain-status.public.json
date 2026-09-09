@@ -1,0 +1,195 @@
+{
+  "public_projection": true,
+  "original_sha256": "2bac84f122042a0ef5b41e8293c61200c08e6dde5f37192955fa782c3e26eadf",
+  "changed_string_fields": [
+    "/interrupted_attempts/0/current_wsl_boot_id",
+    "/interrupted_attempts/0/original_workspace_preserved",
+    "/workspace"
+  ],
+  "not_an_original_commit_or_seal": true,
+  "data": {
+    "active_size": null,
+    "contract_sha256": "ed4fefec23234a6d4df8f12f998df81aed0a028185b09fbe3c104ef367ae3daa",
+    "finished_at": 1788907593.1519136,
+    "interpretation": "Finite-size ladder accepted after one documented environmental recovery; broader A1 unfinished",
+    "interrupted_attempts": [
+      {
+        "L14_payload_produced": false,
+        "classification": "EXECUTION_FAILURE",
+        "confirmed_cause": "Windows planned update restarts interrupted WSL and all current processes; Windows events 1074 at 05:48:04 and 05:50:00, WSL prior boot ends 05:48:06.",
+        "current_wsl_boot_id": "[LOCAL_ID_REMOVED]",
+        "last_monitored_seconds": 218.76992640799995,
+        "layer": "environment",
+        "not_a_numerical_nonacceptance": true,
+        "original_job": "a1-potts-l14-050",
+        "original_workspace_preserved": "[LOCAL_PATH_REMOVED]",
+        "recovery": "Restore verified complete L13 checkpoint into new native workspace, validate seals/environment, one bounded rerun of L14 with unchanged numerical settings.",
+        "sampled_peak_memory_bytes_lower_bound": 1696800768,
+        "terminal_kernel_peak_unavailable": true,
+        "time_accounting_note": "Manager STOPPED elapsed time includes undetected downtime; last recorded sample is a lower bound on observed active time, not complete failed-attempt wall time.",
+        "windows_evidence": "windows-restart-events.json"
+      }
+    ],
+    "recovery_contract_sha256": "926adac659dd0ba7f3a172d9940a934fca9ff3d845b12102ae9b84e86f3b7d17",
+    "recovery_job": "a1-potts-l14-recovery-050",
+    "sizes": [
+      {
+        "L": 12,
+        "backup_files_verified": 43,
+        "backup_status": "PASS",
+        "cgroup_peak_bytes": 716677120,
+        "committed_payload_sha256": "81fb0085a06c8a004b295fc946b17d1af9cebb523c0d8e08b22416c237bc9cc4",
+        "counts": {
+          "128": {
+            "guard_configured": 1,
+            "guard_used": 1,
+            "requested": 128,
+            "retained_excited_states": 126,
+            "retained_groups": 58,
+            "solver_returned": 129
+          },
+          "192": {
+            "guard_configured": 1,
+            "guard_used": 1,
+            "requested": 192,
+            "retained_excited_states": 191,
+            "retained_groups": 86,
+            "solver_returned": 193
+          },
+          "256": {
+            "guard_configured": 1,
+            "guard_used": 1,
+            "requested": 256,
+            "retained_excited_states": 255,
+            "retained_groups": 109,
+            "solver_returned": 257
+          }
+        },
+        "dimension": 44368,
+        "disk_growth_bytes": 415271,
+        "job": "a1-potts-l12-050",
+        "job_seconds": 133.39885410600002,
+        "memory_cap_gib": 16,
+        "outcome": {
+          "absolute_width": 3.0887253865685697e-09,
+          "all_rung_interval": [
+            0.8751257827422886,
+            0.875125785831014
+          ],
+          "width_ceiling": 1e-08,
+          "width_pass": true
+        },
+        "scientific_seconds": 130.724895965,
+        "solver_peak_rss_bytes": 676331520,
+        "status": "PASS",
+        "validation_status": "PASS"
+      },
+      {
+        "L": 13,
+        "backup_files_verified": 48,
+        "backup_status": "PASS",
+        "cgroup_peak_bytes": 1775726592,
+        "committed_payload_sha256": "a9957b8ab050fd769c1e62e45fa1a7bafce2cecf1041fb57d3f5d84917b79990",
+        "counts": {
+          "128": {
+            "guard_configured": 1,
+            "guard_used": 1,
+            "requested": 128,
+            "retained_excited_states": 127,
+            "retained_groups": 57,
+            "solver_returned": 129
+          },
+          "192": {
+            "guard_configured": 1,
+            "guard_used": 1,
+            "requested": 192,
+            "retained_excited_states": 191,
+            "retained_groups": 86,
+            "solver_returned": 193
+          },
+          "256": {
+            "guard_configured": 1,
+            "guard_used": 1,
+            "requested": 256,
+            "retained_excited_states": 254,
+            "retained_groups": 108,
+            "solver_returned": 257
+          }
+        },
+        "dimension": 122643,
+        "disk_growth_bytes": 544077,
+        "job": "a1-potts-l13-050",
+        "job_seconds": 371.93457165100006,
+        "memory_cap_gib": 16,
+        "outcome": {
+          "absolute_width": 3.178279861515421e-09,
+          "all_rung_interval": [
+            0.8720475132035371,
+            0.872047516381817
+          ],
+          "width_ceiling": 1e-08,
+          "width_pass": true
+        },
+        "scientific_seconds": 369.52751499899995,
+        "solver_peak_rss_bytes": 1784590336,
+        "status": "PASS",
+        "validation_status": "PASS"
+      },
+      {
+        "L": 14,
+        "backup_files_verified": 53,
+        "backup_status": "PASS",
+        "cgroup_peak_bytes": 4530782208,
+        "committed_payload_sha256": "064c16303d358c8deadc8466aec0c6de7a9001ed7991d8e1073b12e0f61278ed",
+        "counts": {
+          "128": {
+            "guard_configured": 1,
+            "guard_used": 1,
+            "requested": 128,
+            "retained_excited_states": 127,
+            "retained_groups": 57,
+            "solver_returned": 129
+          },
+          "192": {
+            "guard_configured": 1,
+            "guard_used": 1,
+            "requested": 192,
+            "retained_excited_states": 189,
+            "retained_groups": 85,
+            "solver_returned": 193
+          },
+          "256": {
+            "guard_configured": 1,
+            "guard_used": 1,
+            "requested": 256,
+            "retained_excited_states": 255,
+            "retained_groups": 109,
+            "solver_returned": 257
+          }
+        },
+        "dimension": 341802,
+        "disk_growth_bytes": 1080865,
+        "job": "a1-potts-l14-recovery-050",
+        "job_seconds": 1385.217374995,
+        "memory_cap_gib": 16,
+        "outcome": {
+          "absolute_width": 3.450296603979553e-09,
+          "all_rung_interval": [
+            0.8694880646676919,
+            0.8694880681179885
+          ],
+          "width_ceiling": 1e-08,
+          "width_pass": true
+        },
+        "recovery_attempt": 1,
+        "scientific_seconds": 1382.515461554,
+        "solver_peak_rss_bytes": 4517724160,
+        "status": "PASS",
+        "validation_status": "PASS"
+      }
+    ],
+    "started_at": 1788903330.2623594,
+    "status": "PASS",
+    "workspace": "[LOCAL_PATH_REMOVED]"
+  }
+}

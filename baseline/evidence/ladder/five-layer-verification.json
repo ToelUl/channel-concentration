@@ -1,0 +1,24 @@
+{
+  "A1_overall_complete": false,
+  "formal": {
+    "evidence": "Original interval machinery validated; independent spectral completeness not proved",
+    "status": "PARTIAL"
+  },
+  "implementation": {
+    "evidence": "Frozen byte identity, A0 controls, current seals/predecessor and backup verification",
+    "status": "PASS"
+  },
+  "inference": {
+    "scope": "Reproducibility/resource measurement only; no physical claim promotion",
+    "status": "PASS"
+  },
+  "model": {
+    "scope": "Declared finite periodic Potts k=0 at g=1 representation only",
+    "status": "PASS"
+  },
+  "numerical": {
+    "evidence": "All three sizes and nine rungs accepted by original validators",
+    "status": "PASS"
+  },
+  "outcome": "EXPECTED_MATCH"
+}

@@ -1,0 +1,39 @@
+{
+  "config_sha256": "559933b837853b10817729e0430b6e71addcd62a929a03cb24ffbea04d539f9d",
+  "elapsed_seconds": 0.0019912349962396547,
+  "engine_sha256": "c7938dae35706bbb2d0b4e8a060d9de1a54e8579d14f7f8a05658b3d0e713bc1",
+  "result": {
+    "KF": 0.8760109818242717,
+    "KF_half": 0.8760109191666176,
+    "L": 6,
+    "P2": 0.7740544887837172,
+    "P4_low": 0.5248710478807421,
+    "gap": 2.300862779766166,
+    "h": 1.0911701533893579,
+    "k_low": 160,
+    "lambda_or_g": 0.05,
+    "minres_info": 0,
+    "n_levels": 5,
+    "sector_dim": 8,
+    "solve_res": 1.7000106079809291e-15,
+    "x": [
+      0.7228541637764215,
+      0.048439492955858796,
+      0.0025463252011023495,
+      0.0001925109269457,
+      2.1943679141783728e-05
+    ]
+  },
+  "schema_version": "nnn-tfim-checkpoint/1.1.0",
+  "solver_environment_sha256": "18a5af48bfafdccffa5327e292bdc932d1c79995025ee530606ef73f7dff550b",
+  "status": "complete",
+  "task": {
+    "L": 6,
+    "h": 1.0911701533893579,
+    "k_low": 160,
+    "kind": "response",
+    "lambda_or_g": 0.05,
+    "suffix": ""
+  },
+  "task_sha256": "3a23172d29f160aa4112ca141aaea0bda1bc13730f429384d5cf55a548c59136"
+}

@@ -1,0 +1,47 @@
+{
+  "config_sha256": "559933b837853b10817729e0430b6e71addcd62a929a03cb24ffbea04d539f9d",
+  "elapsed_seconds": 0.007678665002458729,
+  "engine_sha256": "c7938dae35706bbb2d0b4e8a060d9de1a54e8579d14f7f8a05658b3d0e713bc1",
+  "result": {
+    "L": 6,
+    "bracket_left": 1.07,
+    "bracket_right": 1.11,
+    "evaluation_count": 7,
+    "f_left": 0.04252079848753354,
+    "f_right": -0.040850298879714586,
+    "h": 1.0911701533893579,
+    "lambda_or_g": 0.05,
+    "large": {
+      "dim_even": 8.0,
+      "dim_odd": 6.0,
+      "energy_even": -8.252281916758765,
+      "energy_odd": -7.946689151581765,
+      "gap": 0.30559276517699985,
+      "residual_even": 1.500912704921417e-15,
+      "residual_odd": 5.5457836360328295e-14
+    },
+    "prg_residual": 3.055333763768431e-13,
+    "small": {
+      "dim_even": 4.0,
+      "dim_odd": 2.0,
+      "energy_even": -5.587020722353515,
+      "energy_odd": -5.1286315745879385,
+      "gap": 0.45838914776557615,
+      "residual_even": 2.366290515834469e-15,
+      "residual_odd": 1.7318039067204514e-16
+    }
+  },
+  "schema_version": "nnn-tfim-checkpoint/1.1.0",
+  "solver_environment_sha256": "18a5af48bfafdccffa5327e292bdc932d1c79995025ee530606ef73f7dff550b",
+  "status": "complete",
+  "task": {
+    "L": 6,
+    "bracket": [
+      1.07,
+      1.11
+    ],
+    "kind": "parity-prg",
+    "lambda_or_g": 0.05
+  },
+  "task_sha256": "e61232fa85157703b79472afe2a34cbd5e03cdda0b1659a40f98916962a39b46"
+}

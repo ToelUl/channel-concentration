@@ -1,0 +1,59 @@
+{
+  "status": "PASS_ACTUAL_CURRENT_ARTIST_BINDING",
+  "checks": [
+    {
+      "check": "Figure4 Potts all9 actual points",
+      "passed": true
+    },
+    {
+      "check": "Figure4 NNN J2=0.05 all8 actual points",
+      "passed": true
+    },
+    {
+      "check": "Figure4 NNN J2=0.1 all8 actual points",
+      "passed": true
+    },
+    {
+      "check": "Figure4 NNN J2=0.2 all8 actual points",
+      "passed": true
+    },
+    {
+      "check": "Figure5 Potts15 actual bars",
+      "passed": true
+    },
+    {
+      "check": "Figure5 NNN L6 actual10 bars including explicit absent ranks",
+      "passed": true
+    },
+    {
+      "check": "Figure5 NNN L10 actual10 bars including explicit absent ranks",
+      "passed": true
+    },
+    {
+      "check": "Figure5 NNN L14 actual10 bars including explicit absent ranks",
+      "passed": true
+    },
+    {
+      "check": "Figure5 NNN L20 actual10 bars including explicit absent ranks",
+      "passed": true
+    }
+  ],
+  "reference_comparison": [
+    {
+      "selector": "4",
+      "labels_axes_styles_and_point_counts_unchanged": true,
+      "max_absolute_plotted_value_change": 1.000088900582341e-12,
+      "comparison": "Descriptive current-vs-reference numerical difference; no new acceptance tolerance."
+    },
+    {
+      "selector": "5",
+      "labels_axes_styles_and_point_counts_unchanged": true,
+      "max_absolute_plotted_value_change": 2.0550228185811648e-13,
+      "comparison": "Descriptive current-vs-reference numerical difference; no new acceptance tolerance."
+    }
+  ],
+  "source_hashes": {
+    "4.json": "9b1abdb45d158c88326cec72b974011d5f9286687d349b427b5bd5dce71be422",
+    "5.json": "bea8d7f23d1447deca45765cedc527e2476c10c580ee9248c56303b9c9d7c5f3"
+  }
+}

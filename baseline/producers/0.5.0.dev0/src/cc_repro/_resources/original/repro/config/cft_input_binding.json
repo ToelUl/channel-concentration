@@ -1,0 +1,7 @@
+{
+  "schema": "cc-cft-input-binding/1",
+  "immutable_inputs": {
+    "cft_producer_sha256": "515b99757c0f5b23991ce48312c9f34be8987eae5e5761e16a96e8d0c1a61027"
+  },
+  "scope": "Selected input identity only; not historical execution authority"
+}

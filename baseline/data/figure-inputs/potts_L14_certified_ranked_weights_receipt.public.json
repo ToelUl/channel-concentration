@@ -1,0 +1,43 @@
+{
+  "public_projection": true,
+  "original_sha256": "9f827c5add018898de74078da2165a638e3165ddc0d3df2b13965bb8ba2351a4",
+  "changed_string_fields": [
+    "/campaign_receipt"
+  ],
+  "not_an_original_commit_or_seal": true,
+  "data": {
+    "campaign_receipt": "[LOCAL_PATH_REMOVED]",
+    "campaign_receipt_sha256": "2dc500c5801fa68a362b35e475f84c8f23529407e748a99be98205882c399d3b",
+    "claim_ceiling": "CALIBRATED_CURRENT_SOURCE_REPRODUCTION_OF_HISTORICAL_L14_LOW_RANK_COMPARATOR",
+    "decision_id": "CC-POTTS-RANKED-L14-R1/DERIVE-1.0",
+    "display_rank_count": 15,
+    "fresh_result_is_ladder_certificate": false,
+    "normalization": {
+      "P2_interval": [
+        20.798678872312905,
+        20.798678911962256
+      ],
+      "formula": "pi_lower=x_lower/P2_upper; pi_central=mid(x)/mid(P2); pi_upper=x_upper/P2_lower"
+    },
+    "notation": {
+      "legacy_mapping": "k_target=256 -> N_eig^req=256",
+      "momentum": "k",
+      "n_eigenpairs_effective": 256,
+      "n_eigenpairs_requested": 256,
+      "n_grouped_channels": 109,
+      "n_guard_eigenpairs": 1,
+      "n_solver_eigenpairs": 257
+    },
+    "positive_lower_cluster_count": 18,
+    "schema": "potts-certified-ranked-weights/1.0",
+    "scientific_compute_performed": false,
+    "source_contract": "current",
+    "source_path": "build/runs/a1-ranked/work/potts/L14_retained_eigenpairs_receipt.json",
+    "source_rung": "256",
+    "source_sha256": "49e3594cc5b625032ddaa93ee9825d2b1bfcdc31ef484b38d819562f4180aeaa",
+    "table_path": "build/runs/a1-ranked/data/reproducibility/potts_L14_certified_ranked_weights.csv",
+    "table_sha256": "4c979056b70b5a4dac89deb888fc27c8c534429c6740dccc8465dc327156e891",
+    "top15_strict_interval_order": true,
+    "zero_inclusive_cluster_count": 91
+  }
+}

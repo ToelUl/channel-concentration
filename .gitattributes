@@ -1,0 +1,4 @@
+# Preserve all baseline bytes and their SHA256 identities on every platform.
+* -text
+*.whl binary
+*.gz binary

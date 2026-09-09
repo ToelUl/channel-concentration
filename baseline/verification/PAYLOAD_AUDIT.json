@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "Selected payload and nested software distributions; path/host/credential patterns, extension exclusion, source/resource equality and lineage hashes. Original public author/license metadata and dependency build/platform identity retained.",
+  "counts": {
+    "files": 1022,
+    "archive_members": 1493
+  },
+  "findings": [],
+  "source_checks": [
+    {
+      "version": "0.5.0.dev0",
+      "source_test_resource_files": 238,
+      "status": "BYTE_IDENTICAL"
+    },
+    {
+      "version": "0.5.1.dev0",
+      "source_test_resource_files": 241,
+      "status": "BYTE_IDENTICAL"
+    },
+    {
+      "version": "0.5.2.dev0",
+      "source_test_resource_files": 242,
+      "status": "BYTE_IDENTICAL"
+    }
+  ],
+  "lineage_entries_verified": 988
+}

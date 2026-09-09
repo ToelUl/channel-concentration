@@ -1,0 +1,37 @@
+{
+  "runtime_source_tests_and_resources": "byte-identical to each corresponding candidate",
+  "versions": {
+    "Potts": "0.5.0.dev0",
+    "NNN": "0.5.1.dev0",
+    "reader": "0.5.2.dev0"
+  },
+  "new_content": [
+    "release README/docs",
+    "explicit data license scope using project MIT license",
+    "versioned source distributions",
+    "relative-path restore/replay helper",
+    "final manifest verifier"
+  ],
+  "excluded": [
+    "private manuscript/source backups",
+    "rendered artwork",
+    "full archives",
+    "local job-manager scripts/logs",
+    "private context.json with workstation paths",
+    "stale internal verification and excluded-manuscript filename inventory"
+  ],
+  "public_projection_files": [
+    "data/figure-inputs/potts_L14_certified_ranked_weights_receipt.public.json",
+    "data/nnn-postprocess/postprocess.public.json",
+    "evidence/potts/postprocess-verification.public.json",
+    "evidence/ladder/chain-status.public.json"
+  ],
+  "not_changed": [
+    "scientific methods",
+    "acceptance thresholds",
+    "raw committed result identities",
+    "historical source attribution"
+  ],
+  "figure_inputs": 41,
+  "software_distribution_identity": "Same internal dev versions and identical runtime bytes; newly assembled documentation gives new wheel/sdist hashes. Not uploaded to a package index."
+}

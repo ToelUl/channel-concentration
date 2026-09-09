@@ -1,0 +1,8 @@
+{
+  "source": "data/figure-support/evidence/cft/cft_kf_results.json",
+  "source_sha256": "fce9fbb5aae4d76686a767933ee51a63cd89b5e0bdcc61187334293aed158087",
+  "output_sha256": "8470eb126fa04daace13884030b89a59ca9316f2368783bd791c11db79a8ad9a",
+  "mapping": "delta_results[1 or 4/5].beta_integral_hypergeometric_closed_form.{s1,s2,k} -> delta_1 or delta_4_over_5.{S1,S2,KF}; exact decimal strings retained",
+  "value_changes": false,
+  "output": "data/figure-support/renderer-evidence/cft/cft_kf_results.json"
+}

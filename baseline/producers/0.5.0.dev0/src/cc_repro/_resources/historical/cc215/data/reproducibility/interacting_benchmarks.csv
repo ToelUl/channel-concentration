@@ -1,0 +1,40 @@
+model,L,dim,lambda_or_g,h,KF,KF_half,P2,P4_low,Neff,gap_times_L,solve_res,n_levels,method,seconds,note
+Potts,6,130,1.0,,0.919949336245,0.919949336245,2.5724018473,6.08753590808,1.08701638297,2.21681242892,1.091e-09,45.0,k0-hybrid,0.021,critical self-dual point
+Potts,7,315,1.0,,0.906664272704,0.906664272703,3.78537771373,12.9916689183,1.10294408868,2.20994784141,3.819e-09,43.0,k0-hybrid,0.057,critical self-dual point
+Potts,8,834,1.0,,0.89682829143,0.896828291427,5.27482554378,24.9531571298,1.11504064887,2.20513408493,4.519e-09,46.0,k0-hybrid,0.139,critical self-dual point
+Potts,9,2195,1.0,,0.889343715994,0.889343715989,7.0558980136,44.2765965762,1.12442465384,2.20157937814,1.803e-08,47.0,k0-hybrid,0.305,critical self-dual point
+Potts,10,5934,1.0,,0.883512065738,0.883505481014,9.14265317266,73.8511011181,1.1318464555,2.19884956598,7.341e-09,50.0,k0-hybrid,0.661,critical self-dual point
+Potts,11,16107,1.0,,0.878875757774,0.878864725584,11.5482427508,117.208550265,1.1378172525,2.19668802767,2.5e-08,47.0,k0-hybrid,2.355,critical self-dual point
+Potts,12,44368,1.0,,0.875125773196,0.875110195636,14.2850529032,178.580560014,1.14269289127,2.19493391518,3.131e-08,47.0,k0-hybrid,9.729,critical self-dual point
+NNN-TFIM,6,64,0,1,0.866666666667,nan,nan,nan,1.15384615385,nan,nan,0,exact-TFIM,0.000,exact critical TFIM NS-sector formula
+NNN-TFIM,8,256,0,1,0.821428571429,nan,nan,nan,1.21739130435,nan,nan,0,exact-TFIM,0.000,exact critical TFIM NS-sector formula
+NNN-TFIM,10,1024,0,1,0.792592592593,nan,nan,nan,1.26168224299,nan,nan,0,exact-TFIM,0.000,exact critical TFIM NS-sector formula
+NNN-TFIM,12,4096,0,1,0.772727272727,nan,nan,nan,1.29411764706,nan,nan,0,exact-TFIM,0.000,exact critical TFIM NS-sector formula
+NNN-TFIM,14,16384,0,1,0.758241758242,nan,nan,nan,1.31884057971,nan,nan,0,exact-TFIM,0.000,exact critical TFIM NS-sector formula
+NNN-TFIM,16,65536,0,1,0.747222222222,nan,nan,nan,1.33828996283,nan,nan,0,exact-TFIM,0.000,exact critical TFIM NS-sector formula
+NNN-TFIM,18,262144,0,1,0.738562091503,nan,nan,nan,1.35398230088,nan,nan,0,exact-TFIM,0.000,exact critical TFIM NS-sector formula
+NNN-TFIM,20,1048576,0,1,0.731578947368,nan,nan,nan,1.36690647482,nan,nan,0,exact-TFIM,0.000,exact critical TFIM NS-sector formula
+NNN-TFIM,6,8,0.05,1.09117015339,0.876010981824,0.876010919167,0.774054488784,0.524871047881,1.14153820072,13.8051766786,1.700e-15,5,parity-PRG-sector-hybrid,0.002,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,8,20,0.05,1.08641720041,0.827386912363,0.827386912363,1.45162032409,1.74347099686,1.20862438728,13.9442023896,2.942e-09,17,parity-PRG-sector-hybrid,0.002,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,10,56,0.05,1.08505433985,0.795924830908,0.795924830908,2.33196273695,4.32827919108,1.25640005333,14.0177924486,1.042e-08,53,parity-PRG-sector-hybrid,0.004,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,12,180,0.05,1.08451709391,0.774276968954,0.774276968954,3.41639680908,9.03718049674,1.29152750256,14.0601445054,1.857e-08,159,parity-PRG-sector-hybrid,0.029,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,14,596,0.05,1.08426274399,0.758594523178,0.758594523178,4.70531311492,16.7952611304,1.31822728671,14.0865040985,2.127e-08,159,parity-PRG-sector-hybrid,0.420,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,16,2068,0.05,1.08412681448,0.746762541184,0.746762541184,6.19886988217,28.695088309,1.33911376756,14.1039539434,2.864e-08,159,parity-PRG-sector-hybrid,1.059,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,18,7316,0.05,1.08404759543,0.737543870639,0.737543870639,7.89714349944,45.9968316318,1.35585154973,14.1160784064,6.267e-08,159,parity-PRG-sector-hybrid,5.977,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,20,26272,0.05,1.08399831373,0.730172967025,0.730172541658,9.80017539639,70.1283219418,1.36953851369,14.1248343011,8.802e-08,63,parity-PRG-sector-hybrid,5.105,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,6,8,0.1,1.174539332,0.885561145514,0.885560939883,0.65864783326,0.384171451354,1.12922750176,15.1209549382,8.310e-16,5,parity-PRG-sector-hybrid,0.002,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,8,20,0.1,1.16891991387,0.834071756017,0.834071756013,1.23246442597,1.26692877525,1.19893761273,15.366484977,2.887e-09,17,parity-PRG-sector-hybrid,0.002,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,10,56,0.1,1.16731483949,0.80018646145,0.80018646145,1.97585019652,3.12391514178,1.24970872187,15.4960672037,1.697e-08,53,parity-PRG-sector-hybrid,0.004,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,12,180,0.1,1.16667887151,0.776816878022,0.776816878022,2.89012848772,6.48862916984,1.28730467668,15.5706890967,2.638e-08,159,parity-PRG-sector-hybrid,0.027,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,14,596,0.1,1.16637655024,0.759936611269,0.759936611269,3.97566680867,12.0115022782,1.31589922787,15.6171693412,3.181e-08,159,parity-PRG-sector-hybrid,0.436,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,16,2068,0.1,1.16621447794,0.747264400156,0.747264400156,5.23261247013,20.460273585,1.33821442557,15.6479552534,3.989e-08,159,parity-PRG-sector-hybrid,1.089,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,18,7316,0.1,1.16611979215,0.737448808996,0.737448808993,6.66103619289,32.7201635184,1.35602632725,15.6693526281,5.277e-08,159,parity-PRG-sector-hybrid,6.243,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,20,26272,0.1,1.16606077374,0.72964473707,0.72963901264,8.26097617208,49.7936764739,1.37052999795,15.6848077547,5.885e-08,31,parity-PRG-sector-hybrid,1.368,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,6,8,0.2,1.33628342663,0.904106456771,0.904105777719,0.497510167234,0.22378114511,1.106064438,17.6665460545,6.844e-15,5,parity-PRG-sector-hybrid,0.001,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,8,20,0.2,1.32905710695,0.848277879352,0.848277879319,0.928477008185,0.731274533738,1.17885898518,18.1396373924,1.854e-09,17,parity-PRG-sector-hybrid,0.002,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,10,56,0.2,1.32710055409,0.810171957034,0.810171957034,1.48394425106,1.78407200256,1.23430586719,18.3940409902,2.225e-08,53,parity-PRG-sector-hybrid,0.004,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,12,180,0.2,1.32632124122,0.783619372916,0.783619372916,2.16540027672,3.67435860845,1.27612975708,18.5418776558,2.529e-08,159,parity-PRG-sector-hybrid,0.027,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,14,596,0.2,1.32594812712,0.764426352976,0.764426352976,2.97315159503,6.75724643368,1.30817049426,18.6344812586,3.109e-08,159,parity-PRG-sector-hybrid,0.425,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,16,2068,0.2,1.32574699312,0.750075123473,0.750075123472,3.90731409804,11.4514745134,1.33319979387,18.6960400329,3.415e-08,159,parity-PRG-sector-hybrid,1.083,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,18,7316,0.2,1.32562898362,0.73902591448,0.739025914462,4.96794273467,18.2394958372,1.3531325227,18.7389297462,4.439e-08,159,parity-PRG-sector-hybrid,6.302,finite-size nonintegrable Ising-line control; producer-derived parity PRG
+NNN-TFIM,20,26272,0.2,1.32555517889,0.730308153047,0.730308152269,6.15506699549,27.6676146267,1.3692850009,18.7699605177,5.275e-08,95,parity-PRG-sector-hybrid,11.910,finite-size nonintegrable Ising-line control; producer-derived parity PRG

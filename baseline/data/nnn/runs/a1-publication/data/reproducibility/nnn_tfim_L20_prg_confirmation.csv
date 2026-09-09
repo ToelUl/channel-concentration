@@ -1,0 +1,4 @@
+lambda_or_g,L,h_extrapolated_previous,h_prg_confirmed,delta_h,confirmation_sector,note
+0.05,20,1.08399497826,1.08399831373,3.335467e-06,k=0 even/odd spin-flip parity gap,L20 PRG crossing regenerated from Hamiltonian parameters
+0.1,20,1.16605706394,1.16606077374,3.709798e-06,k=0 even/odd spin-flip parity gap,L20 PRG crossing regenerated from Hamiltonian parameters
+0.2,20,1.3255511558,1.32555517889,4.023088e-06,k=0 even/odd spin-flip parity gap,L20 PRG crossing regenerated from Hamiltonian parameters

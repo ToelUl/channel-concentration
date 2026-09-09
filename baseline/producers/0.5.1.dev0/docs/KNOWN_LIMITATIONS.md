@@ -1,0 +1,16 @@
+# Known limitations and claim boundaries
+
+The full manuscript/A1 acceptance status remains **NOT_PASSED**. This numerical evidence candidate uses a separate, narrower release gate. Original numerical tolerances are unchanged.
+
+1. Three printed NNN L20 fields differ at the last displayed digits from the current results. Current values remain inside the original numerical tolerance. Three maximum residual diagnostics also differ between realizations while satisfying the original acceptance bound. Historical and current values must be labelled separately.
+2. The historical manuscript's joint P2/P4/KF error claim below 5e-15 is unsupported for P2 and P4. The recorded maximum absolute errors are approximately 1.217e-13, 7.23e-13 and 4.885e-15 respectively. This is an existing prose/data discrepancy, not a reason to alter the stored numbers.
+3. Thirty-five operator-table cells remain reference-only because the historical invocation/cutoff was not recovered. Potts P2 L6–L11 uses an explicitly reconstructed original-helper invocation (k0-hybrid, k=96, guard=0), not a recovered historical command.
+4. A dedicated current independent full-space parity receipt for the historical small-size assertion has not been located. Existing configuration/test evidence does not establish that missing assertion.
+5. Projector enclosures retain their conditional premises. Spectral completeness is not independently proved. Retained-rank ordering and full-spectrum mass guarantees are different statements.
+6. The NNN evidence supports endpoint contraction and L20 proximity under the matched ranked-level projector contract. It does not establish strict monotonicity or a universality proof.
+7. The theory-guided 7/5 fit is an accessible-size analysis with fixed documented windows, not a unique asymptotic exponent determination. Alternative fits must receive new analysis identities.
+8. Seven figures were regenerated and their data bindings audited internally, but artwork issues remain, including an S1 label clipping issue. This release includes numerical figure inputs and original renderer source, not a new publication-quality artwork claim or a supported current seven-figure rendering workflow.
+9. Strict current-result readers require the recorded numerical environment identity, including platform and BLAS metadata. A different Linux kernel/platform or numerical build may be refused even if package version numbers match. Do not edit receipt hashes or bypass that gate. Hash inspection and CSV reading are platform-independent; fresh computations in another environment create new evidence.
+10. Raw checkpoint/task durations are not end-to-end wall time. The campaign included restart/recovery and observed WSL clock adjustments. Resource measurements are scoped observations, not universal runtime/RAM guarantees. Do not rerun large cases without configuring local resource limits.
+
+Public path-redacted JSON files are projections, not original commits. Their filenames end in `.public.json`, they retain the original file hash and list changed string fields. Raw committed inputs needed by the strict replay paths are unmodified. Omitted local contexts and execution logs are not required by those tested readers; this is not a complete operating-system/job log archive.

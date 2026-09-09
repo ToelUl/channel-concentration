@@ -1,0 +1,91 @@
+{
+  "schema": "kf-cft-calculation-summary/1.0.0",
+  "research_id": "KF-CFT-2026-001",
+  "arithmetic": {
+    "mpmath_version": "1.3.0",
+    "decimal_precision": 80,
+    "routes": [
+      "coefficient recurrence plus Bernoulli gamma-ratio and Hurwitz-zeta tail",
+      "beta-integral hypergeometric closed form"
+    ],
+    "cross_route_tolerance": "1e-20"
+  },
+  "formula": {
+    "A_n": "((Delta)_n/n!)^2",
+    "w_n": "A_n/(Delta+2n)^2",
+    "K": "sum_n(w_n^2)/(sum_n(w_n))^2"
+  },
+  "delta_1": {
+    "S1": "1.23370055013616982735431137498451889191421242590509882830167",
+    "S2": "1.01467803160419205454625346550734490885132901742380647595279",
+    "K": "0.666666666666666666666666666666666666666666666666666666666667",
+    "exact_identification": {
+      "S1": "pi^2/8",
+      "S2": "pi^4/96",
+      "K": "2/3"
+    },
+    "maximum_oracle_error": "2.2e-80",
+    "passed_1e-30": true
+  },
+  "delta_4_over_5": {
+    "S1": "1.69581459045452258311579522492441561104846818760322165742191",
+    "S2": "2.44872014149799975069448884532215670144302524151656963883587",
+    "K": "0.851495620117928174862536635272317552459042013784975737930313",
+    "maximum_cross_route_difference": "6.4e-80",
+    "routes_agree_1e-20": true,
+    "planned_failure_flat_A_n_K": "0.743723247164103117326244043102869209837903337188737658161725",
+    "rev1c_pure_tail_comparator": "0.7999554280268085"
+  },
+  "potts_retrospective_checks": {
+    "sizes": [6, 7, 8, 9, 10, 11, 12],
+    "K_L": [
+      0.919949336245,
+      0.906664272704,
+      0.89682829143,
+      0.889343715994,
+      0.883512065738,
+      0.878875757774,
+      0.875125773196
+    ],
+    "documented_free_fit_interval": [0.8297939751, 0.8399672],
+    "distance_CFT_to_fit_interval": 0.011528420117928095,
+    "distance_pure_tail_to_fit_interval": 0.029838547073191446,
+    "L12_residual_to_CFT": 0.023630153078071925,
+    "L12_residual_to_pure_tail": 0.07517034516919152,
+    "L12_rank2_over_rank1": {
+      "ED": 0.05244386600818561,
+      "CFT": 0.052244897959183696,
+      "relative_error": 0.00380837281292723,
+      "pure_tail": 0.0715993349974727
+    },
+    "fixed_CFT_plus_L_minus_0p8_and_L_minus_2_RMSE": {
+      "L6_to_12": 0.0007984880593230942,
+      "L8_to_12": 0.00023674802688652716,
+      "L9_to_12": 0.00011550374710841349
+    },
+    "inference": "INCONCLUSIVE: full CFT low-level shape is supported and is closer than the tail model, but current sizes do not establish the thermodynamic scalar limit"
+  },
+  "cutoff_scaling": {
+    "Delta_1p5_K_logN_squared_slope": 0.014782266889075819,
+    "Delta_1p6_raw_slope": -0.4315988126265145,
+    "Delta_1p6_expected_asymptotic_slope": -0.4,
+    "Delta_1p75_K_over_logN_slope": -1.0074857256394356,
+    "Delta_1p9_raw_slope": -0.999753157886645
+  },
+  "retained_controls": {
+    "tfim_J2_zero_level_projector_rows": 16,
+    "tfim_J2_zero_all_pass": true,
+    "tfim_J2_zero_max_K_error": 4.885e-15,
+    "XX_assertion_rows": 56,
+    "XX_all_assertions_pass": true,
+    "XX_recorded_incommensurate_diagnostics": 8,
+    "split_merge_identity_pass": true,
+    "Ramond_zero_mode_excluded_limit": 0.4
+  },
+  "provenance": {
+    "source_script": "calculations/compute_cft_kf.py",
+    "interacting_benchmarks_sha256": "ed10ff3be1c5d6829e09850a565cda649c1a480e994ae7864da42f2b7c6d63d9",
+    "potts_fit_summary_sha256": "86343595248eca1a2c4bb31b800db35b4522e8db0e6feb9ff7748acd0dd9a3c2",
+    "nnn_fit_summary_sha256": "142990e0106ef01a0030ec575dbba93b40df88b3d8dab885e5cbdf96cccede38"
+  }
+}

@@ -1,0 +1,3630 @@
+{
+  "cft_target": 0.8514956201179281,
+  "claim_ceiling": "THEORY_GUIDED_ACCESSIBLE_SIZE_EXTRAPOLATION; NO_UNIQUE_ASYMPTOTIC_EXPONENT",
+  "decision_id": "POTTS-FSS-7/5-INTEGRATION-R1/OPTION-A",
+  "empirical_comparators": {
+    "linear_1_over_L": {
+      "amplitudes": [
+        0.5304639351566103
+      ],
+      "condition_number": 33.46900786717165,
+      "intercept": 0.8309138048314586,
+      "max_abs_residual": 0.0006839804787664994,
+      "rmse": 0.00042847591059962906,
+      "rss": 1.6523244536776318e-06
+    },
+    "quadratic_1_over_L": {
+      "amplitudes": [
+        0.4124796754955776,
+        0.5028395232626777
+      ],
+      "condition_number": 1243.1172132977722,
+      "intercept": 0.8373276157152969,
+      "max_abs_residual": 0.00014895797433533975,
+      "rmse": 9.436128188034044e-05,
+      "rss": 8.013646366290958e-08
+    }
+  },
+  "fixed_CFT_mechanism_diagnostics": {
+    "KCFT+a*L^(-4/5)+b*L^(-7/5)": {
+      "amplitudes": [
+        -0.051601094227646686,
+        1.0015758341630008
+      ],
+      "condition_number": 23.996005459764273,
+      "intercept": 0.8514956201179281,
+      "loocv_rmse": 0.0008378113703330895,
+      "max_abs_residual": 0.0007611746851882151,
+      "rmse": 0.0004860043463925255,
+      "rss": 2.1258020224118333e-06
+    },
+    "KCFT+b*L^(-7/5)": {
+      "amplitudes": [
+        0.8216988227653956
+      ],
+      "condition_number": 1.0,
+      "intercept": 0.8514956201179281,
+      "loocv_rmse": 0.0016630371998493005,
+      "max_abs_residual": 0.0024312063332405653,
+      "rmse": 0.0014829751573984036,
+      "rss": 1.9792937857147377e-05
+    },
+    "KCFT+c*L^(-8/5)": {
+      "amplitudes": [
+        1.2382728867371604
+      ],
+      "condition_number": 1.0,
+      "intercept": 0.8514956201179281,
+      "loocv_rmse": 0.001212970967189802,
+      "max_abs_residual": 0.0019789880779558233,
+      "rmse": 0.0008983739529731009,
+      "rss": 7.2636818344246375e-06
+    },
+    "KCFT+d*L^(-2)": {
+      "amplitudes": [
+        2.7531147583602937
+      ],
+      "condition_number": 1.0,
+      "intercept": 0.8514956201179281,
+      "loocv_rmse": 0.005925013266628825,
+      "max_abs_residual": 0.008021693827230725,
+      "rmse": 0.004487564215166543,
+      "rss": 0.00018124409326718976
+    }
+  },
+  "input_hashes": {
+    "build/runs/a1-fit75-recovery/data/reproducibility/interacting_benchmarks.csv": "d16e45c207286aedc322f487417238d325c0a7f727841088b38cfc4d978cbe24",
+    "build/runs/a1-fit75-recovery/data/reproducibility/potts_outcome_aware_fss.csv": "3de3a0cef1bf8f47b8646591e8728c0084fe338471ee60024340f402e04d948f",
+    "build/runs/a1-fit75-recovery/work/current-ladder/L12.json": "81fb0085a06c8a004b295fc946b17d1af9cebb523c0d8e08b22416c237bc9cc4",
+    "build/runs/a1-fit75-recovery/work/current-ladder/L13.json": "a9957b8ab050fd769c1e62e45fa1a7bafce2cecf1041fb57d3f5d84917b79990",
+    "build/runs/a1-fit75-recovery/work/current-ladder/L14.json": "064c16303d358c8deadc8466aec0c6de7a9001ed7991d8e1073b12e0f61278ed"
+  },
+  "primary_KF_contract": {
+    "certified_endpoint_envelope": {
+      "all_corners": [
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891035585669
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891050324355
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891047810749
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891062549434
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.847589104588578
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891060624465
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891058110859
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891072849544
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891041838959
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891056577645
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891054064039
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891068802724
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891052139071
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891066877754
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.847589106436415
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891079102835
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891038280874
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891053019559
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891050505956
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891065244638
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891048580985
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891063319669
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891060806064
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.847589107554475
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891044534165
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.847589105927285
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891056759246
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.847589107149793
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891054834275
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891069572961
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891067059356
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.847589108179804
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891037297334
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.847589105203602
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891049522414
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.84758910642611
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891047597444
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891062336128
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891059822526
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.847589107456121
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891043550623
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891058289311
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891055775705
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891070514391
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891053850734
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891068589418
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891066075814
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891080814498
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.847589103999254
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891054731224
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891052217621
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891066956305
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891050292648
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891065031333
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891062517729
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891077256414
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891046245829
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891060984513
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.847589105847091
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891073209595
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891056545939
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891071284625
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.847589106877102
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891083509706
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.847589103538599
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891050124674
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891047611072
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891062349756
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891045686099
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891060424785
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891057911179
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891072649866
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.847589104163928
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891056377964
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.847589105386436
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891068603044
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891051939388
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891066678074
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.847589106416447
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891078903156
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891038081194
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891052819879
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891050306276
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.847589106504496
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891048381304
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891063119989
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891060606386
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.847589107534507
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891044334485
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891059073171
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891056559566
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891071298249
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891054634596
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.847589106937328
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891066859678
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891081598361
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891037097654
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.847589105183634
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891049322734
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891064061419
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891047397766
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891062136449
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891059622845
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.847589107436153
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891043350945
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891058089631
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891055576025
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891070314711
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891053651055
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.847589106838974
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891065876137
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891080614822
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.847589103979286
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891054531544
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891052017941
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891066756625
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891050092971
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891064831655
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891062318051
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891077056735
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891046046151
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891060784835
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891058271232
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891073009915
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891056346261
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891071084943
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891068571341
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891083310025
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891035052012
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891049790698
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891047277093
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891062015779
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891045352124
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891060090808
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891057577205
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891072315888
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891041305303
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891056043989
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891053530384
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.847589106826907
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891051605414
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891066344099
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891063830496
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.847589107856918
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.847589103774722
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891052485902
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.84758910499723
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891064710984
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891048047328
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891062786014
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891060272409
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891075011095
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891044000511
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891058739193
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891056225591
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891070964274
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891054300619
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891069039304
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.84758910665257
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891081264386
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891036763677
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891051502363
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.847589104898876
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891063727445
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891047063788
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891061802472
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891059288868
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891074027553
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891043016969
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891057755653
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891055242049
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891069980733
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.847589105331708
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891068055763
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891065542159
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891080280844
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891039458883
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891054197567
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891051683965
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891066422649
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891049758993
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891064497678
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891061984073
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891076722759
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891045712174
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891060450859
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891057937256
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891072675938
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891056012284
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891070750969
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891068237364
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.847589108297605
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891034852332
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891049591018
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891047077414
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.84758910618161
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891045152443
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891059891129
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891057377523
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891072116208
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891041105623
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891055844308
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891053330704
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.847589106806939
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891051405734
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.847589106614442
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891063630814
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.84758910783695
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891037547539
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891052286224
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891049772619
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891064511304
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.847589104784765
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891062586334
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891060072731
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891074811415
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.847589104380083
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891058539513
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.847589105602591
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891070764595
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891054100941
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891068839625
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891066326021
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891081064706
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891036563998
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891051302684
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891048789079
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891063527765
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891046864109
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891061602795
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891059089189
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891073827874
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891042817288
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891057555974
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.847589105504237
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891069781056
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891053117399
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891067856082
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891065342479
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891080081164
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891039259205
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891053997888
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891051484284
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891066222969
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891049559312
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891064297998
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891061784393
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891076523081
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891045512494
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891060251178
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891057737575
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8475891072476258
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8475891055812603
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8475891070551289
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8475891068037684
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.847589108277637
+        }
+      ],
+      "corner_count": 256,
+      "intercept_max": 0.8475891083509706,
+      "intercept_min": 0.8475891034852332,
+      "intercept_width": 4.865737368575651e-09
+    },
+    "fit": {
+      "amplitudes": [
+        0.8966081051810378
+      ],
+      "condition_number": 56.02941768073775,
+      "intercept": 0.8475891059181018,
+      "loocv_rmse": 0.0005898440930653502,
+      "max_abs_residual": 0.0006175937089255568,
+      "rmse": 0.0003487749954745597,
+      "rss": 1.0947959772145122e-06,
+      "signed_relative_deviation_percent": -0.4587826534310671
+    },
+    "interval_representative": "deterministic_midpoint",
+    "model": "unweighted_OLS_Kinf_plus_b_L_minus_7_over_5",
+    "sizes": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "window_fits": {
+      "10": {
+        "amplitudes": [
+          0.9379021933213436
+        ],
+        "condition_number": 189.04886525800967,
+        "intercept": 0.8461873519188028,
+        "loocv_rmse": 2.4645739952209147e-05,
+        "max_abs_residual": 1.399300322146857e-05,
+        "rmse": 1.1345016925350567e-05,
+        "rss": 6.435470451824541e-10,
+        "signed_relative_deviation_percent": -0.6234052264872675
+      },
+      "6": {
+        "amplitudes": [
+          0.8966081051810378
+        ],
+        "condition_number": 56.02941768073775,
+        "intercept": 0.8475891059181018,
+        "loocv_rmse": 0.0005898440930653502,
+        "max_abs_residual": 0.0006175937089255568,
+        "rmse": 0.0003487749954745597,
+        "rss": 1.0947959772145122e-06,
+        "signed_relative_deviation_percent": -0.4587826534310671
+      },
+      "7": {
+        "amplitudes": [
+          0.9147397353705639
+        ],
+        "condition_number": 75.91689756986547,
+        "intercept": 0.8469318376023496,
+        "loocv_rmse": 0.00027881713132608374,
+        "max_abs_residual": 0.00026881361257768965,
+        "rmse": 0.00016119049837564982,
+        "rss": 2.0785901413272292e-07,
+        "signed_relative_deviation_percent": -0.5359725179733136
+      },
+      "8": {
+        "amplitudes": [
+          0.9261842808105059
+        ],
+        "condition_number": 102.09405448608914,
+        "intercept": 0.8465476637076519,
+        "loocv_rmse": 0.00013164486855135097,
+        "max_abs_residual": 0.0001125127385013247,
+        "rmse": 7.27750254192312e-05,
+        "rss": 3.707343027338823e-08,
+        "signed_relative_deviation_percent": -0.5810900600511562
+      },
+      "9": {
+        "amplitudes": [
+          0.9334315269142208
+        ],
+        "condition_number": 137.8000141112536,
+        "intercept": 0.846319940582797,
+        "loocv_rmse": 5.976998386059689e-05,
+        "max_abs_residual": 4.305914733604421e-05,
+        "rmse": 3.0741461909234944e-05,
+        "rss": 5.670224881901658e-09,
+        "signed_relative_deviation_percent": -0.6078339586073604
+      }
+    }
+  },
+  "scale_diagnostics": {
+    "fixed_power_models": {
+      "A2+B1*L^(-4/5)+B2*L^(-7/5)": {
+        "amplitudes": [
+          0.0014422054863620498,
+          -0.03888396679607515
+        ],
+        "condition_number": 880.4243043482327,
+        "intercept": 0.03771718956766443,
+        "loocv_rmse": 6.089750317944066e-07,
+        "max_abs_residual": 3.4493391548595653e-07,
+        "rmse": 2.3470528199091306e-07,
+        "rss": 4.957791245499061e-13
+      },
+      "A2+B2*L^(-2)": {
+        "amplitudes": [
+          -0.08969367786805067
+        ],
+        "condition_number": 140.0719610045017,
+        "intercept": 0.03732633910530078,
+        "loocv_rmse": 6.854776843721411e-05,
+        "max_abs_residual": 6.11650946021336e-05,
+        "rmse": 4.05478780699647e-05,
+        "rss": 1.4797173743790519e-08
+      },
+      "A2+B2*L^(-4/5)": {
+        "amplitudes": [
+          -0.01714189639256001
+        ],
+        "condition_number": 27.541176341851493,
+        "intercept": 0.039069211738869875,
+        "loocv_rmse": 7.771997084728282e-05,
+        "max_abs_residual": 8.494463598007068e-05,
+        "rmse": 4.9707626110712576e-05,
+        "rss": 2.2237632842061554e-08
+      },
+      "A2+B2*L^(-7/5)": {
+        "amplitudes": [
+          -0.03588182308592114
+        ],
+        "condition_number": 56.02941768073775,
+        "intercept": 0.03782280682577035,
+        "loocv_rmse": 6.270620365115233e-06,
+        "max_abs_residual": 6.256426172697449e-06,
+        "rmse": 3.85476522952781e-06,
+        "rss": 1.337329347729893e-10
+      },
+      "A2+B2*L^(-8/5)": {
+        "amplitudes": [
+          -0.04812180652541005
+        ],
+        "condition_number": 75.0642109330092,
+        "intercept": 0.037615607219079646,
+        "loocv_rmse": 1.832386208796463e-05,
+        "max_abs_residual": 1.75642735317158e-05,
+        "rmse": 1.1156966106553643e-05,
+        "rss": 1.1203010343250811e-09
+      }
+    },
+    "free_power_windows": {
+      "10": {
+        "amplitude": -0.03839460301894152,
+        "intercept": 0.03776716019185355,
+        "jacobian_condition_number": 109023.85638283308,
+        "max_abs_residual": 6.502964944310463e-09,
+        "omega": 1.4476764809627314,
+        "rmse": 4.577775453600847e-09,
+        "rss": 1.047801405179522e-16,
+        "success": true
+      },
+      "6": {
+        "amplitude": -0.03862101430667051,
+        "intercept": 0.03776437236093405,
+        "jacobian_condition_number": 13314.735924003642,
+        "max_abs_residual": 7.972400198341667e-08,
+        "omega": 1.451127629787597,
+        "rmse": 4.964211151605896e-08,
+        "rss": 2.21790531219555e-14,
+        "success": true
+      },
+      "7": {
+        "amplitude": -0.03857528747701153,
+        "intercept": 0.03776505193902528,
+        "jacobian_condition_number": 21883.15797881789,
+        "max_abs_residual": 4.7009142058185294e-08,
+        "omega": 1.450386610546986,
+        "rmse": 3.2481848352716137e-08,
+        "rss": 8.440563779270783e-15,
+        "success": true
+      },
+      "8": {
+        "amplitude": -0.03851965316538191,
+        "intercept": 0.03776577528242152,
+        "jacobian_condition_number": 36136.09771710895,
+        "max_abs_residual": 2.6715068164595568e-08,
+        "omega": 1.449523498061251,
+        "rmse": 1.9013559017628786e-08,
+        "rss": 2.5306079856179706e-15,
+        "success": true
+      },
+      "9": {
+        "amplitude": -0.0384585561922923,
+        "intercept": 0.03776648528253021,
+        "jacobian_condition_number": 61161.80791901683,
+        "max_abs_residual": 1.444008201900715e-08,
+        "omega": 1.4486079711705189,
+        "rmse": 1.0018376451099794e-08,
+        "rss": 6.022072002957053e-16,
+        "success": true
+      }
+    }
+  },
+  "schema": "channel-concentration.potts-theory-guided-7over5.v1",
+  "scientific_compute_performed": false,
+  "status": "POST_OUTCOME_THEORY_GUIDED_INTEGRATION",
+  "theory_contract": {
+    "analytic_background_power": 1.0,
+    "claim": "accessible-size analytic-background correction, not unique asymptotic exponent",
+    "relative_analytic_background_correction": 1.4,
+    "response_RG_eigenvalue": 1.2,
+    "singular_P2_power": 2.4,
+    "thermal_scaling_dimension": 0.8
+  }
+}

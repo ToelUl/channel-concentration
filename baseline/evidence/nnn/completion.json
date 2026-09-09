@@ -1,0 +1,58 @@
+{
+  "status": "NNN_REPLAY_AND_POSTPROCESS_COMPLETE",
+  "initial_tasks": 48,
+  "new_tasks": 21,
+  "completed_unique_tasks": 69,
+  "remaining_nnn_numerical_tasks": 0,
+  "original_outputs": 19,
+  "response_count_receipts": 45,
+  "archived_comparisons_passed": 24,
+  "current_postprocess_rows": 2374,
+  "selftests": {
+    "exact_KF_closed_form": "PASS",
+    "exact_normalization": "PASS",
+    "identity_distance": "PASS",
+    "seeded_unsorted_vector_rejected": "PASS",
+    "unresolved_tail": "PASS"
+  },
+  "producer": "0.5.1.dev0",
+  "reader": "0.5.2.dev0",
+  "new_21_task_seconds_sum": 12.148667116999999,
+  "all_69_checkpoint_task_seconds_sum": 58.583124312999985,
+  "this_batch_controller_raw_seconds_sum": 166.59843552499999,
+  "this_batch_kernel_peak_bytes": 1329844224,
+  "verified_backup_files": 243,
+  "initial_48_checkpoint_bytes_unchanged": true,
+  "scientific_environment_frozen": true,
+  "terminal_new_tasks": 0,
+  "terminal_resumed_tasks": 69,
+  "postprocess_eigensolves": 0,
+  "L20_retained_scan": [
+    {
+      "J2": 0.05,
+      "lowest_requested": 16,
+      "highest_requested": 64,
+      "KF_absolute_change_lowest_to_highest": 1.376893074356289e-05,
+      "new_acceptance_threshold_introduced": false
+    },
+    {
+      "J2": 0.1,
+      "lowest_requested": 16,
+      "highest_requested": 32,
+      "KF_absolute_change_lowest_to_highest": 5.724429060771641e-06,
+      "new_acceptance_threshold_introduced": false
+    },
+    {
+      "J2": 0.2,
+      "lowest_requested": 16,
+      "highest_requested": 96,
+      "KF_absolute_change_lowest_to_highest": 3.3854930194809896e-06,
+      "new_acceptance_threshold_introduced": false
+    }
+  ],
+  "field_sensitivity_max_KF_change_from_zero": 5.973659801261633e-07,
+  "claim_ceiling": "OVERALL_ENDPOINT_CONTRACTION_AND_L20_PROXIMITY_UNDER_THE_MATCHED_RANKED_LEVEL_PROJECTOR_CONTRACT;_NO_STRICT_MONOTONICITY_OR_UNIVERSALITY_PROOF",
+  "full_A1_complete": false,
+  "next_batch": "Integrate verified current Potts and NNN results into figure/table input mappings, cross-check manuscript values, and close the A1 acceptance inventory before considering release.",
+  "github_published": false
+}

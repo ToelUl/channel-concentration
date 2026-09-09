@@ -1,0 +1,8 @@
+{"config_sha256": "eede620cc66249141c46935897ede1ac9236e5b653a03095534663439ee221ca", "elapsed_seconds": null, "engine_sha256": "9694ea60cd77d807b31a57061f32ca644d4e4e294c85ad34b99a4c97480ee792", "event": "run-start", "mode": "publication", "resume": false, "solver_environment_sha256": "5e36d3244603b328b25abc39e3534c9f78439c249735ad86a19f2bdc1cb650a6", "workdir_empty_at_start": true}
+{"elapsed_seconds": null, "event": "task-start", "key": "prg_j2_0p05_L6"}
+{"elapsed_seconds": 0.012873488999986193, "event": "task-complete", "key": "prg_j2_0p05_L6"}
+{"elapsed_seconds": null, "event": "task-start", "key": "prg_j2_0p05_L8"}
+{"elapsed_seconds": 0.006703434000002062, "event": "task-complete", "key": "prg_j2_0p05_L8"}
+{"elapsed_seconds": null, "event": "task-start", "key": "prg_j2_0p05_L10"}
+{"elapsed_seconds": 0.009921332000004668, "event": "task-complete", "key": "prg_j2_0p05_L10"}
+{"committed_tasks": 3, "elapsed_seconds": null, "event": "adapter-paused"}

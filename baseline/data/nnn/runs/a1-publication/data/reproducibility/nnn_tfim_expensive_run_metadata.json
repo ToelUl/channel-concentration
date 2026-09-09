@@ -1,0 +1,154 @@
+{
+  "checkpoint_manifest": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoint_manifest.json",
+  "command": "python3 scripts/simulation/reproduce_nnn_tfim_expensive.py --mode publication --resume --workdir build/runs/a1-publication/work/nnn_tfim_expensive --outdir build/runs/a1-publication/data/reproducibility",
+  "comparison_status": "PASS",
+  "computation_environment": null,
+  "config_path": "repro/config/nnn_tfim_expensive_reproduction.json",
+  "config_sha256": "eede620cc66249141c46935897ede1ac9236e5b653a03095534663439ee221ca",
+  "engine_sha256": "9694ea60cd77d807b31a57061f32ca644d4e4e294c85ad34b99a4c97480ee792",
+  "event_log": "build/runs/a1-publication/work/nnn_tfim_expensive/run_1788932882067602870_resume_events.jsonl",
+  "fresh_run_resource_reference": null,
+  "invocation_resources": {
+    "computed_tasks": 0,
+    "elapsed_seconds": 0.02942436500001122,
+    "peak_rss_kib": 81144,
+    "resumed_tasks": 69,
+    "solver_environment": {
+      "blas": {
+        "configuration": "OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64",
+        "name": "scipy-openblas",
+        "version": "0.3.30"
+      },
+      "machine": "x86_64",
+      "numpy": "2.3.5",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "python": "3.12.13",
+      "python_implementation": "CPython",
+      "scipy": "1.17.0",
+      "thread_environment": {
+        "MKL_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1"
+      }
+    },
+    "solver_environment_sha256": "5e36d3244603b328b25abc39e3534c9f78439c249735ad86a19f2bdc1cb650a6"
+  },
+  "lineage": {
+    "computed_tasks": 0,
+    "mode": "checkpoint-resume",
+    "require_empty_workdir": false,
+    "resume_requested": true,
+    "resumed_tasks": 69,
+    "workdir_empty_at_start": false
+  },
+  "logical_cpus": 32,
+  "machine": "x86_64",
+  "mode": "publication",
+  "numpy": "2.3.5",
+  "outputs": [
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_prg_fields_L20.csv",
+      "sha256": "e3a1c33221b1faf58eaf671bae59d45e83b965c262213dd74f1c2f9c2613420b"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_prg_fields_L18.csv",
+      "sha256": "f27fc20e2c56adc2e9475c49700d30d797613f91300d93d084b14c3ef953b12d"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_prg_solver_diagnostics.csv",
+      "sha256": "b6a83f874c243f489912d29f73c8e464fa5b9f911048f7b22b9444468600ed4b"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_L20_prg_confirmation.csv",
+      "sha256": "1ce4da581939d55382887fe6ef2b40cb34051fb8610e5fb8e91e62c09dce3878"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_L16_L18_retained_eigenpair_convergence.csv",
+      "sha256": "c85ed61ed186f383a384f535524f2794eff36d18099cf9e899516883f1e400ec"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_L20_retained_eigenpair_convergence.csv",
+      "sha256": "3647f419015cc3307d73dd14ca62476f2c8dc4d67f6e19424dc075eaa6904e49"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_L20_h_sensitivity.csv",
+      "sha256": "42c14b769da923f4b7d2d661983fa1fe67ddcc010931efc40ab3b3d6518ccec3"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/interacting_benchmarks.csv",
+      "sha256": "87ece5b3d7f142efa2b7980e19ca11aac447bf39d47dd240167ad48248ce9aa3"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/interacting_benchmarks_nnn_L18_sector.csv",
+      "sha256": "f8fd97114f74b963e73d955d68fcb3ba46702bc94168af69bf5d028ee4c0dfa8"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/interacting_benchmarks_nnn_L20_sector.csv",
+      "sha256": "d7afed111cf7a2567b71e3ff91f4b66d004b21949a75317576edefae7f7358a2"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/interacting_weight_distributions.csv",
+      "sha256": "5a910d6b0fe020e896f107abd204e09ea3a0b943088eff8ec1d17895bd1a0e2d"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/interacting_weights_nnn_L18_sector.csv",
+      "sha256": "b16ff5e61e91c0ceb132764601e011f4e0ab8ef4516399005ec7efe278f06fab"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/interacting_weights_nnn_L20_sector.csv",
+      "sha256": "0e5b3398fbcb794ae29c865a17753293f92f1964dbb3dc835c6bc6fbf7cbb92b"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_L18_fit_summary.csv",
+      "sha256": "6be771ab8d75d404672c5f6b94ccf44672bd5cc4240b0d82005bfcfa179d3e6b"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_L20_fit_summary.csv",
+      "sha256": "13aa29ef4967a1008301d69b96bd7f09a1116a498a2bbff803db8db4d1baae0f"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_alternative_fit_summary.csv",
+      "sha256": "fe6c3d059b3b98ae13314d07659abe335f748f4b8c8e36aea9a1f7fd943f5a34"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_j2_scan_diagnostics.csv",
+      "sha256": "3136d333bc02950966b1e6f834735b3fd79cce97ef2e5713c7171014e365a553"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_linear_fit_summary.csv",
+      "sha256": "b24eefc9fe459f459284cd384e7e22b6326a9fe6d471109f10258e8b5246cd09"
+    },
+    {
+      "path": "build/runs/a1-publication/data/reproducibility/nnn_tfim_archived_vs_regenerated.csv",
+      "sha256": "e35c29c2b6fe17a098a29d2f438eb36604b59a86c39c3c5af82e370fb7484953"
+    }
+  ],
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.13",
+  "schema_version": "nnn-tfim-expensive-output/1.0.0",
+  "scipy": "1.17.0",
+  "solver_environment_sha256": "5e36d3244603b328b25abc39e3534c9f78439c249735ad86a19f2bdc1cb650a6",
+  "thread_environment": {
+    "MKL_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "validation_environment": {
+    "blas": {
+      "configuration": "OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64",
+      "name": "scipy-openblas",
+      "version": "0.3.30"
+    },
+    "machine": "x86_64",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "python": "3.12.13",
+    "python_implementation": "CPython",
+    "scipy": "1.17.0",
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  }
+}

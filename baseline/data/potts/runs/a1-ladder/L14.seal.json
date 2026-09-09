@@ -1,0 +1,8 @@
+{
+  "artifact": {
+    "bytes": 326619,
+    "path": "L14.json",
+    "sha256": "064c16303d358c8deadc8466aec0c6de7a9001ed7991d8e1073b12e0f61278ed"
+  },
+  "schema": "cc-repro-artifact-seal/1"
+}

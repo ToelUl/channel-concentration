@@ -1,0 +1,8 @@
+{
+  "artifact": {
+    "bytes": 3848,
+    "path": "P2-L6.json",
+    "sha256": "5a7c07d539bec6f50ee5856590f5c20489a1a955e2251142246c102607c39f21"
+  },
+  "schema": "cc-repro-artifact-seal/1"
+}

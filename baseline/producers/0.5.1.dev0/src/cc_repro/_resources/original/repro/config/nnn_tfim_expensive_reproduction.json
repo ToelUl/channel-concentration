@@ -1,0 +1,78 @@
+{
+  "schema_version": "nnn-tfim-expensive-reproduction/1.0.0",
+  "model": {
+    "hamiltonian": "H=-sum_i Z_i Z_{i+1}-J2 sum_i Z_i Z_{i+2}-h sum_i X_i",
+    "boundary_condition": "periodic",
+    "prg_sector": "k=0 odd-even global-spin-flip parity gap",
+    "response_sector": "k=0 global-spin-flip even",
+    "perturbation": "dH/dh=-sum_i X_i"
+  },
+  "prg": {
+    "j2_values": [0.05, 0.1, 0.2],
+    "sizes": [6, 8, 10, 12, 14, 16, 18, 20],
+    "brackets": {
+      "0.05": [1.07, 1.11],
+      "0.1": [1.15, 1.2],
+      "0.2": [1.3, 1.36]
+    },
+    "eigensolver_tolerance": 1e-10,
+    "root_xtol": 1e-10,
+    "root_rtol": 1e-10,
+    "maximum_root_iterations": 100,
+    "maximum_scaled_gap_residual": 1e-8,
+    "maximum_eigenpair_residual": 1e-9
+  },
+  "response": {
+    "sizes": [6, 8, 10, 12, 14, 16, 18, 20],
+    "eigensolver_tolerance": 1e-9,
+    "projected_solve_rtol": 1e-9,
+    "level_group_tolerance": 1e-7,
+    "ncv_factor": 4,
+    "n_low_energy_eigenpairs_default": 160,
+    "n_low_energy_eigenpairs_L20": {
+      "0.05": 64,
+      "0.1": 32,
+      "0.2": 96
+    },
+    "maximum_solve_residual": 1e-6,
+    "maximum_weight_ranks": 120
+  },
+  "convergence_scans": {
+    "L16_L18": [64, 96, 160],
+    "L20": {
+      "0.05": [16, 24, 32, 64],
+      "0.1": [16, 24, 32],
+      "0.2": [16, 96]
+    }
+  },
+  "field_sensitivity": {
+    "j2": 0.2,
+    "L": 20,
+    "shifts": [-0.0001, 0.0, 0.0001],
+    "n_low_energy_eigenpairs": 16
+  },
+  "comparison_tolerances": {
+    "h_absolute": 1e-5,
+    "KF_absolute": 2e-5,
+    "P2_relative": 2e-5,
+    "P4_relative": 2e-5
+  },
+  "archived_reference": {
+    "prg": [
+      {"lambda_or_g": 0.05, "L": 18, "h": 1.08404752938},
+      {"lambda_or_g": 0.1, "L": 18, "h": 1.16611974987},
+      {"lambda_or_g": 0.2, "L": 18, "h": 1.32562896},
+      {"lambda_or_g": 0.05, "L": 20, "h": 1.0839983},
+      {"lambda_or_g": 0.1, "L": 20, "h": 1.16606076},
+      {"lambda_or_g": 0.2, "L": 20, "h": 1.32555516}
+    ],
+    "response": [
+      {"lambda_or_g": 0.05, "L": 18, "KF": 0.73754387077, "P2": 7.89714451803, "P4_low": 45.9968435056},
+      {"lambda_or_g": 0.1, "L": 18, "KF": 0.737448808995, "P2": 6.66103672417, "P4_low": 32.7201687378},
+      {"lambda_or_g": 0.2, "L": 18, "KF": 0.739025914372, "P2": 4.96794294095, "P4_low": 18.2394973492},
+      {"lambda_or_g": 0.05, "L": 20, "KF": 0.730172967047, "P2": 9.80017565876, "P4_low": 70.1283256988},
+      {"lambda_or_g": 0.1, "L": 20, "KF": 0.729644737059, "P2": 8.26097638584, "P4_low": 49.79367905},
+      {"lambda_or_g": 0.2, "L": 20, "KF": 0.730308152949, "P2": 6.15506719947, "P4_low": 27.6676164568}
+    ]
+  }
+}

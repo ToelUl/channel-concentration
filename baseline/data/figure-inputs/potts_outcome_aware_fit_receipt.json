@@ -1,0 +1,153 @@
+{
+  "active_data_source": "fresh_complete_L6_L14",
+  "cft_target": 0.8514956201179281,
+  "closure_ceiling": "CALIBRATED_RETAINED_EIGENPAIR_REPRODUCTION_PASS",
+  "decision_id": "DEC-KF-CFT-REPRODUCIBLE-PROJECT-CLEANROOM-REBUILD-001/A-R1",
+  "fit_audits": {
+    "linear_L10_L14": {
+      "amplitude": 0.4911829761530723,
+      "intercept": 0.8342956349417043,
+      "max_abs_residual": 0.00010793315448776042,
+      "rss": 3.793422958436507e-08
+    },
+    "linear_L11_L14": {
+      "amplitude": 0.48219879049453845,
+      "intercept": 0.834995662906177,
+      "max_abs_residual": 5.3111160737140395e-05,
+      "rss": 8.835406930100442e-09
+    },
+    "linear_L8_L14": {
+      "amplitude": 0.510647049707086,
+      "intercept": 0.8326936196755099,
+      "max_abs_residual": 0.00031965745253836886,
+      "rss": 3.4089841697009684e-07
+    },
+    "power_4_over_5_L6_L14": {
+      "amplitude": 0.4291721337497001,
+      "intercept": 0.8163049386933681,
+      "max_abs_residual": 0.0012890552404835054,
+      "rss": 5.933042654394897e-06
+    },
+    "quadratic_L6_L14": {
+      "a_1_over_L": 0.412479675495579,
+      "b_1_over_L2": 0.5028395232625629,
+      "intercept": 0.8373276157152979,
+      "max_abs_residual": 0.00014895797433644997,
+      "rss": 8.013646366292717e-08
+    }
+  },
+  "inputs": {
+    "source_mode": "campaign",
+    "t3_campaign_sha256": "f1b032109d6570360c110c9012194a136251db22710dbc366f3b67fb69c64685"
+  },
+  "l15_active": false,
+  "machine_readable_enclosures_retained": true,
+  "outputs": {
+    "audit_csv_sha256": "8e397c7a52b2bad100e3b0c91b75adb06f9b6f437aa13081639ab2d0ba449a4e",
+    "fss_csv_sha256": "3de3a0cef1bf8f47b8646591e8728c0084fe338471ee60024340f402e04d948f"
+  },
+  "partial_fresh_selection": false,
+  "primary_contract": {
+    "certified_endpoint_envelope": {
+      "all_corners": [
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.830913802348021
+        },
+        {
+          "choices": [
+            "lower",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8309138043635693
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.8309138039761614
+        },
+        {
+          "choices": [
+            "lower",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8309138059917097
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "lower"
+          ],
+          "intercept": 0.8309138036712079
+        },
+        {
+          "choices": [
+            "upper",
+            "lower",
+            "upper"
+          ],
+          "intercept": 0.8309138056867565
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "lower"
+          ],
+          "intercept": 0.830913805299348
+        },
+        {
+          "choices": [
+            "upper",
+            "upper",
+            "upper"
+          ],
+          "intercept": 0.8309138073148968
+        }
+      ],
+      "corner_count": 8,
+      "intercept_max": 0.8309138073148968,
+      "intercept_min": 0.830913802348021,
+      "intercept_width": 4.966875799539139e-09
+    },
+    "certified_interval_sizes": [
+      12,
+      13,
+      14
+    ],
+    "fit": {
+      "amplitude": 0.5304639351566062,
+      "intercept": 0.8309138048314589,
+      "max_abs_residual": 0.0006839804787664994,
+      "rss": 1.6523244536779145e-06,
+      "signed_relative_deviation_percent": -2.417136952932148
+    },
+    "interval_representative": "deterministic_midpoint",
+    "model": "unweighted_OLS_K0_plus_a_over_L",
+    "sizes": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ]
+  },
+  "receipt_content_sha256": "f5273c749c2f34a7ec359dba49961c979a1f8610d297835d123743d09324aac7",
+  "schema": "kf-cft.potts-fss.cleanroom.v1",
+  "scientific_compute_performed": false,
+  "visible_potts_error_bars": false
+}

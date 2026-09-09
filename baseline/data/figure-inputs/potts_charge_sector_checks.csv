@@ -1,0 +1,55 @@
+check,case,direct_value,expected_value,abs_error,tolerance,status,note
+color_shift_order,L=4,0,0,0.000000e+00,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+hamiltonian_commutator,L=4,0,0,0.000000e+00,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+perturbation_commutator,L=4,0,0,0.000000e+00,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+q0_isometry,L=4,6.2803698347351007e-16,0,6.280370e-16,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+ground_charge_leakage,L=4,5.2567101975308687e-15,0,5.256710e-15,1.000000e-10,PASS,frozen relative-norm tolerance for support outside q=0
+response_charge_leakage,L=4,4.6215275161050376e-15,0,4.621528e-15,1.000000e-10,PASS,frozen relative-norm tolerance for support outside q=0
+k0_q0_P2,L=4,0.90809351402839833,0.908093514028399,6.661338e-16,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+k0_q0_P4,L=4,0.79553056473185668,0.79553056473185779,1.110223e-15,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+k0_q0_KF,L=4,0.96470765032668115,0.96470765032668104,1.110223e-16,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+color_shift_order,L=5,0,0,0.000000e+00,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+hamiltonian_commutator,L=5,1.2560739669470201e-15,0,1.256074e-15,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+perturbation_commutator,L=5,1.2560739669470201e-15,0,1.256074e-15,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+q0_isometry,L=5,9.1551335970444749e-16,0,9.155134e-16,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+ground_charge_leakage,L=5,1.0079086751366205e-15,0,1.007909e-15,1.000000e-10,PASS,frozen relative-norm tolerance for support outside q=0
+response_charge_leakage,L=5,9.2299771755382578e-16,0,9.229977e-16,1.000000e-10,PASS,frozen relative-norm tolerance for support outside q=0
+k0_q0_P2,L=5,1.6193891418673314,1.6193891418673385,7.105427e-15,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+k0_q0_P4,L=5,2.4609649625253378,2.46096496252536,2.220446e-14,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+k0_q0_KF,L=5,0.9384323804597462,0.93843238045974642,2.220446e-16,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+color_shift_order,L=6,0,0,0.000000e+00,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+hamiltonian_commutator,L=6,4.5288390936029406e-15,0,4.528839e-15,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+perturbation_commutator,L=6,4.5288390936029406e-15,0,4.528839e-15,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+q0_isometry,L=6,1.4390135079995448e-15,0,1.439014e-15,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+ground_charge_leakage,L=6,1.9186440893188137e-14,0,1.918644e-14,1.000000e-10,PASS,frozen relative-norm tolerance for support outside q=0
+response_charge_leakage,L=6,1.7456132367535437e-14,0,1.745613e-14,1.000000e-10,PASS,frozen relative-norm tolerance for support outside q=0
+k0_q0_P2,L=6,2.5724018473005801,2.572401847300553,2.708944e-14,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+k0_q0_P4,L=6,6.0875359080799818,6.0875359080798503,1.314504e-13,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+k0_q0_KF,L=6,0.91994933624514996,0.91994933624514952,4.440892e-16,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+color_shift_order,L=7,0,0,0.000000e+00,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+hamiltonian_commutator,L=7,8.4726821240450222e-15,0,8.472682e-15,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+perturbation_commutator,L=7,8.4726821240450222e-15,0,8.472682e-15,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+q0_isometry,L=7,2.2752801345137459e-15,0,2.275280e-15,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+ground_charge_leakage,L=7,1.9238428901926525e-14,0,1.923843e-14,1.000000e-10,PASS,frozen relative-norm tolerance for support outside q=0
+response_charge_leakage,L=7,1.8158692138363673e-14,0,1.815869e-14,1.000000e-10,PASS,frozen relative-norm tolerance for support outside q=0
+k0_q0_P2,L=7,3.7853777137281726,3.7853777137282392,6.661338e-14,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+k0_q0_P4,L=7,12.991668918315449,12.991668918315938,4.884981e-13,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+k0_q0_KF,L=7,0.90666427270449568,0.90666427270449779,2.109424e-15,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+color_shift_order,L=8,0,0,0.000000e+00,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+hamiltonian_commutator,L=8,1.2716779685529958e-14,0,1.271678e-14,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+perturbation_commutator,L=8,1.2716779685529958e-14,0,1.271678e-14,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+q0_isometry,L=8,3.7022234168422464e-15,0,3.702223e-15,1.000000e-11,PASS,global color shift C=prod_j tau_j; explicit q=0 columns are orthonormal
+ground_charge_leakage,L=8,1.8802985662027806e-15,0,1.880299e-15,1.000000e-10,PASS,frozen relative-norm tolerance for support outside q=0
+response_charge_leakage,L=8,1.8122215325115487e-15,0,1.812222e-15,1.000000e-10,PASS,frozen relative-norm tolerance for support outside q=0
+k0_q0_P2,L=8,5.2748255437834848,5.2748255437836375,1.527667e-13,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+k0_q0_P4,L=8,24.953157129814507,24.953157129815981,1.474376e-12,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+k0_q0_KF,L=8,0.8968282914300848,0.8968282914300858,9.992007e-16,1.000000e-10,PASS,"full k=0 and explicit (k=0,q=0) level-projector moments agree"
+three_representation_P2,"L=6,full",2.572401847300581,2.572401847300553,2.797762e-14,1.000000e-10,PASS,"full space, full k=0 block, and explicit q=0 response give identical moments"
+three_representation_P4,"L=6,full",6.0875359080799845,6.0875359080798503,1.341149e-13,1.000000e-10,PASS,"full space, full k=0 block, and explicit q=0 response give identical moments"
+three_representation_KF,"L=6,full",0.91994933624514974,0.91994933624514952,2.220446e-16,1.000000e-10,PASS,"full space, full k=0 block, and explicit q=0 response give identical moments"
+three_representation_P2,"L=6,full-k0",2.5724018473005801,2.572401847300553,2.708944e-14,1.000000e-10,PASS,"full space, full k=0 block, and explicit q=0 response give identical moments"
+three_representation_P4,"L=6,full-k0",6.0875359080799818,6.0875359080798503,1.314504e-13,1.000000e-10,PASS,"full space, full k=0 block, and explicit q=0 response give identical moments"
+three_representation_KF,"L=6,full-k0",0.91994933624514996,0.91994933624514952,4.440892e-16,1.000000e-10,PASS,"full space, full k=0 block, and explicit q=0 response give identical moments"
+representation_dimension,"L=6,full",729,729,0.000000e+00,0.000000e+00,PASS,dimension labels distinguish the diagonalized block from response support
+representation_dimension,"L=6,full-k0",130,130,0.000000e+00,0.000000e+00,PASS,dimension labels distinguish the diagonalized block from response support
+representation_dimension,"L=6,explicit-q0",46,46,0.000000e+00,0.000000e+00,PASS,dimension labels distinguish the diagonalized block from response support

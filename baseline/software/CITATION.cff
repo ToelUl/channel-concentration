@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Development candidate; use the final archived release identifier when available."
+title: "CC original-source reproduction adapters"
+type: software
+authors:
+  - family-names: Lee
+    given-names: Qian-Rui
+  - family-names: Wang
+    given-names: Daw-Wei
+version: 0.5.2.dev0
+license: MIT
+abstract: "Installable integration of unchanged CC 2.1.15 R3.3 producers and selected public resources. Author names are inherited from the source citation. No public release or DOI is claimed."

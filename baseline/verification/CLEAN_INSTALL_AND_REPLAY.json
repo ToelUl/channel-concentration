@@ -1,0 +1,329 @@
+{
+  "status": "PASS",
+  "date": "2026-09-09",
+  "scope": "Scoped numerical-evidence public candidate; full manuscript acceptance remains NOT_PASSED",
+  "fresh_conda_environment": true,
+  "dependency_install": "Pinned distribution files, not copied installed packages from producer environments",
+  "detached_tests": [
+    {
+      "version": "0.5.0.dev0",
+      "tests": 45,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    {
+      "version": "0.5.1.dev0",
+      "tests": 58,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    },
+    {
+      "version": "0.5.2.dev0",
+      "tests": 69,
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0
+    }
+  ],
+  "wheel_and_sdist_install_versions": [
+    "0.5.0.dev0",
+    "0.5.1.dev0",
+    "0.5.2.dev0"
+  ],
+  "wheels_tested_from_extracted_archive": true,
+  "sdists_installed_and_resource_inventory_verified": true,
+  "postprocessing": [
+    {
+      "status": "PASS",
+      "analysis": "potts-fss",
+      "no_new_eigensolves": true,
+      "original_inputs_unchanged": true,
+      "comparisons": [
+        {
+          "file": "potts_outcome_aware_fss.csv",
+          "comparison": "byte-identical",
+          "sha256": "3de3a0cef1bf8f47b8646591e8728c0084fe338471ee60024340f402e04d948f"
+        },
+        {
+          "file": "potts_outcome_aware_fit_audit.csv",
+          "comparison": "byte-identical",
+          "sha256": "8e397c7a52b2bad100e3b0c91b75adb06f9b6f437aa13081639ab2d0ba449a4e"
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "analysis": "potts-ranked",
+      "no_new_eigensolves": true,
+      "original_inputs_unchanged": true,
+      "comparisons": [
+        {
+          "file": "potts_L14_certified_ranked_weights.csv",
+          "comparison": "byte-identical",
+          "sha256": "4c979056b70b5a4dac89deb888fc27c8c534429c6740dccc8465dc327156e891"
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "analysis": "nnn-ranked",
+      "no_new_eigensolves": true,
+      "original_inputs_unchanged": true,
+      "comparisons": [
+        {
+          "file": "nnn_ranked_distribution_convergence.csv",
+          "comparison": "byte-identical",
+          "sha256": "0b78e274fc6c0a87a4a0e26bf67201fae93e1a4151862fb30e5b722914de3874"
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "analysis": "potts-7over5",
+      "no_new_eigensolves": true,
+      "original_inputs_unchanged": true,
+      "comparisons": [
+        {
+          "file": "potts_theory_guided_7over5_fit_summary.csv",
+          "comparison": "byte-identical",
+          "sha256": "70dc7ada0b6147eefd7d20d964d29dba49ccd7725249f25f426004457338a5f9"
+        },
+        {
+          "file": "potts_scaled_P2_7over5.csv",
+          "comparison": "byte-identical",
+          "sha256": "e68ca51dabceee7260464bef03acec5301afacea4b2d935f4665f450f8d8241a"
+        }
+      ]
+    },
+    {
+      "status": "PASS",
+      "analysis": "projector-enclosures",
+      "no_new_eigensolves": true,
+      "original_inputs_unchanged": true,
+      "comparisons": [
+        {
+          "file": "projector-response-enclosures.json",
+          "comparison": "exact numeric structures and premises"
+        }
+      ]
+    }
+  ],
+  "fresh_small_routes": [
+    "exact fast",
+    "Potts L6",
+    "NNN point L6 J2=0.2"
+  ],
+  "pip_check": "PASS",
+  "original_baseline": {
+    "status": "PASS",
+    "files_verified": 1123,
+    "mismatches": []
+  },
+  "full_large_campaign_rerun": false,
+  "frozen_producer_environments_modified": false,
+  "distribution_hashes": [
+    {
+      "file": "cc_repro-0.5.0.dev0-py3-none-any.whl",
+      "sha256": "b7b6083e408ac5466498377f5bf747ca6588186a833381f043567979763825c0"
+    },
+    {
+      "file": "cc_repro-0.5.0.dev0.tar.gz",
+      "sha256": "0fa38bcab357729d916bc8e2005a80780523893bd30a093c4bb9ed64d0736815"
+    },
+    {
+      "file": "cc_repro-0.5.1.dev0-py3-none-any.whl",
+      "sha256": "3d63c3de42a3fd440839e451773cc2575ae190f54d655c1f4c7145c6b68ceb88"
+    },
+    {
+      "file": "cc_repro-0.5.1.dev0.tar.gz",
+      "sha256": "b4e8d1beb398c4b157a028eff6958aa87acab93283b30e02c59f26b1483fbef0"
+    },
+    {
+      "file": "cc_repro-0.5.2.dev0-py3-none-any.whl",
+      "sha256": "8da29644a642a92d14c7073f052dbe39c1be1a12adb497bc10d8ef15bc98abfc"
+    },
+    {
+      "file": "cc_repro-0.5.2.dev0.tar.gz",
+      "sha256": "e318b2f033a06084bc6552d25f6ea1690c627b9a4e82e51f4e5139c59c459da3"
+    }
+  ],
+  "local_validation_steps": [
+    {
+      "step": "conda-create",
+      "returncode": 0,
+      "seconds": 3.223993184000001
+    },
+    {
+      "step": "dependency-download",
+      "returncode": 0,
+      "seconds": 35.04472311600001
+    },
+    {
+      "step": "dependency-install",
+      "returncode": 0,
+      "seconds": 2.923855605
+    },
+    {
+      "step": "build-0.5.0.dev0",
+      "returncode": 0,
+      "seconds": 0.6682396319999953
+    },
+    {
+      "step": "build-0.5.1.dev0",
+      "returncode": 0,
+      "seconds": 0.6688444509999982
+    },
+    {
+      "step": "build-0.5.2.dev0",
+      "returncode": 0,
+      "seconds": 0.6685134850000054
+    },
+    {
+      "step": "extracted-integrity",
+      "returncode": 0,
+      "seconds": 0.11768293900000515
+    },
+    {
+      "step": "install-wheel-0.5.0.dev0",
+      "returncode": 0,
+      "seconds": 0.718279073000005
+    },
+    {
+      "step": "pip-check-0.5.0.dev0",
+      "returncode": 0,
+      "seconds": 0.11723852800000145
+    },
+    {
+      "step": "installed-identity-0.5.0.dev0",
+      "returncode": 0,
+      "seconds": 0.018251825000007216
+    },
+    {
+      "step": "tests-0.5.0.dev0",
+      "returncode": 0,
+      "seconds": 12.993865980999999
+    },
+    {
+      "step": "replay-potts-fss",
+      "returncode": 0,
+      "seconds": 0.5686679810000044
+    },
+    {
+      "step": "replay-potts-ranked",
+      "returncode": 0,
+      "seconds": 0.5176847080000044
+    },
+    {
+      "step": "install-sdist-0.5.0.dev0",
+      "returncode": 0,
+      "seconds": 1.1192170670000081
+    },
+    {
+      "step": "sdist-resource-check-0.5.0.dev0",
+      "returncode": 0,
+      "seconds": 0.11673473900000886
+    },
+    {
+      "step": "install-wheel-0.5.1.dev0",
+      "returncode": 0,
+      "seconds": 0.7194986690000036
+    },
+    {
+      "step": "pip-check-0.5.1.dev0",
+      "returncode": 0,
+      "seconds": 0.11747321400000033
+    },
+    {
+      "step": "installed-identity-0.5.1.dev0",
+      "returncode": 0,
+      "seconds": 0.018324679000002675
+    },
+    {
+      "step": "tests-0.5.1.dev0",
+      "returncode": 0,
+      "seconds": 13.195636463
+    },
+    {
+      "step": "install-sdist-0.5.1.dev0",
+      "returncode": 0,
+      "seconds": 1.1229128450000019
+    },
+    {
+      "step": "sdist-resource-check-0.5.1.dev0",
+      "returncode": 0,
+      "seconds": 0.11702545600000747
+    },
+    {
+      "step": "install-wheel-0.5.2.dev0",
+      "returncode": 0,
+      "seconds": 0.7204098119999998
+    },
+    {
+      "step": "pip-check-0.5.2.dev0",
+      "returncode": 0,
+      "seconds": 0.11735582299999692
+    },
+    {
+      "step": "installed-identity-0.5.2.dev0",
+      "returncode": 0,
+      "seconds": 0.018724253999991447
+    },
+    {
+      "step": "tests-0.5.2.dev0",
+      "returncode": 0,
+      "seconds": 14.185364909
+    },
+    {
+      "step": "replay-nnn-ranked",
+      "returncode": 0,
+      "seconds": 1.0194193580000075
+    },
+    {
+      "step": "replay-potts-7over5",
+      "returncode": 0,
+      "seconds": 1.0198163629999897
+    },
+    {
+      "step": "replay-projector-enclosures",
+      "returncode": 0,
+      "seconds": 0.9344200380000132
+    },
+    {
+      "step": "install-sdist-0.5.2.dev0",
+      "returncode": 0,
+      "seconds": 1.191261792000006
+    },
+    {
+      "step": "sdist-resource-check-0.5.2.dev0",
+      "returncode": 0,
+      "seconds": 0.16950565999999867
+    },
+    {
+      "step": "fresh-exact",
+      "returncode": 0,
+      "seconds": 0.4774168189999841
+    },
+    {
+      "step": "fresh-potts",
+      "returncode": 0,
+      "seconds": 0.6248785800000007
+    },
+    {
+      "step": "fresh-nnn-point",
+      "returncode": 0,
+      "seconds": 0.6183659710000029
+    },
+    {
+      "step": "final-pip-check",
+      "returncode": 0,
+      "seconds": 0.11701688799999488
+    },
+    {
+      "step": "extracted-unchanged",
+      "returncode": 0,
+      "seconds": 0.11717932300001621
+    }
+  ]
+}

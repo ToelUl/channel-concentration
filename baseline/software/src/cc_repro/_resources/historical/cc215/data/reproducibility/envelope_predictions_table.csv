@@ -1,0 +1,7 @@
+label,P2_size_exponent,p_env,y_O,scaling_regime,KF_env,status
+Ising / TFIM mass,2.0,2.0,1.0,single-scale,0.6666666666666667,proved free-fermion NS result
+3-state Potts energy,2.4,2.4,1.2,single-scale,0.7999554067521271,ideal soft-ladder reference (not interacting prediction)
+Tricritical Ising energy-like,3.6,3.6,1.8,single-scale,0.954119324885924,ideal soft-ladder reference (not interacting prediction)
+Gaussian / mean-field,4.0,4.0,2.0,single-scale,0.9714285714285712,ideal soft-ladder reference / free-field benchmark
+Lifshitz anisotropy direction,2.0,2.0,1.0,single-scale,0.6666666666666667,demonstrated free-fermion result
+Lifshitz field direction,4.0,6.0,NA,two-scale,0.9971139971139968,demonstrated free-fermion result; punctured normalized limit

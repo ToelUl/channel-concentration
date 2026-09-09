@@ -1,0 +1,61 @@
+{
+  "context": {
+    "adapter_environment": {
+      "adapter_sources": {
+        "__init__.py": "ef8d2ea8eb3d662553069cd4d931dafad9c47787f29107aebd8dc369e3b0b094",
+        "__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+        "campaign.py": "8da749ffdd9fd97fc577cad93da1c6bd57d1334740750b50391c5fe833b425b4",
+        "checkpoint_bridge.py": "386217784ecda9744eed52f9679d0223aec3f4e4abf8bf6c44138c4b6c516dea",
+        "cli.py": "17d112a289106ec463af411d900fa0f9a3dac15d4aae0feb32c777204d834113",
+        "controls.py": "6ffb7cd3c96e38b4da0562b673bbf5736df2ca7aac9736ff14a934ad1fee9849",
+        "current_analysis.py": "b8f8ef149e1a950624181422f62f3f00b6f6844251277dc1ada4c6340629af5e",
+        "evidence.py": "02ff945e4496293730a8ab53eea7302d6dc22c8cb04c1d1d248c3b759703c38a",
+        "figure_map.py": "01159f987b4825291a9c40b14c531ddda792c934bf60f191d29fb04fdd27442b",
+        "ladder.py": "d61f4000c7f08304e14754dd31a2362c4d8aed584a9b310d33c4f9dd4c35bf8d",
+        "postprocess.py": "99706e84b3805136532caa7200d54740869e09997dd70b2236b74aa82cd099e3",
+        "receipt_compat.py": "62e297112e52e4c2c04fabc89abbfedd868ea772a558b7b7ccbfec9a4e7f77e5",
+        "render.py": "85eece87bfde736b0ea04e0bbff7e87179ef6705eb9f209fae945f5c265c1eed",
+        "resources.py": "e1940c19effaa7b2909e51edc08ca0c96df5d1ff21bbf0d33722ee1bfe8adb0e",
+        "worker.py": "13ac5a819062c03eca39e1692047f4ad9f12c5ae97d8f8ce71deabd825692bbb"
+      },
+      "blas": {
+        "detection method": "pkgconfig",
+        "found": true,
+        "include directory": "/opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include",
+        "lib directory": "/opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib",
+        "name": "scipy-openblas",
+        "openblas configuration": "OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=64",
+        "pc file directory": "/project/.openblas",
+        "version": "0.3.30"
+      },
+      "blas_threads": 1,
+      "numpy": "2.3.5",
+      "package_version": "0.5.1.dev0",
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "python": "3.12.13",
+      "scipy": "1.17.0"
+    },
+    "bridge_sha256": "386217784ecda9744eed52f9679d0223aec3f4e4abf8bf6c44138c4b6c516dea",
+    "manifest_meaning": "completed tasks only; not terminal publication qualification",
+    "mode": "publication",
+    "schema": "cc-repro-nnn-commit/1",
+    "source_binding_sha256": "da922f250794275e543c3d664366ad101f6b90fefc1ebf434f189f741bf54550"
+  },
+  "counts": {
+    "guard_used": 1,
+    "nominal_eigenpairs": 24,
+    "requested": 24,
+    "retained_groups": 23,
+    "solver_returned": 25,
+    "source": "same unchanged engine invocation, before response_task projection"
+  },
+  "task": {
+    "L": 20,
+    "h": 1.166060773736693,
+    "kind": "response",
+    "lambda_or_g": 0.1,
+    "n_low_energy_eigenpairs": 24,
+    "suffix": ""
+  },
+  "task_key": "response_j2_0p1_L20_neig24"
+}

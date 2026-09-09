@@ -1,0 +1,341 @@
+{
+  "all_endpoint_contractions": true,
+  "claim_ceiling": "OVERALL_ENDPOINT_CONTRACTION_AND_L20_PROXIMITY_UNDER_THE_MATCHED_RANKED_LEVEL_PROJECTOR_CONTRACT;_NO_STRICT_MONOTONICITY_OR_UNIVERSALITY_PROOF",
+  "couplings": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "decision_id": "FIG7-ISING-DISTRIBUTION-CONVERGENCE-R1/OPTION-A",
+  "observable_contract": {
+    "distance": "D_TV_ranked=0.5*(sum_r|pi_r_NNN-pi_r_TFIM|+unresolved_mass), with absent ranks padded by zero",
+    "exact_reference": "finite-size critical NS TFIM momentum-block distribution",
+    "lattice_weight": "pi_r=x_r/P2 without retained-spectrum renormalization",
+    "rank_order": "decreasing projector response weight",
+    "unresolved_tail": "one explicit aggregate bin of mass 1-sum_r pi_r"
+  },
+  "postprocessing_only": true,
+  "schema": "nnn-ranked-distribution-convergence/1.0",
+  "scientific_compute_performed": false,
+  "selftests": {
+    "exact_KF_closed_form": "PASS",
+    "exact_normalization": "PASS",
+    "identity_distance": "PASS",
+    "seeded_unsorted_vector_rejected": "PASS",
+    "unresolved_tail": "PASS"
+  },
+  "sizes": [
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20
+  ],
+  "source_contract": {
+    "benchmarks": "build/runs/a1-publication/data/reproducibility/interacting_benchmarks.csv",
+    "benchmarks_sha256": "87ece5b3d7f142efa2b7980e19ca11aac447bf39d47dd240167ad48248ce9aa3",
+    "checkpoint_manifest": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoint_manifest.json",
+    "checkpoint_manifest_sha256": "274275dca0478c894fdd67d15c07fd269fe9c21de47985060a9a1682400f9671",
+    "mode": "current",
+    "run_metadata": "build/runs/a1-publication/data/reproducibility/nnn_tfim_expensive_run_metadata.json",
+    "run_metadata_sha256": "69a96ed6914f221fcd1636f338eced1c2d9047d72563dd07eafa42c82b18d44e",
+    "selected_checkpoint_sha256s": {
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L10_neig160.json": "b5930e304bbc8e2e01cb8f5323dd00ca1193944d626e8271b9d6b93e6ecb4863",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L12_neig160.json": "9004ab544badb5a6c5c0e83b21dd54b77450575872811fe0c03356f4399fd958",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L14_neig160.json": "e484ded2832df0bd837a43508371f950a0c9dd7476a1df39f6d01d30283c85bd",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L16_neig160.json": "141a809fc3088cccfffd7ba06714d3e73bc25507f7d7fdf7dd6478f6b60d75c1",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L18_neig160.json": "641b26ca5b56bbab3a7ebe813b8fca64a3188177fa754349809dfabbc2666e08",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L20_neig64.json": "184e510da7596ed702560034aa6725c30f060b32fe73e9a933a936a48afcb657",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L6_neig160.json": "e5dba50a6bbca8a1777d2fe3e60701d675c436f5bfc8e255800f201c14101a43",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L8_neig160.json": "0ba69116ea59cc1f0c6c199655a77647c6ee24d73b5b35cd9daf48857c6b17be",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L10_neig160.json": "da4ac9e09de50b84e4fb973dc2eeb3293af5c86c21f8878d1344adcaadb63b20",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L12_neig160.json": "b68921661e70386d904925ac39557d2a94bca347f71dee95046d3149ec90056f",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L14_neig160.json": "883fc415f9e8b3dc3a430908d7d7db0b1a63378474d7931b2cf202a2f6f706b1",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L16_neig160.json": "2851970dd9614ad4d0f0a3ea762c5831665c805477cad0f86f226bec6b019b6b",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L18_neig160.json": "9f056d6c37c09789a65400523ae69dabc6813098c8b92eae413ef0fe891d38b6",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L20_neig32.json": "8d4130e669b44cc3b6261e0c8867f58b47ba212e77e2af4c58b4c00fe86c40ca",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L6_neig160.json": "cb3076c1413c17bc49c36ae183e5c0397195968b651df9cc021c94f1baf33d42",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L8_neig160.json": "86c1c5fcdaca3744fc40e80b423aa39bab64be08c7b46e46cecfac67e5f0586f",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L10_neig160.json": "f3034acb88e35fb42f5cb61ebb4f9d52ead6f4ad514405a71abc248e5771c56b",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L12_neig160.json": "c94bdd86ddd10b0b734b9b407729b0b3cc0c8d95791c029adb6f8290d1afd293",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L14_neig160.json": "0d0b69232bf1b41c06b865a42b8f05499a3d4ff783802d25a29cd3f86c4dce44",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L16_neig160.json": "025e01e2e5f2291df98874c63f776562fd7513fdefb704603a3b378a41198352",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L18_neig160.json": "cea79664deccebd7e59f338e8a2c3a59ef87994a223fc50950be0e79657487a7",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L20_neig96.json": "8ec97f3aec8f4c43cc1617a471ca82bed422c888174ed386eca63c98f2f242b7",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L6_neig160.json": "de7ff2bbb6e8f23a7de2852a9a826e3b87c5d3b9059a5255f6a330db509a4f57",
+      "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L8_neig160.json": "c8044ad1b37975b3da76cbe6d6373a514d17f66d5b3d6175ce9878bd99689e8f"
+    }
+  },
+  "strict_monotonicity_claimed": false,
+  "summaries": [
+    {
+      "J2": 0.05,
+      "endpoint_contraction": true,
+      "endpoint_contraction_factor": 1.9723341062485504,
+      "sizes": [
+        {
+          "D_TV_ranked": 0.005584604981887922,
+          "L": 6,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L6_neig160.json",
+          "checkpoint_sha256": "e5dba50a6bbca8a1777d2fe3e60701d675c436f5bfc8e255800f201c14101a43",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 5,
+          "retained_mass": 0.9999999325057294,
+          "unresolved_mass": 6.749427061691904e-08
+        },
+        {
+          "D_TV_ranked": 0.0034462973343905635,
+          "L": 8,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L8_neig160.json",
+          "checkpoint_sha256": "0ba69116ea59cc1f0c6c199655a77647c6ee24d73b5b35cd9daf48857c6b17be",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 17,
+          "retained_mass": 0.9999999999999319,
+          "unresolved_mass": 6.80566714095221e-14
+        },
+        {
+          "D_TV_ranked": 0.0033062241399194406,
+          "L": 10,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L10_neig160.json",
+          "checkpoint_sha256": "b5930e304bbc8e2e01cb8f5323dd00ca1193944d626e8271b9d6b93e6ecb4863",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 53,
+          "retained_mass": 0.9999999999999973,
+          "unresolved_mass": 2.6645352591003757e-15
+        },
+        {
+          "D_TV_ranked": 0.0029128217745094487,
+          "L": 12,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L12_neig160.json",
+          "checkpoint_sha256": "9004ab544badb5a6c5c0e83b21dd54b77450575872811fe0c03356f4399fd958",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 159,
+          "retained_mass": 1.000000000000021,
+          "unresolved_mass": 0.0
+        },
+        {
+          "D_TV_ranked": 0.00236085492216711,
+          "L": 14,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L14_neig160.json",
+          "checkpoint_sha256": "e484ded2832df0bd837a43508371f950a0c9dd7476a1df39f6d01d30283c85bd",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 159,
+          "retained_mass": 0.9999999999618856,
+          "unresolved_mass": 3.8114400524591474e-11
+        },
+        {
+          "D_TV_ranked": 0.002743048847407664,
+          "L": 16,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L16_neig160.json",
+          "checkpoint_sha256": "141a809fc3088cccfffd7ba06714d3e73bc25507f7d7fdf7dd6478f6b60d75c1",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 159,
+          "retained_mass": 0.9999999909762074,
+          "unresolved_mass": 9.023792602036451e-09
+        },
+        {
+          "D_TV_ranked": 0.002843085033781503,
+          "L": 18,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L18_neig160.json",
+          "checkpoint_sha256": "641b26ca5b56bbab3a7ebe813b8fca64a3188177fa754349809dfabbc2666e08",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 159,
+          "retained_mass": 0.9999997563537774,
+          "unresolved_mass": 2.4364622264183566e-07
+        },
+        {
+          "D_TV_ranked": 0.0028314700659464024,
+          "L": 20,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p05_L20_neig64.json",
+          "checkpoint_sha256": "184e510da7596ed702560034aa6725c30f060b32fe73e9a933a936a48afcb657",
+          "n_low_energy_eigenpairs": 64,
+          "rank_count": 63,
+          "retained_mass": 0.999992058176741,
+          "unresolved_mass": 7.941823259027814e-06
+        }
+      ],
+      "strictly_monotone_nonincreasing": false
+    },
+    {
+      "J2": 0.1,
+      "endpoint_contraction": true,
+      "endpoint_contraction_factor": 2.057126813266446,
+      "sizes": [
+        {
+          "D_TV_ranked": 0.011224354954253344,
+          "L": 6,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L6_neig160.json",
+          "checkpoint_sha256": "cb3076c1413c17bc49c36ae183e5c0397195968b651df9cc021c94f1baf33d42",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 5,
+          "retained_mass": 0.9999998363318889,
+          "unresolved_mass": 1.6366811106394152e-07
+        },
+        {
+          "D_TV_ranked": 0.007414547971533669,
+          "L": 8,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L8_neig160.json",
+          "checkpoint_sha256": "86c1c5fcdaca3744fc40e80b423aa39bab64be08c7b46e46cecfac67e5f0586f",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 17,
+          "retained_mass": 0.9999999999994783,
+          "unresolved_mass": 5.216937992713611e-13
+        },
+        {
+          "D_TV_ranked": 0.006571300306375778,
+          "L": 10,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L10_neig160.json",
+          "checkpoint_sha256": "da4ac9e09de50b84e4fb973dc2eeb3293af5c86c21f8878d1344adcaadb63b20",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 53,
+          "retained_mass": 1.0000000000000002,
+          "unresolved_mass": 0.0
+        },
+        {
+          "D_TV_ranked": 0.005991735339447269,
+          "L": 12,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L12_neig160.json",
+          "checkpoint_sha256": "b68921661e70386d904925ac39557d2a94bca347f71dee95046d3149ec90056f",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 159,
+          "retained_mass": 1.0000000000000266,
+          "unresolved_mass": 0.0
+        },
+        {
+          "D_TV_ranked": 0.004886349170675625,
+          "L": 14,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L14_neig160.json",
+          "checkpoint_sha256": "883fc415f9e8b3dc3a430908d7d7db0b1a63378474d7931b2cf202a2f6f706b1",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 159,
+          "retained_mass": 0.9999999997301533,
+          "unresolved_mass": 2.6984670054019944e-10
+        },
+        {
+          "D_TV_ranked": 0.004918704379374115,
+          "L": 16,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L16_neig160.json",
+          "checkpoint_sha256": "2851970dd9614ad4d0f0a3ea762c5831665c805477cad0f86f226bec6b019b6b",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 159,
+          "retained_mass": 0.9999999815483406,
+          "unresolved_mass": 1.8451659422602518e-08
+        },
+        {
+          "D_TV_ranked": 0.005225293196144183,
+          "L": 18,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L18_neig160.json",
+          "checkpoint_sha256": "9f056d6c37c09789a65400523ae69dabc6813098c8b92eae413ef0fe891d38b6",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 159,
+          "retained_mass": 0.9999995252609124,
+          "unresolved_mass": 4.74739087596987e-07
+        },
+        {
+          "D_TV_ranked": 0.005456326212787315,
+          "L": 20,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p1_L20_neig32.json",
+          "checkpoint_sha256": "8d4130e669b44cc3b6261e0c8867f58b47ba212e77e2af4c58b4c00fe86c40ca",
+          "n_low_energy_eigenpairs": 32,
+          "rank_count": 31,
+          "retained_mass": 0.99979777042995,
+          "unresolved_mass": 0.00020222957005000541
+        }
+      ],
+      "strictly_monotone_nonincreasing": false
+    },
+    {
+      "J2": 0.2,
+      "endpoint_contraction": true,
+      "endpoint_contraction_factor": 2.395025001415423,
+      "sizes": [
+        {
+          "D_TV_ranked": 0.021745165071406305,
+          "L": 6,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L6_neig160.json",
+          "checkpoint_sha256": "de7ff2bbb6e8f23a7de2852a9a826e3b87c5d3b9059a5255f6a330db509a4f57",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 5,
+          "retained_mass": 0.9999998431185046,
+          "unresolved_mass": 1.5688149535009188e-07
+        },
+        {
+          "D_TV_ranked": 0.01554892820588652,
+          "L": 8,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L8_neig160.json",
+          "checkpoint_sha256": "c8044ad1b37975b3da76cbe6d6373a514d17f66d5b3d6175ce9878bd99689e8f",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 17,
+          "retained_mass": 0.9999999999985292,
+          "unresolved_mass": 1.4708234630234074e-12
+        },
+        {
+          "D_TV_ranked": 0.012454022993193835,
+          "L": 10,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L10_neig160.json",
+          "checkpoint_sha256": "f3034acb88e35fb42f5cb61ebb4f9d52ead6f4ad514405a71abc248e5771c56b",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 53,
+          "retained_mass": 1.00000000000001,
+          "unresolved_mass": 0.0
+        },
+        {
+          "D_TV_ranked": 0.01175120408398696,
+          "L": 12,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L12_neig160.json",
+          "checkpoint_sha256": "c94bdd86ddd10b0b734b9b407729b0b3cc0c8d95791c029adb6f8290d1afd293",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 159,
+          "retained_mass": 0.9999999999999888,
+          "unresolved_mass": 1.1213252548714081e-14
+        },
+        {
+          "D_TV_ranked": 0.010262308460559992,
+          "L": 14,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L14_neig160.json",
+          "checkpoint_sha256": "0d0b69232bf1b41c06b865a42b8f05499a3d4ff783802d25a29cd3f86c4dce44",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 159,
+          "retained_mass": 0.9999999990415307,
+          "unresolved_mass": 9.58469303924403e-10
+        },
+        {
+          "D_TV_ranked": 0.008712642161402422,
+          "L": 16,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L16_neig160.json",
+          "checkpoint_sha256": "025e01e2e5f2291df98874c63f776562fd7513fdefb704603a3b378a41198352",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 159,
+          "retained_mass": 0.9999999649687655,
+          "unresolved_mass": 3.503123446879641e-08
+        },
+        {
+          "D_TV_ranked": 0.008776730470482103,
+          "L": 18,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L18_neig160.json",
+          "checkpoint_sha256": "cea79664deccebd7e59f338e8a2c3a59ef87994a223fc50950be0e79657487a7",
+          "n_low_energy_eigenpairs": 160,
+          "rank_count": 159,
+          "retained_mass": 0.9999996506193586,
+          "unresolved_mass": 3.493806414178735e-07
+        },
+        {
+          "D_TV_ranked": 0.009079306085972067,
+          "L": 20,
+          "checkpoint": "build/runs/a1-publication/work/nnn_tfim_expensive/checkpoints/response_j2_0p2_L20_neig96.json",
+          "checkpoint_sha256": "8ec97f3aec8f4c43cc1617a471ca82bed422c888174ed386eca63c98f2f242b7",
+          "n_low_energy_eigenpairs": 96,
+          "rank_count": 95,
+          "retained_mass": 0.9999858930489988,
+          "unresolved_mass": 1.4106951001235934e-05
+        }
+      ],
+      "strictly_monotone_nonincreasing": false
+    }
+  ],
+  "table_path": "build/runs/a1-nnn-ranked-052/data/reproducibility/nnn_ranked_distribution_convergence.csv",
+  "table_sha256": "0b78e274fc6c0a87a4a0e26bf67201fae93e1a4151862fb30e5b722914de3874"
+}

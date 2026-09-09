@@ -1,0 +1,119 @@
+{
+  "public_projection": true,
+  "original_sha256": "216c3c5e01c77a2513a384a9ea7c4e8962a2835459a9ac60aec0df6ce8034164",
+  "changed_string_fields": [
+    "/products/3/outputs/0/path",
+    "/products/3/outputs/1/path",
+    "/products/3/outputs/2/path",
+    "/products/4/outputs/0/path",
+    "/products/4/outputs/1/path"
+  ],
+  "not_an_original_commit_or_seal": true,
+  "data": {
+    "enclosure_classification": "CONDITIONAL_NUMERICAL_ENCLOSURE",
+    "fit_claim_ceiling": "THEORY_GUIDED_ACCESSIBLE_SIZE_EXTRAPOLATION; NO_UNIQUE_ASYMPTOTIC_EXPONENT",
+    "fit_summary": {
+      "absolute_Kinf_difference": 0.0,
+      "current_CFT_deviation_percent": -0.4587826534310671,
+      "current_Kinf": 0.8475891059181018,
+      "historical_Kinf": 0.8475891059181018,
+      "note": "Descriptive numeric comparison; original theory-guided post-outcome claim ceiling retained. No new acceptance tolerance invented."
+    },
+    "independent_spectral_completeness": false,
+    "last_backup_files_verified": 231,
+    "products": [
+      {
+        "points": 6,
+        "run_id": "a1-p2",
+        "status": "PASS"
+      },
+      {
+        "analysis": "projector-enclosures",
+        "outputs": [
+          {
+            "bytes": 278512,
+            "path": "projector-response-enclosures.json",
+            "sha256": "ef357bfbe800a7ca0f98dfa5ad6f203254a849935bed3705cc3a39814246aadf"
+          }
+        ],
+        "run_id": "a1-enclosure",
+        "status": "PASS"
+      },
+      {
+        "accepted_tasks": [
+          "potts-L6",
+          "potts-L7",
+          "potts-L8",
+          "potts-L9",
+          "potts-L10",
+          "potts-L11",
+          "potts-L12",
+          "potts-L13",
+          "potts-L14"
+        ],
+        "planned_tasks": 9,
+        "run_id": "a1-fixed-grid",
+        "status": "PASS"
+      },
+      {
+        "analysis": "potts-fss",
+        "outputs": [
+          {
+            "path": "[LOCAL_PATH_REMOVED]",
+            "sha256": "3de3a0cef1bf8f47b8646591e8728c0084fe338471ee60024340f402e04d948f"
+          },
+          {
+            "path": "[LOCAL_PATH_REMOVED]",
+            "sha256": "8e397c7a52b2bad100e3b0c91b75adb06f9b6f437aa13081639ab2d0ba449a4e"
+          },
+          {
+            "path": "[LOCAL_PATH_REMOVED]",
+            "sha256": "0383003fd9962b1bad55bb5f171b975f1e1b98f094c689dcad6d34538d949676"
+          }
+        ],
+        "run_id": "a1-fss",
+        "status": "PASS"
+      },
+      {
+        "analysis": "potts-ranked",
+        "outputs": [
+          {
+            "path": "[LOCAL_PATH_REMOVED]",
+            "sha256": "4c979056b70b5a4dac89deb888fc27c8c534429c6740dccc8465dc327156e891"
+          },
+          {
+            "path": "[LOCAL_PATH_REMOVED]",
+            "sha256": "9f827c5add018898de74078da2165a638e3165ddc0d3df2b13965bb8ba2351a4"
+          }
+        ],
+        "run_id": "a1-ranked",
+        "status": "PASS"
+      },
+      {
+        "analysis": "potts-7over5",
+        "outputs": [
+          {
+            "bytes": 4182,
+            "path": "data/reproducibility/potts_theory_guided_7over5_fit_summary.csv",
+            "sha256": "70dc7ada0b6147eefd7d20d964d29dba49ccd7725249f25f426004457338a5f9"
+          },
+          {
+            "bytes": 889,
+            "path": "data/reproducibility/potts_scaled_P2_7over5.csv",
+            "sha256": "e68ca51dabceee7260464bef03acec5301afacea4b2d935f4665f450f8d8241a"
+          },
+          {
+            "bytes": 78199,
+            "path": "data/reproducibility/potts_theory_guided_7over5_receipt.json",
+            "sha256": "de41bb3368740f2dea18377f8e5ba47039bf1f85ec6c08721005f0f82da9e197"
+          }
+        ],
+        "run_id": "a1-fit75-recovery",
+        "status": "PASS"
+      }
+    ],
+    "ranked_display_count": 15,
+    "ranked_positive_lower_clusters": 18,
+    "status": "PASS"
+  }
+}

@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cc-repro"
+version = "0.5.2.dev0"
+description = "Public computation sources and reproducible adapters for CC 2.1.15 R3.3"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = {file = "LICENSE"}
+dependencies = ["numpy==2.3.5", "scipy==1.17.0", "matplotlib==3.10.8"]
+classifiers = ["Development Status :: 3 - Alpha", "Operating System :: POSIX :: Linux"]
+
+[project.scripts]
+cc-repro = "cc_repro.cli:main"
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["cc_repro"]
+namespaces = false
+
+[tool.setuptools.package-data]
+cc_repro = ["_data/*.json", "_resources/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

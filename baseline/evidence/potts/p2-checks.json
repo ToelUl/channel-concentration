@@ -1,0 +1,36 @@
+{
+  "historical_invocation_recovered": false,
+  "points": [
+    {
+      "L": 6,
+      "P2": 2.5724018473,
+      "model": "Potts"
+    },
+    {
+      "L": 7,
+      "P2": 3.78537771373,
+      "model": "Potts"
+    },
+    {
+      "L": 8,
+      "P2": 5.27482554378,
+      "model": "Potts"
+    },
+    {
+      "L": 9,
+      "P2": 7.0558980136,
+      "model": "Potts"
+    },
+    {
+      "L": 10,
+      "P2": 9.14265317266,
+      "model": "Potts"
+    },
+    {
+      "L": 11,
+      "P2": 11.5482427508,
+      "model": "Potts"
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,291 @@
+[
+  {
+    "name": "potts_outcome_aware_fss.csv",
+    "source_input_sha256": "3de3a0cef1bf8f47b8646591e8728c0084fe338471ee60024340f402e04d948f",
+    "role": "current-Potts",
+    "public_path": "data/figure-inputs/potts_outcome_aware_fss.csv",
+    "public_sha256": "3de3a0cef1bf8f47b8646591e8728c0084fe338471ee60024340f402e04d948f"
+  },
+  {
+    "name": "potts_outcome_aware_fit_audit.csv",
+    "source_input_sha256": "8e397c7a52b2bad100e3b0c91b75adb06f9b6f437aa13081639ab2d0ba449a4e",
+    "role": "current-Potts",
+    "public_path": "data/figure-inputs/potts_outcome_aware_fit_audit.csv",
+    "public_sha256": "8e397c7a52b2bad100e3b0c91b75adb06f9b6f437aa13081639ab2d0ba449a4e"
+  },
+  {
+    "name": "potts_outcome_aware_fit_receipt.json",
+    "source_input_sha256": "0383003fd9962b1bad55bb5f171b975f1e1b98f094c689dcad6d34538d949676",
+    "role": "current-Potts",
+    "public_path": "data/figure-inputs/potts_outcome_aware_fit_receipt.json",
+    "public_sha256": "0383003fd9962b1bad55bb5f171b975f1e1b98f094c689dcad6d34538d949676"
+  },
+  {
+    "name": "potts_L14_certified_ranked_weights.csv",
+    "source_input_sha256": "4c979056b70b5a4dac89deb888fc27c8c534429c6740dccc8465dc327156e891",
+    "role": "current-Potts",
+    "public_path": "data/figure-inputs/potts_L14_certified_ranked_weights.csv",
+    "public_sha256": "4c979056b70b5a4dac89deb888fc27c8c534429c6740dccc8465dc327156e891"
+  },
+  {
+    "name": "potts_L14_certified_ranked_weights_receipt.json",
+    "source_input_sha256": "9f827c5add018898de74078da2165a638e3165ddc0d3df2b13965bb8ba2351a4",
+    "role": "current-Potts",
+    "public_path": "data/figure-inputs/potts_L14_certified_ranked_weights_receipt.public.json",
+    "public_sha256": "f1d6f899d881186fd2a7f28f7064f2c9d90e5e43347514b75974082008eacb2b",
+    "integration_transform": "Public path-redacted receipt; not original sealed receipt"
+  },
+  {
+    "name": "potts_theory_guided_7over5_fit_summary.csv",
+    "source_input_sha256": "70dc7ada0b6147eefd7d20d964d29dba49ccd7725249f25f426004457338a5f9",
+    "role": "current-Potts",
+    "public_path": "data/figure-inputs/potts_theory_guided_7over5_fit_summary.csv",
+    "public_sha256": "70dc7ada0b6147eefd7d20d964d29dba49ccd7725249f25f426004457338a5f9"
+  },
+  {
+    "name": "potts_scaled_P2_7over5.csv",
+    "source_input_sha256": "e68ca51dabceee7260464bef03acec5301afacea4b2d935f4665f450f8d8241a",
+    "role": "current-Potts",
+    "public_path": "data/figure-inputs/potts_scaled_P2_7over5.csv",
+    "public_sha256": "e68ca51dabceee7260464bef03acec5301afacea4b2d935f4665f450f8d8241a"
+  },
+  {
+    "name": "potts_theory_guided_7over5_receipt.json",
+    "source_input_sha256": "de41bb3368740f2dea18377f8e5ba47039bf1f85ec6c08721005f0f82da9e197",
+    "role": "current-Potts",
+    "public_path": "data/figure-inputs/potts_theory_guided_7over5_receipt.json",
+    "public_sha256": "de41bb3368740f2dea18377f8e5ba47039bf1f85ec6c08721005f0f82da9e197"
+  },
+  {
+    "name": "nnn_tfim_prg_fields_L20.csv",
+    "source_input_sha256": "e3a1c33221b1faf58eaf671bae59d45e83b965c262213dd74f1c2f9c2613420b",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_prg_fields_L20.csv",
+    "public_sha256": "e3a1c33221b1faf58eaf671bae59d45e83b965c262213dd74f1c2f9c2613420b"
+  },
+  {
+    "name": "nnn_tfim_prg_fields_L18.csv",
+    "source_input_sha256": "f27fc20e2c56adc2e9475c49700d30d797613f91300d93d084b14c3ef953b12d",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_prg_fields_L18.csv",
+    "public_sha256": "f27fc20e2c56adc2e9475c49700d30d797613f91300d93d084b14c3ef953b12d"
+  },
+  {
+    "name": "nnn_tfim_prg_solver_diagnostics.csv",
+    "source_input_sha256": "b6a83f874c243f489912d29f73c8e464fa5b9f911048f7b22b9444468600ed4b",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_prg_solver_diagnostics.csv",
+    "public_sha256": "b6a83f874c243f489912d29f73c8e464fa5b9f911048f7b22b9444468600ed4b"
+  },
+  {
+    "name": "nnn_tfim_L20_prg_confirmation.csv",
+    "source_input_sha256": "1ce4da581939d55382887fe6ef2b40cb34051fb8610e5fb8e91e62c09dce3878",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_L20_prg_confirmation.csv",
+    "public_sha256": "1ce4da581939d55382887fe6ef2b40cb34051fb8610e5fb8e91e62c09dce3878"
+  },
+  {
+    "name": "nnn_tfim_L16_L18_retained_eigenpair_convergence.csv",
+    "source_input_sha256": "c85ed61ed186f383a384f535524f2794eff36d18099cf9e899516883f1e400ec",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_L16_L18_retained_eigenpair_convergence.csv",
+    "public_sha256": "c85ed61ed186f383a384f535524f2794eff36d18099cf9e899516883f1e400ec"
+  },
+  {
+    "name": "nnn_tfim_L20_retained_eigenpair_convergence.csv",
+    "source_input_sha256": "3647f419015cc3307d73dd14ca62476f2c8dc4d67f6e19424dc075eaa6904e49",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_L20_retained_eigenpair_convergence.csv",
+    "public_sha256": "3647f419015cc3307d73dd14ca62476f2c8dc4d67f6e19424dc075eaa6904e49"
+  },
+  {
+    "name": "nnn_tfim_L20_h_sensitivity.csv",
+    "source_input_sha256": "42c14b769da923f4b7d2d661983fa1fe67ddcc010931efc40ab3b3d6518ccec3",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_L20_h_sensitivity.csv",
+    "public_sha256": "42c14b769da923f4b7d2d661983fa1fe67ddcc010931efc40ab3b3d6518ccec3"
+  },
+  {
+    "name": "interacting_benchmarks.csv",
+    "source_input_sha256": "d7afed111cf7a2567b71e3ff91f4b66d004b21949a75317576edefae7f7358a2",
+    "role": "current-NNN-and-original-exact-TFIM",
+    "public_path": "data/figure-inputs/interacting_benchmarks.csv",
+    "public_sha256": "d7afed111cf7a2567b71e3ff91f4b66d004b21949a75317576edefae7f7358a2",
+    "integration_transform": "Explicit current NNN plus original exact TFIM rows; historical Potts seed rows excluded. Current Potts data has its own FSS table."
+  },
+  {
+    "name": "interacting_benchmarks_nnn_L18_sector.csv",
+    "source_input_sha256": "f8fd97114f74b963e73d955d68fcb3ba46702bc94168af69bf5d028ee4c0dfa8",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/interacting_benchmarks_nnn_L18_sector.csv",
+    "public_sha256": "f8fd97114f74b963e73d955d68fcb3ba46702bc94168af69bf5d028ee4c0dfa8"
+  },
+  {
+    "name": "interacting_benchmarks_nnn_L20_sector.csv",
+    "source_input_sha256": "d7afed111cf7a2567b71e3ff91f4b66d004b21949a75317576edefae7f7358a2",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/interacting_benchmarks_nnn_L20_sector.csv",
+    "public_sha256": "d7afed111cf7a2567b71e3ff91f4b66d004b21949a75317576edefae7f7358a2"
+  },
+  {
+    "name": "interacting_weight_distributions.csv",
+    "source_input_sha256": "5a910d6b0fe020e896f107abd204e09ea3a0b943088eff8ec1d17895bd1a0e2d",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/interacting_weight_distributions.csv",
+    "public_sha256": "5a910d6b0fe020e896f107abd204e09ea3a0b943088eff8ec1d17895bd1a0e2d"
+  },
+  {
+    "name": "interacting_weights_nnn_L18_sector.csv",
+    "source_input_sha256": "b16ff5e61e91c0ceb132764601e011f4e0ab8ef4516399005ec7efe278f06fab",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/interacting_weights_nnn_L18_sector.csv",
+    "public_sha256": "b16ff5e61e91c0ceb132764601e011f4e0ab8ef4516399005ec7efe278f06fab"
+  },
+  {
+    "name": "interacting_weights_nnn_L20_sector.csv",
+    "source_input_sha256": "0e5b3398fbcb794ae29c865a17753293f92f1964dbb3dc835c6bc6fbf7cbb92b",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/interacting_weights_nnn_L20_sector.csv",
+    "public_sha256": "0e5b3398fbcb794ae29c865a17753293f92f1964dbb3dc835c6bc6fbf7cbb92b"
+  },
+  {
+    "name": "nnn_tfim_L18_fit_summary.csv",
+    "source_input_sha256": "6be771ab8d75d404672c5f6b94ccf44672bd5cc4240b0d82005bfcfa179d3e6b",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_L18_fit_summary.csv",
+    "public_sha256": "6be771ab8d75d404672c5f6b94ccf44672bd5cc4240b0d82005bfcfa179d3e6b"
+  },
+  {
+    "name": "nnn_tfim_L20_fit_summary.csv",
+    "source_input_sha256": "13aa29ef4967a1008301d69b96bd7f09a1116a498a2bbff803db8db4d1baae0f",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_L20_fit_summary.csv",
+    "public_sha256": "13aa29ef4967a1008301d69b96bd7f09a1116a498a2bbff803db8db4d1baae0f"
+  },
+  {
+    "name": "nnn_tfim_alternative_fit_summary.csv",
+    "source_input_sha256": "fe6c3d059b3b98ae13314d07659abe335f748f4b8c8e36aea9a1f7fd943f5a34",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_alternative_fit_summary.csv",
+    "public_sha256": "fe6c3d059b3b98ae13314d07659abe335f748f4b8c8e36aea9a1f7fd943f5a34"
+  },
+  {
+    "name": "nnn_tfim_j2_scan_diagnostics.csv",
+    "source_input_sha256": "3136d333bc02950966b1e6f834735b3fd79cce97ef2e5713c7171014e365a553",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_j2_scan_diagnostics.csv",
+    "public_sha256": "3136d333bc02950966b1e6f834735b3fd79cce97ef2e5713c7171014e365a553"
+  },
+  {
+    "name": "nnn_tfim_linear_fit_summary.csv",
+    "source_input_sha256": "b24eefc9fe459f459284cd384e7e22b6326a9fe6d471109f10258e8b5246cd09",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_linear_fit_summary.csv",
+    "public_sha256": "b24eefc9fe459f459284cd384e7e22b6326a9fe6d471109f10258e8b5246cd09"
+  },
+  {
+    "name": "nnn_tfim_archived_vs_regenerated.csv",
+    "source_input_sha256": "e35c29c2b6fe17a098a29d2f438eb36604b59a86c39c3c5af82e370fb7484953",
+    "role": "current-NNN",
+    "public_path": "data/figure-inputs/nnn_tfim_archived_vs_regenerated.csv",
+    "public_sha256": "e35c29c2b6fe17a098a29d2f438eb36604b59a86c39c3c5af82e370fb7484953"
+  },
+  {
+    "name": "nnn_ranked_distribution_convergence.csv",
+    "source_input_sha256": "0b78e274fc6c0a87a4a0e26bf67201fae93e1a4151862fb30e5b722914de3874",
+    "role": "current-NNN-ranked",
+    "public_path": "data/figure-inputs/nnn_ranked_distribution_convergence.csv",
+    "public_sha256": "0b78e274fc6c0a87a4a0e26bf67201fae93e1a4151862fb30e5b722914de3874"
+  },
+  {
+    "name": "nnn_ranked_distribution_convergence_receipt.json",
+    "source_input_sha256": "3eb7a664a4e2acdb10281bb183d02254269ea6f137723c36e60c86e995eb8d7d",
+    "role": "current-NNN-ranked",
+    "public_path": "data/figure-inputs/nnn_ranked_distribution_convergence_receipt.json",
+    "public_sha256": "3eb7a664a4e2acdb10281bb183d02254269ea6f137723c36e60c86e995eb8d7d"
+  },
+  {
+    "name": "envelope_predictions_table.csv",
+    "source_input_sha256": "afa59a926f0a74de75ad031a8726a20181669977e2b01f881040da0f77664ad8",
+    "role": "current-A0-exact-reused",
+    "public_path": "data/figure-inputs/envelope_predictions_table.csv",
+    "public_sha256": "afa59a926f0a74de75ad031a8726a20181669977e2b01f881040da0f77664ad8"
+  },
+  {
+    "name": "multicone_examples.csv",
+    "source_input_sha256": "bd050d6bf793fef3c834995cd685e24f2f6f26c6d7ee76f0d76a5461138e2352",
+    "role": "current-A0-exact-reused",
+    "public_path": "data/figure-inputs/multicone_examples.csv",
+    "public_sha256": "bd050d6bf793fef3c834995cd685e24f2f6f26c6d7ee76f0d76a5461138e2352"
+  },
+  {
+    "name": "numerical_reproducibility_summary.json",
+    "source_input_sha256": "8847c7cd8262aac58339f0fee431c18158f39c4f4a7be0be6f57ed165d2e9b3a",
+    "role": "current-A0-exact-reused",
+    "public_path": "data/figure-inputs/numerical_reproducibility_summary.json",
+    "public_sha256": "8847c7cd8262aac58339f0fee431c18158f39c4f4a7be0be6f57ed165d2e9b3a"
+  },
+  {
+    "name": "numerical_reproducibility_summary.txt",
+    "source_input_sha256": "22189aa5f97b651dc7c290dee004ff6112c9ea4f39705bf27d3cc14423d139c6",
+    "role": "current-A0-exact-reused",
+    "public_path": "data/figure-inputs/numerical_reproducibility_summary.txt",
+    "public_sha256": "22189aa5f97b651dc7c290dee004ff6112c9ea4f39705bf27d3cc14423d139c6"
+  },
+  {
+    "name": "tfim_sector_contrast.csv",
+    "source_input_sha256": "14baaaf75c198dd2c8d2c298f9901259c8501566c3b0adc0fb5dbd1be69c414b",
+    "role": "current-A0-exact-reused",
+    "public_path": "data/figure-inputs/tfim_sector_contrast.csv",
+    "public_sha256": "14baaaf75c198dd2c8d2c298f9901259c8501566c3b0adc0fb5dbd1be69c414b"
+  },
+  {
+    "name": "weak_quench_delta_budget.csv",
+    "source_input_sha256": "471771e6b1bd349bf23b0735ce4c0f72e0e504a437ab071c43ef673030a3648e",
+    "role": "current-A0-exact-reused",
+    "public_path": "data/figure-inputs/weak_quench_delta_budget.csv",
+    "public_sha256": "471771e6b1bd349bf23b0735ce4c0f72e0e504a437ab071c43ef673030a3648e"
+  },
+  {
+    "name": "weak_quench_fixed_u_feasibility.csv",
+    "source_input_sha256": "80b13502c92f968afe18bc88fc113f1fbe04dd88866e74342b0efdbb16e1e41c",
+    "role": "current-A0-exact-reused",
+    "public_path": "data/figure-inputs/weak_quench_fixed_u_feasibility.csv",
+    "public_sha256": "80b13502c92f968afe18bc88fc113f1fbe04dd88866e74342b0efdbb16e1e41c"
+  },
+  {
+    "name": "xy_directional_scan.csv",
+    "source_input_sha256": "f0b2cfee91d764a65ac7c0af6a36d12aa5fc14391797b36c8c68baed62d6de30",
+    "role": "current-A0-exact-reused",
+    "public_path": "data/figure-inputs/xy_directional_scan.csv",
+    "public_sha256": "f0b2cfee91d764a65ac7c0af6a36d12aa5fc14391797b36c8c68baed62d6de30"
+  },
+  {
+    "name": "tfim_j2_zero_resolution_match.csv",
+    "source_input_sha256": "9844cbac07256e600f126e097adf3910639a351d221ac2a211a17e1b18eff6cf",
+    "role": "current-A0-control-reused",
+    "public_path": "data/figure-inputs/tfim_j2_zero_resolution_match.csv",
+    "public_sha256": "9844cbac07256e600f126e097adf3910639a351d221ac2a211a17e1b18eff6cf"
+  },
+  {
+    "name": "potts_charge_sector_checks.csv",
+    "source_input_sha256": "95079c3f662b7a8625ed6e5c245eb1cfe414ed1be545c033f371fe4c21d4d4b7",
+    "role": "current-A0-control-reused",
+    "public_path": "data/figure-inputs/potts_charge_sector_checks.csv",
+    "public_sha256": "95079c3f662b7a8625ed6e5c245eb1cfe414ed1be545c033f371fe4c21d4d4b7"
+  },
+  {
+    "name": "retained.json",
+    "source_input_sha256": "16f10e1b5e0974603de1677f144056c94d2c122ed7343d56b5418284989f9daf",
+    "role": "current-A0-reconstructed-invocation",
+    "public_path": "data/figure-support/controls/retained.json",
+    "public_sha256": "16f10e1b5e0974603de1677f144056c94d2c122ed7343d56b5418284989f9daf"
+  },
+  {
+    "name": "cft_kf_results.json",
+    "source_input_sha256": "fce9fbb5aae4d76686a767933ee51a63cd89b5e0bdcc61187334293aed158087",
+    "role": "current-A0-CFT-reused",
+    "public_path": "data/figure-support/evidence/cft/cft_kf_results.json",
+    "public_sha256": "fce9fbb5aae4d76686a767933ee51a63cd89b5e0bdcc61187334293aed158087"
+  }
+]

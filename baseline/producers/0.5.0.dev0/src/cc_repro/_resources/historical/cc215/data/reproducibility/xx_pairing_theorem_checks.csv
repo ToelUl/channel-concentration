@@ -1,0 +1,65 @@
+check,L,direct_value,closed_value,abs_error,status,note
+P2_closed,8,2.9999999999999996,3,4.440892e-16,PASS,"L = 0 (mod 4), direct NS sum"
+P4_closed,8,4.2499999999999982,4.25,1.776357e-15,PASS,"L = 0 (mod 4), direct NS sum"
+KF_closed,8,0.4722222222222221,0.47222222222222221,1.110223e-16,PASS,exact XX pairing ratio
+half_size_TFIM_identity,8,17/36,17/36,0,PASS,exact Fraction comparison
+P2_closed,12,7.5000000000000044,7.5,4.440892e-15,PASS,"L = 0 (mod 4), direct NS sum"
+P4_closed,12,24.375000000000036,24.375,3.552714e-14,PASS,"L = 0 (mod 4), direct NS sum"
+KF_closed,12,0.43333333333333346,0.43333333333333335,1.110223e-16,PASS,exact XX pairing ratio
+half_size_TFIM_identity,12,13/30,13/30,0,PASS,exact Fraction comparison
+P2_closed,16,14.000000000000002,14,1.776357e-15,PASS,"L = 0 (mod 4), direct NS sum"
+P4_closed,16,80.500000000000028,80.5,2.842171e-14,PASS,"L = 0 (mod 4), direct NS sum"
+KF_closed,16,0.41071428571428575,0.4107142857142857,5.551115e-17,PASS,exact XX pairing ratio
+half_size_TFIM_identity,16,23/56,23/56,0,PASS,exact Fraction comparison
+P2_closed,20,22.500000000000028,22.5,2.842171e-14,PASS,"L = 0 (mod 4), direct NS sum"
+P4_closed,20,200.62500000000057,200.625,5.684342e-13,PASS,"L = 0 (mod 4), direct NS sum"
+KF_closed,20,0.39629629629629637,0.39629629629629631,5.551115e-17,PASS,exact XX pairing ratio
+half_size_TFIM_identity,20,107/270,107/270,0,PASS,exact Fraction comparison
+P2_closed,24,32.999999999999979,33,2.131628e-14,PASS,"L = 0 (mod 4), direct NS sum"
+P4_closed,24,420.74999999999909,420.75,9.094947e-13,PASS,"L = 0 (mod 4), direct NS sum"
+KF_closed,24,0.38636363636363602,0.38636363636363635,3.330669e-16,PASS,exact XX pairing ratio
+half_size_TFIM_identity,24,17/44,17/44,0,PASS,exact Fraction comparison
+P2_closed,32,59.999999999999879,60,1.207923e-13,PASS,"L = 0 (mod 4), direct NS sum"
+P4_closed,32,1344.9999999999939,1345,6.139089e-12,PASS,"L = 0 (mod 4), direct NS sum"
+KF_closed,32,0.37361111111111089,0.37361111111111112,2.220446e-16,PASS,exact XX pairing ratio
+half_size_TFIM_identity,32,269/720,269/720,0,PASS,exact Fraction comparison
+P2_closed,64,247.99999999999957,248,4.263256e-13,PASS,"L = 0 (mod 4), direct NS sum"
+P4_closed,64,21761.999999999909,21762,9.094947e-11,PASS,"L = 0 (mod 4), direct NS sum"
+KF_closed,64,0.35383064516129004,0.35383064516129031,2.775558e-16,PASS,exact XX pairing ratio
+half_size_TFIM_identity,64,351/992,351/992,0,PASS,exact Fraction comparison
+P2_closed,128,1008.0000000000059,1008,5.911716e-12,PASS,"L = 0 (mod 4), direct NS sum"
+P4_closed,128,349188.00000000483,349188,4.831236e-09,PASS,"L = 0 (mod 4), direct NS sum"
+KF_closed,128,0.3436673280423288,0.34366732804232802,7.771561e-16,PASS,exact XX pairing ratio
+half_size_TFIM_identity,128,4157/12096,4157/12096,0,PASS,exact Fraction comparison
+P2_closed,256,4064.0000000000214,4064,2.137313e-11,PASS,"L = 0 (mod 4), direct NS sum"
+P4_closed,256,5591048.0000000792,5591048,7.916242e-08,PASS,"L = 0 (mod 4), direct NS sum"
+KF_closed,256,0.33852116141732408,0.33852116141732286,1.221245e-15,PASS,exact XX pairing ratio
+half_size_TFIM_identity,256,5503/16256,5503/16256,0,PASS,exact Fraction comparison
+P2_closed,1024,65407.999999996406,65408,3.594323e-09,PASS,"L = 0 (mod 4), direct NS sum"
+P4_closed,1024,1431633951.9998155,1431633952,1.845360e-04,PASS,"L = 0 (mod 4), direct NS sum"
+KF_closed,1024,0.33463414261251812,0.33463414261252444,6.328271e-15,PASS,exact XX pairing ratio
+half_size_TFIM_identity,1024,87551/261632,87551/261632,0,PASS,exact Fraction comparison
+leading_correction,4096,1.3330076534766324,1.3333333333333333,3.256799e-04,PASS,L[K_F(L)-1/3] -> 4/3
+zero_mode_present,10,True,True,0,PASS,original nondegenerate-state QGT is undefined
+zero_mode_excluded_regularization,10,0.45000000000000001,0.45000000000000001,0.000000e+00,PASS,"regularized diagnostic, not an original QGT theorem"
+zero_mode_present,18,True,True,0,PASS,original nondegenerate-state QGT is undefined
+zero_mode_excluded_regularization,18,0.33928571428571447,0.3392857142857143,1.665335e-16,PASS,"regularized diagnostic, not an original QGT theorem"
+zero_mode_present,26,True,True,0,PASS,original nondegenerate-state QGT is undefined
+zero_mode_excluded_regularization,26,0.29545454545454553,0.29545454545454547,5.551115e-17,PASS,"regularized diagnostic, not an original QGT theorem"
+zero_mode_present,50,True,True,0,PASS,original nondegenerate-state QGT is undefined
+zero_mode_excluded_regularization,50,0.24891304347826085,0.24891304347826088,2.775558e-17,PASS,"regularized diagnostic, not an original QGT theorem"
+zero_mode_present,102,True,True,0,PASS,original nondegenerate-state QGT is undefined
+zero_mode_excluded_regularization,102,0.22375510204081617,0.22375510204081633,1.665335e-16,PASS,"regularized diagnostic, not an original QGT theorem"
+zero_mode_present,1026,True,True,0,PASS,original nondegenerate-state QGT is undefined
+zero_mode_excluded_regularization,1026,0.20234145670254458,0.20234145670254403,5.551115e-16,PASS,"regularized diagnostic, not an original QGT theorem"
+centered_Hurwitz_ladder,NA,0.3333333333333332,0.33333333333333331,1.110223e-16,PASS,alpha_L = 1/2
+rational_offset_periodicity,8:54,True,True,0,PASS,k_F/pi = 1/3 gives period three along even L
+irrational_offset_distinctness,8:518,256,256,0,PASS,finite diagnostic consistent with dense irrational rotation
+incommensurate_h_0p3,512,0.51213338514196072,NA,NA,RECORDED,oscillatory finite-size diagnostic
+incommensurate_h_0p3,514,0.96459839461899632,NA,NA,RECORDED,oscillatory finite-size diagnostic
+incommensurate_h_0p3,516,0.33915553198467085,NA,NA,RECORDED,oscillatory finite-size diagnostic
+incommensurate_h_0p3,518,0.91131652124109519,NA,NA,RECORDED,oscillatory finite-size diagnostic
+incommensurate_h_0p3,1024,0.85105227200553069,NA,NA,RECORDED,oscillatory finite-size diagnostic
+incommensurate_h_0p3,2048,0.7982419175645471,NA,NA,RECORDED,oscillatory finite-size diagnostic
+incommensurate_h_0p3,4096,0.89692944256727647,NA,NA,RECORDED,oscillatory finite-size diagnostic
+incommensurate_h_0p3,8192,0.68241481504669921,NA,NA,RECORDED,oscillatory finite-size diagnostic

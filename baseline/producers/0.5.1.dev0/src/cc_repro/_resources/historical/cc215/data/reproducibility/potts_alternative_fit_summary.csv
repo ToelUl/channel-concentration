@@ -1,0 +1,5 @@
+fit_form,window,K_infty,rmse,notes
+Kinf+a/L,L=6-12,0.8297939751,2.826757e-4,all-size linear fit
+Kinf+a/L,L=8-12,0.8315235743,1.247273e-4,drop L=6 and L=7
+Kinf+a/L+b/L^2,L=6-12,0.8358350641,6.005840e-5,all-size quadratic fit
+Kinf+a/L^omega,L=6-12,0.8399672000,4.686002e-5,free correction exponent omega=1.18876

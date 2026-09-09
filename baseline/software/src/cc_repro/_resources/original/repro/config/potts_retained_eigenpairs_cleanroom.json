@@ -1,0 +1,35 @@
+{
+  "schema": "potts-retained-eigenpairs-cleanroom/1.1",
+  "decision_id": "DEC-KF-CFT-REPRODUCIBLE-PROJECT-CLEANROOM-REBUILD-001/A-R1",
+  "active_sizes": [6, 7, 8, 9, 10, 11, 12, 13, 14],
+  "forbidden_sizes": [15],
+  "n_eigenpairs_requested": 256,
+  "forbidden_n_eigenpairs_requested": [128, 192, 384],
+  "guard_eigenpairs": 1,
+  "momentum_sector": "k_mom=0",
+  "coupling_g": 1.0,
+  "grouping_tolerances": [5e-8, 1e-7, 2e-7],
+  "primary_grouping_tolerance": 1e-7,
+  "solve_residual_ceiling": 1e-8,
+  "eigenpair_residual_ceiling": 1e-8,
+  "reference_agreement_ceiling": 1e-8,
+  "reference": {
+    "6": {"kind": "released_scalar", "value": 0.919949336245},
+    "7": {"kind": "released_scalar", "value": 0.906664272704},
+    "8": {"kind": "released_scalar", "value": 0.89682829143},
+    "9": {"kind": "released_scalar", "value": 0.889343715994},
+    "10": {"kind": "released_scalar", "value": 0.883512065738},
+    "11": {"kind": "released_scalar", "value": 0.878875757774},
+    "12": {"kind": "frozen_terminal_interval", "lower": 0.8751257827422886, "upper": 0.875125785831014},
+    "13": {"kind": "frozen_terminal_interval", "lower": 0.8720475132035371, "upper": 0.872047516381817},
+    "14": {"kind": "frozen_terminal_interval", "lower": 0.8694880646676919, "upper": 0.8694880681179885}
+  },
+  "fresh_campaign_success_label": "CALIBRATED_RETAINED_EIGENPAIR_REPRODUCTION_PASS",
+  "fallback_label": "VERIFIED_WITH_FROZEN_T3_REFERENCE",
+  "partial_fresh_selection_forbidden": true,
+  "same_size_retry_forbidden": true,
+  "legacy_compatibility": {
+    "config": "config/potts_fixed_k_cleanroom.json",
+    "field_mapping": "k_target -> n_eigenpairs_requested"
+  }
+}

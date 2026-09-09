@@ -1,0 +1,26 @@
+{"config_sha256": "eede620cc66249141c46935897ede1ac9236e5b653a03095534663439ee221ca", "elapsed_seconds": null, "engine_sha256": "9694ea60cd77d807b31a57061f32ca644d4e4e294c85ad34b99a4c97480ee792", "event": "run-start", "mode": "publication", "resume": true, "solver_environment_sha256": "5e36d3244603b328b25abc39e3534c9f78439c249735ad86a19f2bdc1cb650a6", "workdir_empty_at_start": false}
+{"elapsed_seconds": null, "event": "checkpoint-resume", "key": "prg_j2_0p05_L6"}
+{"elapsed_seconds": null, "event": "checkpoint-resume", "key": "prg_j2_0p05_L8"}
+{"elapsed_seconds": null, "event": "checkpoint-resume", "key": "prg_j2_0p05_L10"}
+{"elapsed_seconds": null, "event": "checkpoint-resume", "key": "prg_j2_0p05_L12"}
+{"elapsed_seconds": null, "event": "checkpoint-resume", "key": "prg_j2_0p05_L14"}
+{"elapsed_seconds": null, "event": "checkpoint-resume", "key": "prg_j2_0p05_L16"}
+{"elapsed_seconds": null, "event": "checkpoint-resume", "key": "prg_j2_0p05_L18"}
+{"elapsed_seconds": null, "event": "checkpoint-resume", "key": "prg_j2_0p05_L20"}
+{"elapsed_seconds": null, "event": "task-start", "key": "prg_j2_0p1_L6"}
+{"elapsed_seconds": 0.012989937000000396, "event": "task-complete", "key": "prg_j2_0p1_L6"}
+{"elapsed_seconds": null, "event": "task-start", "key": "prg_j2_0p1_L8"}
+{"elapsed_seconds": 0.006808769000000936, "event": "task-complete", "key": "prg_j2_0p1_L8"}
+{"elapsed_seconds": null, "event": "task-start", "key": "prg_j2_0p1_L10"}
+{"elapsed_seconds": 0.010582630000000037, "event": "task-complete", "key": "prg_j2_0p1_L10"}
+{"elapsed_seconds": null, "event": "task-start", "key": "prg_j2_0p1_L12"}
+{"elapsed_seconds": 0.03291016700000071, "event": "task-complete", "key": "prg_j2_0p1_L12"}
+{"elapsed_seconds": null, "event": "task-start", "key": "prg_j2_0p1_L14"}
+{"elapsed_seconds": 0.105454559, "event": "task-complete", "key": "prg_j2_0p1_L14"}
+{"elapsed_seconds": null, "event": "task-start", "key": "prg_j2_0p1_L16"}
+{"elapsed_seconds": 0.30469569799999974, "event": "task-complete", "key": "prg_j2_0p1_L16"}
+{"elapsed_seconds": null, "event": "task-start", "key": "prg_j2_0p1_L18"}
+{"elapsed_seconds": 1.166179477, "event": "task-complete", "key": "prg_j2_0p1_L18"}
+{"elapsed_seconds": null, "event": "task-start", "key": "prg_j2_0p1_L20"}
+{"elapsed_seconds": 4.746819416000001, "event": "task-complete", "key": "prg_j2_0p1_L20"}
+{"committed_tasks": 8, "elapsed_seconds": null, "event": "adapter-paused"}
