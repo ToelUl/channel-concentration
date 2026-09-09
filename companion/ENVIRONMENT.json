@@ -1,0 +1,6 @@
+{
+  "schema": "publication-companion-environment/1.0",
+  "versions": {"python": "3.12.13", "numpy": "2.3.5", "scipy": "1.17.0", "matplotlib": "3.10.8"},
+  "threads": 1,
+  "scope": "Presentation environment; does not replace or relax producer/strict-reader environment identities."
+}

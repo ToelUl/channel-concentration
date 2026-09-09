@@ -7,3 +7,5 @@ The original vendored mpmath 1.3.0 license is at
 Equivalent frozen copies are included with the two producer versions. All selected vendor bytes and notices are unchanged.
 
 NumPy, SciPy, Matplotlib and other installed dependencies retain their respective licenses. Dependency binaries are not redistributed here. See `baseline/DATA_LICENSE.md` for the project-generated data license scope. No license is granted to excluded manuscripts or unbundled archive contents.
+
+The preparation companion distributes project-authored rendering and document-build scripts, wrappers, documentation, and a lossless project-data schema projection under the project MIT License. Source hashes and lineage are in `companion/ORIGIN.json`. Full manuscript text, TeX distribution files, dependency binaries, and internal review records are not included in this companion.

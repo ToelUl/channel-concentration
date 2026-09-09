@@ -1,62 +1,74 @@
 # Channel Concentration
 
-Reproducible numerical methods and versioned evidence for channel concentration in quantum many-body systems.
+Numerical methods and versioned evidence for channel concentration in quantum many-body systems.
 
-This repository preserves a numerical evidence baseline independently of ongoing manuscript revisions. It includes the original computational sources, explicit numerical settings, current Potts/NNN results, bounded regression tests and source-to-result hashes.
+[![Numerical baseline checks](https://github.com/ToelUl/channel-concentration/actions/workflows/bounded-regression.yml/badge.svg)](https://github.com/ToelUl/channel-concentration/actions/workflows/bounded-regression.yml)
+[![Companion checks](https://github.com/ToelUl/channel-concentration/actions/workflows/publication-companion.yml/badge.svg)](https://github.com/ToelUl/channel-concentration/actions/workflows/publication-companion.yml)
 
-**Scope:** the numerical evidence package has passed its scoped local checks. Full manuscript acceptance remains open. Read the [known limitations](baseline/docs/KNOWN_LIMITATIONS.md) before interpreting the results.
+This repository provides computational sources, numerical settings, Potts and next-nearest-neighbor (NNN) results, bounded regression tests, and source-to-result provenance. The numerical evidence is preserved independently of manuscript revisions.
 
-## Numerical evidence baseline
+## Start here
+
+- [Baseline overview](docs/BASELINE.md)
+- [Verification summary](docs/VERIFICATION.md)
+- [Publication companion: regenerate seven figures and build a gallery](companion/README.md)
+- [Table and evidence guide](docs/EVIDENCE_MAP.md)
+- [Installation and reproduction](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/docs/REPRODUCE.md)
+- [Scientific and computational limitations](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/docs/KNOWN_LIMITATIONS.md)
+- [Source and packaging provenance](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/docs/PROVENANCE.md)
+- [Release downloads](https://github.com/ToelUl/channel-concentration/releases/tag/baseline-2026-09-09-rc1)
+
+## Verify the files
+
+From the repository root:
+
+```sh
+python -B baseline/tools/verify_release.py
+```
+
+This checks the distributed baseline against its manifest. It does not run numerical calculations. Follow the reproduction guide for installation, small fresh checks, and reading the archived results.
+
+The numerical runtime is Linux/WSL with Python 3.12.13 and the supplied fixed dependencies. Strict current-result readers also check the recorded platform and BLAS identity. A successful file check on another operating system does not establish numerical runtime compatibility.
+
+## Numerical baseline
 
 | Item | Identity |
 |---|---|
 | Baseline | `CC-NUMERICAL-BASELINE-20260909` |
-| Release tag | `baseline-2026-09-09-rc1` |
+| Release | `baseline-2026-09-09-rc1` |
+| Commit | `6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da` |
 | Potts producer | `cc-repro 0.5.0.dev0` |
 | NNN producer | `cc-repro 0.5.1.dev0` |
 | Compatible reader | `cc-repro 0.5.2.dev0` |
-| Baseline manifest SHA256 | `a6020a66b641854f1345e3d11d36b19ea8812bdfae6b2161f9a8b19121385f67` |
-| Packaged evidence ZIP SHA256 | `73e0a87646354f2e546bb86243b604a3e383617c1e7fe86ddb52e16fbbdb38bf` |
+| Manifest SHA256 | `a6020a66b641854f1345e3d11d36b19ea8812bdfae6b2161f9a8b19121385f67` |
+| Evidence ZIP SHA256 | `73e0a87646354f2e546bb86243b604a3e383617c1e7fe86ddb52e16fbbdb38bf` |
 
-The [`baseline/`](baseline/) directory is the byte-preserved, verified candidate. Its pre-publication status statements describe when those files were sealed; subsequent publication information belongs to this repository and its release record. Do not edit the baseline in place to update those statements.
+The evidence covers nine Potts fixed sizes, nine mandatory ladder rungs, and 69 unique NNN tasks. The final NNN invocation resumed all 69 tasks and computed zero new tasks. The archived postprocessing retains its original scientific premises and acceptance thresholds.
 
-The evidence covers nine Potts fixed sizes, nine mandatory ladder rungs and 69 unique NNN tasks. The final NNN invocation resumed all 69 tasks and computed zero new tasks. Current postprocessing retains its original scientific premises and acceptance thresholds.
+## Verification scope
 
-## Start here
+Clean local installation and detached regression tests succeeded for the wheels and source distributions of all three versions. Five current postprocessing routes reproduced the specified baseline outputs, and three additional small fresh numerical routes passed. The packaging checks did not rerun a complete large campaign.
 
-- [Reproduction and installation instructions](baseline/docs/REPRODUCE.md)
-- [Chinese verification report](baseline/verification/REPORT_zh-TW.md)
-- [Source and public packaging lineage](baseline/docs/PROVENANCE.md)
-- [Numerical datasets](baseline/data/)
-- [Software source](baseline/software/) and [frozen producers](baseline/producers/)
-- [Release downloads](https://github.com/ToelUl/channel-concentration/releases)
+Repository CI checks baseline integrity and bounded software regressions on Linux. Its scope is separate from strict current-result replay and final manuscript verification. See the [verification summary](docs/VERIFICATION.md) for the evidence and its limits.
 
-To verify a clone or unpacked repository archive:
+## Manuscript and versioning
 
-```sh
-python baseline/tools/verify_release.py
-```
+The preparation companion adds the figure-generation implementation, source-derived mappings and public input checks for the R3.7 public-aligned candidate. All seven figures can be regenerated from this repository. Final scientific and publication-artwork review remains open. The full manuscript text is not included in this preparation update; no article DOI or arXiv identifier is asserted here.
 
-Then follow the reproduction guide from inside `baseline/`. Supported numerical runtime: Linux/WSL, Python 3.12.13 and the supplied fixed dependency versions. Strict current-result readers additionally compare the recorded platform and BLAS identity. Use the separately documented hash-inspection path on other systems; do not weaken identity checks to force acceptance.
+The `baseline/` directory is immutable. Historical records, including their original-language text and pre-publication status statements, describe the snapshot when it was sealed. Current English entry points are provided above. Updates to public documentation belong outside the frozen baseline.
 
-## Verification and interpretation
+Changes to computations, input selection, or fitting windows require a new numerical or analysis version with an explicit difference record. Presentation and documentation revisions must retain the identity of the numerical evidence they use.
 
-Local clean installation succeeded for the wheel and source distribution of all three versions. Detached regression suites passed 45, 58 and 69 tests respectively; these suites have overlapping coverage. Five current postprocessing routes reproduced the baseline outputs. Three additional small fresh numerical routes passed. No complete large campaign was rerun for packaging.
+## Citation
 
-Repository CI verifies baseline integrity and bounded software regressions on a hosted Linux runner. Its results are separate from the local large numerical evidence and strict current-result replay. The workflow does not certify full manuscript reproduction.
+Cite the specific numerical release, its commit, and the baseline manifest SHA256. The repository's [CITATION.cff](https://github.com/ToelUl/channel-concentration/blob/main/CITATION.cff) describes the evidence baseline; software-specific citation files are included in the versioned sources. No dataset DOI has been assigned in the cited release record.
 
-Manuscript sources, private local paths, host identities and unpublished artwork are excluded. A small set of nonessential derived receipts is supplied as clearly labelled public projections. Original committed numerical inputs remain unchanged.
+An example [BibTeX entry](docs/CITATION.bib) is provided. Cite the exact commit used for companion outputs separately from the immutable numerical baseline.
 
-## Versions and citation
+## License and support
 
-Cite the specific release, its tag/commit and the baseline manifest SHA256. [CITATION.cff](CITATION.cff) identifies this repository's evidence baseline; software-specific citation files remain in the versioned source trees. No DOI is claimed.
+Project software, documentation, and project-generated numerical data use the [MIT License](https://github.com/ToelUl/channel-concentration/blob/main/LICENSE), with the [data scope](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/DATA_LICENSE.md) and [third-party notices](https://github.com/ToelUl/channel-concentration/blob/main/THIRD_PARTY_NOTICES.md) preserved. Vendored dependencies retain their own licenses.
 
-Manuscript wording and layout can change while referring to this baseline. Changes to scientific computations, input selection or fitting windows require a new numerical/analysis version with an explicit difference record.
+For reproducibility questions or software issues, use the [issue tracker](https://github.com/ToelUl/channel-concentration/issues). Include the release, software version, environment, command, and relevant error output.
 
-## License
-
-Project software, documentation and project-generated numerical data use the [MIT License](LICENSE), with the [data scope](baseline/DATA_LICENSE.md) and [third-party notices](THIRD_PARTY_NOTICES.md) preserved. Vendored dependencies retain their original licenses.
-
-## 中文
-
-此倉庫先固定程式與數值證據，作為後續稿件修訂的依據。`baseline/` 保留原始封存內容；完整論文與出版圖面仍有未結事項，請依已知限制解讀結果。新的科學分析應另外版本化，不覆寫此數值基準。
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the [changelog](CHANGELOG.md) for change and reporting conventions.

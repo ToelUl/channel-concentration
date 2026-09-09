@@ -1,0 +1,32 @@
+{
+  "schema": "publication-companion-origin/1.0",
+  "version": "2026.09.10-s1",
+  "status": "PREPARATION_COMPANION_ARTWORK_REVIEW_PENDING",
+  "parent_source_sha256": "3bb37a093dee546dce13cc55918c0be43de2ddd72168af06c9d3634e982606a8",
+  "scripts": [
+    {
+      "path": "scripts/build_documents_only.py",
+      "sha256": "982445cb3eca904f85fde5ad7fbf92c117623586568c9a0a3a02e5c3673425da",
+      "origin": "scripts/build_documents_only.py"
+    },
+    {
+      "path": "scripts/cleanroom/common.py",
+      "sha256": "5477a46163e7d01a4a92f1e681fbe146839e2fde63efe35d90cf2fc85b0eda11",
+      "origin": "scripts/cleanroom/common.py"
+    },
+    {
+      "path": "scripts/packaging/build_arxiv_bundle.py",
+      "sha256": "d87fddb3942a3cd61d562fbefdf7d9dfdbd309768d22abaef5a98dac597181d2",
+      "origin": "scripts/packaging/build_arxiv_bundle.py"
+    },
+    {
+      "path": "scripts/plotting/generate_figures.py",
+      "sha256": "d62b774b69a7e43cf4706a13924f1b2403a538bd4a8607bf6a65eb13cf55e9dc",
+      "origin": "scripts/plotting/generate_figures.py"
+    }
+  ],
+  "renderer_changes": "NONE_BYTE_PRESERVED",
+  "new_interacting_eigensolves": 0,
+  "new_fits": 0,
+  "publication_artwork_approval": false
+}
