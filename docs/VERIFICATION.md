@@ -39,3 +39,7 @@ Hosted CI does not reproduce the original platform/BLAS identity, perform all st
 The recorded machine-readable local checks are in [CLEAN_INSTALL_AND_REPLAY.json](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/verification/CLEAN_INSTALL_AND_REPLAY.json) and [PAYLOAD_AUDIT.json](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/verification/PAYLOAD_AUDIT.json). Interpret results with the [known limitations](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/docs/KNOWN_LIMITATIONS.md).
 
 No missing historical receipt is certified by these tests. Conditional enclosures retain their spectral premises, and finite-size trends retain their documented scope.
+
+## S2 presentation successor
+
+The S2 update carries the author-approved renderer and exact seven-PDF artwork identities in `companion/ARTWORK.json`. Run `companion/run.py verify-artwork` after publication-mode rendering to compare with that set. The existing coordinate checks retain their numerical scope; human approval and full-manuscript review are author-side records, not conclusions supplied by CI. The source manuscript remains private. No baseline dataset, producer, cutoff, fitting window or computation result changes in this presentation update.

@@ -1,0 +1,52 @@
+{
+  "schema": "publication-companion-approved-artwork/1.0",
+  "version": "2026.09.10-s2",
+  "candidate": "CC-FINAL-SUBMISSION-S2-RC2",
+  "renderer_sha256": "9a3702a1ea9319417fe9ddd149ad814eb96ad51b063cfe92124285b3c2f5875b",
+  "source_archive_sha256": "42072d0078acd9c227ec9d1a53bb1058c950eabaadcc361f62f1043c69526a0a",
+  "human_review": {
+    "authority": "HUMAN",
+    "status": "PASS",
+    "subject_sha256": "6e08af412ac5988921e9be84ed537b43414d735d6f5b83a568c10205e58886e3",
+    "scope": "Author approval of the seven exact S2 figure PDFs. Approval applies only to matching bytes, not arbitrary later renders or venue acceptance."
+  },
+  "figures": [
+    {
+      "selector": "1",
+      "pdf": "fig1_tfim_critical_concentration.pdf",
+      "pdf_sha256": "3cdd302e714d8bd03b5841a02ffeb6e9d5696f6876b9aaa0c828dc435bba5c56"
+    },
+    {
+      "selector": "2",
+      "pdf": "fig2_scaling_and_envelope.pdf",
+      "pdf_sha256": "7931a6b9da2afd7fef928c32fadf2d2bf0b0f968bbabeab57533ebfd1d95280d"
+    },
+    {
+      "selector": "3",
+      "pdf": "fig3_lifshitz_anisotropy_scaling.pdf",
+      "pdf_sha256": "b8f7c4098f628f2371807c8ad4a7d8d7d89f5945d08c86e63111a5f98278d925"
+    },
+    {
+      "selector": "4",
+      "pdf": "fig6_interacting_benchmarks.pdf",
+      "pdf_sha256": "30a8c842f6ac7b3293da7fae5e14b2f074d172f2342cbb195fe6b33d7ad2cd5a"
+    },
+    {
+      "selector": "5",
+      "pdf": "figS1_potts_ideal_ladder_weights.pdf",
+      "pdf_sha256": "a4568caa85a542464677352529ae3e351139ca92ff016be459c7e75b758d2642"
+    },
+    {
+      "selector": "6",
+      "pdf": "fig4_xy_directional_profiles.pdf",
+      "pdf_sha256": "be331b97c870b63a2b3e627d23b116726e7b8361cf2c8cfcb310e21121af1416"
+    },
+    {
+      "selector": "S1",
+      "pdf": "fig5_weak_quench_extraction.pdf",
+      "pdf_sha256": "04ad492001f3eb26bf6fd9a6e2fc521e12d5416899b4ac70bb1d95668ec30d0e"
+    }
+  ],
+  "numerical_baseline_commit": "6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da",
+  "numerical_changes": false
+}

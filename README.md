@@ -53,7 +53,9 @@ Repository CI checks baseline integrity and bounded software regressions on Linu
 
 ## Manuscript and versioning
 
-The preparation companion adds the figure-generation implementation, source-derived mappings and public input checks for the R3.7 public-aligned candidate. All seven figures can be regenerated from this repository. Final scientific and publication-artwork review remains open. The full manuscript text is not included in this preparation update; no article DOI or arXiv identifier is asserted here.
+The presentation companion `2026.09.10-s2` matches the author-approved S2 manuscript candidate. Scientific and full-manuscript review is complete at the stated scope, and all seven final figures have passed machine, caption-consistency and human visual review. [Exact artwork identities](companion/ARTWORK.json) bind that approval to specific PDF bytes. All seven figures can be regenerated from public inputs.
+
+The update preserves the numerical baseline and adds no interacting-model eigensolves or fits. The manuscript text remains outside this public companion. Versioned archival citation and dedicated PRB/arXiv submission packages remain subsequent preparation steps; no new release, DOI, arXiv identifier or journal acceptance is asserted.
 
 The `baseline/` directory is immutable. Historical records, including their original-language text and pre-publication status statements, describe the snapshot when it was sealed. Current English entry points are provided above. Updates to public documentation belong outside the frozen baseline.
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026.09.10-s2 — Approved presentation successor
+
+- Adopted the exact S2 renderer, source-derived figure mappings and seven human-approved PDF identities.
+- Improved contrast, type size, marker presentation and Figure 4 legend spacing; retained all interacting samples and clarified the Figure 5 retained-rank legend.
+- Added explicit artwork-identity verification and updated the English documentation to the completed S2 review state.
+- Preserved numerical baseline files, all data inputs, fitting windows and computation identities. No new fit or interacting-model eigensolve was performed.
+
+This commit does not create a new numerical release or DOI, distribute the manuscript, or complete venue-specific submission packaging.
+
 ## 2026.09.10-s1 — Submission preparation companion
 
 - Added a complete English documentation path, including baseline and verification summaries.

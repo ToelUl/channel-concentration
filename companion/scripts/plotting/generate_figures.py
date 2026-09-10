@@ -576,6 +576,13 @@ def plot_fig1_tfim_critical_concentration(context: PlotContext) -> FigureResult:
     ax3.set_title(r"(c)", loc="left", fontweight="bold", pad=3.0)
 
     fig.subplots_adjust(left=0.085, right=0.99, bottom=0.19, top=0.91, wspace=0.43)
+    # Retain each series identity with a darker stroke and visible marker edge.
+    for ax in (ax1, ax2, ax3):
+        for line in [*ax.lines, *[h for h in getattr(ax.get_legend(), "legend_handles", []) if hasattr(h, "get_marker")]]:
+            line.set_color({C["orange"]: "#9B6700", C["sky"]: "#00718C",
+                            C["purple"]: "#8C3D72", C["green"]: "#007354"}.get(line.get_color(), line.get_color()))
+            if line.get_marker() not in ("None", "none", "", " "):
+                line.set_markeredgecolor("#222222")
 
     diagnostics["K_F(h_c,L_max)"] = float(KF_tfim[-1])
     diagnostics["K_F^XX(0,L_max)"] = float(KF_xx[-1])
@@ -652,6 +659,18 @@ def plot_fig2_scaling_and_envelope(context: PlotContext) -> FigureResult:
     ax2.legend(loc="lower right", fontsize=8)
 
     fig.subplots_adjust(left=0.10, right=0.99, bottom=0.22, top=0.96, wspace=0.28)
+    for ax in (ax1, ax2):
+        for line in [*ax.lines, *[h for h in getattr(ax.get_legend(), "legend_handles", []) if hasattr(h, "get_marker")]]:
+            line.set_color({C["orange"]: "#9B6700", C["sky"]: "#00718C",
+                            C["purple"]: "#8C3D72", C["green"]: "#007354"}.get(line.get_color(), line.get_color()))
+            if line.get_marker() not in ("None", "none", "", " "):
+                line.set_markeredgecolor("#222222")
+    for index, line in enumerate(ax1.lines[2:]):
+        line.set_markeredgecolor("#777777")
+        line.set_markevery((index * 5, 20))
+    for handle in ax1.get_legend().legend_handles:
+        if hasattr(handle, "get_marker") and handle.get_marker() not in ("None", "none", "", " "):
+            handle.set_markeredgecolor("#777777")
 
     diagnostics["Phi(0)"] = float(Phi(0.0, nmax=params["phi_nmax"]))
     diagnostics["KFcrit_p(2)"] = float(KFcrit_p(2.0))
@@ -692,8 +711,8 @@ def plot_fig3_lifshitz_anisotropy_scaling(context: PlotContext) -> FigureResult:
     ax1.set_xlabel(r"anisotropy $\gamma$ at $h=1$")
     ax1.set_ylabel(r"$K_F(1,\gamma;L)$")
     ax1.set_ylim(-0.03, 1.03)
-    ax1.legend(loc="best")
-    ax1.text(0.04, 0.90, r"(a)", transform=ax1.transAxes, fontweight="bold")
+    ax1.legend(loc="upper right", fontsize=8.2, labelspacing=0.05, borderpad=0.1, handlelength=1.4)
+    ax1.text(0.0, 1.02, r"(a)", transform=ax1.transAxes, fontweight="bold")
 
     # PANEL (b) Lifshitz scaling functions
     ax2.plot(w_curve, Phi(2.0 * w_curve, nmax=params["phi_nmax"]), color=C["green"], lw=1.35,
@@ -721,10 +740,25 @@ def plot_fig3_lifshitz_anisotropy_scaling(context: PlotContext) -> FigureResult:
     ax2.set_ylabel(r"$K_F(w)$")
     ax2.set_xlim(float(np.min(w_curve)), float(np.max(w_curve)))
     ax2.set_ylim(0.0, 1.03)
-    ax2.legend(loc="right", bbox_to_anchor=(1.0, 0.35), fontsize=6.6, ncol=1)
-    ax2.text(0.04, 0.90, r"(b)", transform=ax2.transAxes, fontweight="bold")
+    ax2.legend(loc="right", bbox_to_anchor=(1.0, 0.35), fontsize=8.2, ncol=1,
+               labelspacing=0.05, borderpad=0.1, handlelength=1.4)
+    ax2.text(0.0, 1.02, r"(b)", transform=ax2.transAxes, fontweight="bold")
 
     fig.subplots_adjust(bottom=0.16, wspace=0.30)
+    for ax in (ax1, ax2):
+        for line in [*ax.lines, *[h for h in getattr(ax.get_legend(), "legend_handles", []) if hasattr(h, "get_marker")]]:
+            line.set_color({C["orange"]: "#9B6700", C["sky"]: "#00718C",
+                            C["purple"]: "#8C3D72", C["green"]: "#007354"}.get(line.get_color(), line.get_color()))
+            if line.get_marker() not in ("None", "none", "", " "):
+                line.set_markeredgecolor("#222222")
+    for index, line in enumerate(ax2.lines[3:]):
+        line.set_markeredgecolor("#000000")
+        line.set_markevery((index // 2, 3))
+    for handle in ax2.get_legend().legend_handles:
+        if hasattr(handle, "get_marker") and handle.get_marker() not in ("None", "none", "", " "):
+            handle.set_markeredgecolor("#000000")
+    for line in ax1.lines[:2]:
+        line.set_markevery(3)
 
     diagnostics["Psi(0)"] = float(Psi(0.0, nmax=params["psi_nmax"]))
     diagnostics[f"{context.spec.display_name} fixed-L K_h(gamma_min)"] = float(KFh[0])
@@ -860,6 +894,28 @@ def plot_fig4_interacting_benchmarks(context: PlotContext) -> FigureResult:
         labelspacing=0.25,
     )
 
+    for ax in axes:
+        for line in [*ax.lines, *[h for h in getattr(ax.get_legend(), "legend_handles", []) if hasattr(h, "get_marker")]]:
+            line.set_color({C["orange"]: "#9B6700", C["sky"]: "#00718C",
+                            C["purple"]: "#8C3D72", C["green"]: "#007354"}.get(line.get_color(), line.get_color()))
+            if line.get_marker() not in ("None", "none", "", " "):
+                line.set_markeredgecolor("#222222")
+    for text in axes[0].texts:
+        text.set_color({C["orange"]: "#9B6700", C["purple"]: "#8C3D72"}.get(text.get_color(), text.get_color()))
+    for index, line in enumerate(axes[1].lines[2:5]):
+        # Nested transparent glyphs keep all eight finite-size samples visible.
+        line.set_markersize((3.6, 8.0, 12.0)[index])
+        line.set_markeredgewidth(0.5)
+        line.set_markerfacecolor("none")
+        line.set_markevery(None)
+    for handle, size in zip(axes[1].get_legend().legend_handles[1:4], (3.6, 6.0, 6.0)):
+        handle.set_markersize(size)
+        handle.set_markeredgewidth(0.5)
+        handle.set_markerfacecolor("none")
+    axes[1].lines[2].set_markeredgecolor("#777777")
+    axes[1].get_legend().legend_handles[1].set_markeredgecolor("#777777")
+    # Exact-sequence circles avoid the region occupied by independent J2 data.
+    axes[1].lines[1].set_markevery([0, 1, 8, 10, 12, 14, 16])
     diagnostics[f"{context.spec.display_name} Potts 7/5-guide intercept"] = intercept
     diagnostics[f"{context.spec.display_name} Potts 7/5-guide amplitude"] = slope
     diagnostics[f"{context.spec.display_name} Potts 7/5 signed relative deviation percent"] = relative
@@ -934,7 +990,7 @@ def plot_fig5_distribution_comparisons(context: PlotContext) -> FigureResult:
     # Keep the Potts color grammar identical to Figure 4(a): lattice data blue,
     # CFT orange, and the exponent-only ideal comparator purple.
     potts_series = (
-        (potts_weights, C["blue"], r"certified Potts ranks, $L=14$"),
+        (potts_weights, C["blue"], r"retained Potts ranks, $L=14$"),
         (cft_weights, C["orange"], r"CFT levels, $\Delta=4/5$"),
         (ideal_weights, C["purple"], r"ideal odd ladder, $p=12/5$"),
     )
@@ -1167,22 +1223,23 @@ def plot_fig6_xy_directional_profiles(context: PlotContext) -> FigureResult:
             [0, 45, 90, 135, 180, 225, 270, 315],
             labels=[r"$0$", r"$\pi/4$", r"$\pi/2$", r"$3\pi/4$", r"$\pi$",
                     r"$5\pi/4$", r"$3\pi/2$", r"$7\pi/4$"],
-            fontsize=7.0,
+            fontsize=8.2,
         )
         ax.set_rlim(0.0, 1.08)
         ax.set_rticks([0.25, 0.50, 0.75, 1.00])
-        ax.set_yticklabels([r"$0.25$", r"$0.50$", r"$0.75$", r"$1$"], fontsize=6.8)
+        ax.set_yticklabels([r"$0.25$", r"$0.50$", r"$0.75$", r"$1$"], fontsize=8.2)
         ax.grid(True, lw=0.55, alpha=0.65)
-        ax.text(1.01, 0.50, r"$\hat{h}$", transform=ax.transAxes, fontsize=7.5,
+        ax.text(1.01, 0.50, r"$\hat{h}$", transform=ax.transAxes, fontsize=8.2,
                 ha="left", va="center", color="0.25")
-        ax.text(0.50, 1.0, r"$\hat{\gamma}$", transform=ax.transAxes, fontsize=7.5,
+        ax.text(0.50, 1.0, r"$\hat{\gamma}$", transform=ax.transAxes, fontsize=8.2,
                 ha="center", va="bottom", color="0.25")
         ax.text(0.00, 0.95, tag, transform=ax.transAxes, fontweight="bold")
         ax.text(
-            0.58, 0.15,
+            0.5, -0.3,
             title + "\n" + rf"$K_F^{{\max}}/K_F^{{\min}}={float(profile['ratio']):.2f}$",
             transform=ax.transAxes,
-            fontsize=7.0,
+            fontsize=8.2,
+            ha="center",
             va="bottom",
             bbox=dict(boxstyle="round,pad=0.24", facecolor="white",
                       edgecolor="0.82", alpha=0.90),
@@ -1196,8 +1253,14 @@ def plot_fig6_xy_directional_profiles(context: PlotContext) -> FigureResult:
         axes[1], near_lifshitz, r"(b)",
         rf"near Lifshitz $(1+s,s)$, $s={lif_s:.2f}$",
     )
-    figure.subplots_adjust(wspace=0.32)
+    figure.subplots_adjust(wspace=0.32, bottom=0.28, top=0.90)
 
+    for ax in axes:
+        for line in [*ax.lines, *[h for h in getattr(ax.get_legend(), "legend_handles", []) if hasattr(h, "get_marker")]]:
+            line.set_color({C["orange"]: "#9B6700", C["sky"]: "#00718C",
+                            C["purple"]: "#8C3D72", C["green"]: "#007354"}.get(line.get_color(), line.get_color()))
+            if line.get_marker() not in ("None", "none", "", " "):
+                line.set_markeredgecolor("#222222")
     diagnostics[f"{context.spec.display_name} K_F max/min"] = float(generic["ratio"])
     diagnostics[f"{context.spec.display_name} phi_max/pi"] = float(generic["phi_max"]) / np.pi
     diagnostics[f"{context.spec.display_name} phi_min/pi"] = float(generic["phi_min"]) / np.pi
@@ -1261,7 +1324,7 @@ def plot_figS1_weak_quench_extraction(context: PlotContext) -> FigureResult:
         )
     ax1.set_xlabel(r"mode index $n+1$  for $k_n=(2n+1)\pi/L$")
     ax1.set_ylabel(r"normalised excitation weight")
-    ax1.legend(loc="best")
+    ax1.legend(loc="lower left", fontsize=8.2, labelspacing=0.0, borderpad=0.0, handlelength=1.3)
     ax1.text(0.04, 0.8, r"(a)", transform=ax1.transAxes, fontweight="bold")
 
     # PANEL (b) Counting ratio
@@ -1278,11 +1341,23 @@ def plot_figS1_weak_quench_extraction(context: PlotContext) -> FigureResult:
     ax2.set_ylabel(r"extracted ratio $R(\delta)$")
     pad = max(0.005, 0.12 * (float(np.max(Rvals)) - float(np.min(Rvals)) + 1e-12))
     ax2.set_ylim(float(np.min(Rvals)) - pad, float(max(np.max(Rvals), K_exact)) + pad)
-    ax2.legend(loc="best")
+    ax2.legend(loc="lower left", bbox_to_anchor=(0.0, 0.20), fontsize=8.2,
+               labelspacing=0.05, borderpad=0.1, handlelength=1.4)
     ax2.text(0.04, 0.90, r"(b)", transform=ax2.transAxes, fontweight="bold")
     ax2.text(0.10, 0.10, rf"$h=h_c=1$, $L={L}$", transform=ax2.transAxes)
 
     fig.subplots_adjust(bottom=0.20, wspace=0.32)
+    for ax in (ax1, ax2):
+        for line in [*ax.lines, *[h for h in getattr(ax.get_legend(), "legend_handles", []) if hasattr(h, "get_marker")]]:
+            line.set_color({C["orange"]: "#9B6700", C["sky"]: "#00718C",
+                            C["purple"]: "#8C3D72", C["green"]: "#007354"}.get(line.get_color(), line.get_color()))
+            if line.get_marker() not in ("None", "none", "", " "):
+                line.set_markeredgecolor("#222222")
+    # Stagger markers at logarithmically separated existing sample indices.
+    display_indices = np.unique(np.rint(np.geomspace(1, len(nind), 7)).astype(int) - 1)
+    for index, line in enumerate(ax1.lines[1:]):
+        line.set_markevery(display_indices[index::3].tolist())
+    ax2.lines[0].set_markevery(3)
 
     diagnostics["max |R(delta)-K_F| at smallest delta"] = float(abs(Rvals[0] - K_exact))
     diagnostics[f"{context.spec.display_name} exact K_F(h,L)"] = float(K_exact)

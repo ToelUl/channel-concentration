@@ -54,4 +54,27 @@ class IntegrityTests(unittest.TestCase):
         p=self.repo/'build/new';p.mkdir(parents=True)
         with self.assertRaises(FileExistsError):run.fresh_output(p)
 
+    def test_changed_artwork_identity_record_is_refused(self):
+        p=self.here/'ARTWORK.json'
+        p.write_bytes(p.read_bytes()+b'\n')
+        with self.assertRaisesRegex(ValueError,'artwork identity record'):
+            run.verify()
+
+    def test_unapproved_pdf_is_refused(self):
+        out=self.repo/'generated';out.mkdir()
+        expected=json.loads((self.here/'ARTWORK.json').read_text())['figures']
+        for row in expected:(out/row['pdf']).write_bytes(b'not the approved PDF')
+        with self.assertRaisesRegex(ValueError,'differs from approved'):
+            run.verify_artwork(out)
+
+    def test_missing_or_extra_pdf_is_refused(self):
+        out=self.repo/'generated';out.mkdir()
+        with self.assertRaisesRegex(ValueError,'inventory differs'):
+            run.verify_artwork(out)
+        expected=json.loads((self.here/'ARTWORK.json').read_text())['figures']
+        for row in expected:(out/row['pdf']).write_bytes(b'placeholder')
+        (out/'unexpected.pdf').write_bytes(b'extra')
+        with self.assertRaisesRegex(ValueError,'inventory differs'):
+            run.verify_artwork(out)
+
 if __name__=='__main__':unittest.main()

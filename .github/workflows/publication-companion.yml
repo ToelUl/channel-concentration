@@ -36,6 +36,8 @@ jobs:
           python -B -m pip check
       - name: Render and check seven figures
         run: python -B companion/run.py render
+      - name: Verify exact S2 artwork identities
+        run: python -B companion/run.py verify-artwork
       - name: Install minimal LaTeX gallery dependencies
         run: |
           sudo apt-get update

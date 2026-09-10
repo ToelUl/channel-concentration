@@ -1,19 +1,19 @@
 {
   "schema": "publication-figure-map/1.0",
-  "renderer_sha256": "d62b774b69a7e43cf4706a13924f1b2403a538bd4a8607bf6a65eb13cf55e9dc",
-  "source_validation": "PASS_NATIVE_SOURCE_MAPPING",
+  "renderer_sha256": "9a3702a1ea9319417fe9ddd149ad814eb96ad51b063cfe92124285b3c2f5875b",
+  "source_validation": "PASS_EXACT_APPROVED_S2_SOURCE_MAPPING",
   "source_documents": [
     {
       "path": "paper/main.tex",
-      "sha256": "ee801220a1021ec48df465e0941a7ad2a60afd80b7ddf173b1ec2c5e58bf7c4b"
+      "sha256": "82758cd4ecd4c96c59986709b047b4774471060429d7e75ff4e20e510490c37f"
     },
     {
       "path": "supplement_numerical/main.tex",
-      "sha256": "a5986659ebad3290ea1842639bb1f2de6395abeb5c7dd7947f42cf906becac8d"
+      "sha256": "ea92d2f7726f2af1bdf1e448cb21d687cc8e5d25def6d527a8ee61b04b882a7d"
     },
     {
       "path": "supplement_numerical/weak_quench_module.tex",
-      "sha256": "32888f0e091151a4da1e164f58d23b89d91bf512c16ccaa99ea9652110711a2c"
+      "sha256": "ff6d311d9674c6e62c207746e571256b8e1188f1cfc9c955c40542528c42d527"
     }
   ],
   "figures": [

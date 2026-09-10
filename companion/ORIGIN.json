@@ -1,8 +1,8 @@
 {
   "schema": "publication-companion-origin/1.0",
-  "version": "2026.09.10-s1",
-  "status": "PREPARATION_COMPANION_ARTWORK_REVIEW_PENDING",
-  "parent_source_sha256": "3bb37a093dee546dce13cc55918c0be43de2ddd72168af06c9d3634e982606a8",
+  "version": "2026.09.10-s2",
+  "status": "S2_REVIEW_COMPLETE_HUMAN_ARTWORK_APPROVED",
+  "parent_source_sha256": "42072d0078acd9c227ec9d1a53bb1058c950eabaadcc361f62f1043c69526a0a",
   "scripts": [
     {
       "path": "scripts/build_documents_only.py",
@@ -21,12 +21,14 @@
     },
     {
       "path": "scripts/plotting/generate_figures.py",
-      "sha256": "d62b774b69a7e43cf4706a13924f1b2403a538bd4a8607bf6a65eb13cf55e9dc",
+      "sha256": "9a3702a1ea9319417fe9ddd149ad814eb96ad51b063cfe92124285b3c2f5875b",
       "origin": "scripts/plotting/generate_figures.py"
     }
   ],
-  "renderer_changes": "NONE_BYTE_PRESERVED",
+  "renderer_changes": "EXACT_APPROVED_S2_PRESENTATION_SUCCESSOR",
   "new_interacting_eigensolves": 0,
   "new_fits": 0,
-  "publication_artwork_approval": false
+  "publication_artwork_approval": true,
+  "predecessor_companion_commit": "7872b313402f8f892a244d10deb6a18e56617b8c",
+  "artwork_identity_sha256": "0837180aeb8146a09293b7aafbc948fef3941e04fc4c709cade9b7271381659a"
 }

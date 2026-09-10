@@ -11,7 +11,7 @@ The numerical authority is `baseline-2026-09-09-rc1`, commit `6fa71d1fc3d894d76a
 | Analytic result or definition | Supported by its derivation and stated assumptions; file hashes and numerical tests are not a new proof |
 | Consumer projection | A separately identified representation of an archived input; validate both original source identity and the transformation |
 
-The R3.7 alignment table audit covered 16 tables and 396 cells: 331 cells received scoped source/display checks, 30 were classified as analytic-contract review, and 35 historical operator-table cells remained reference-only. These are distinct categories, not 396 independently recomputed numerical results. Final scientific review of the submission candidate remains separate.
+The R3.7 alignment table audit covered 16 tables and 396 cells: 331 cells received scoped source/display checks, 30 were classified as analytic-contract review, and 35 historical operator-table cells remained reference-only. These are distinct categories, not 396 independently recomputed numerical results. The subsequent S2 scientific review retained these classifications and their stated limitations; artwork approval does not change them.
 
 ## Reading numerical tables
 

@@ -1,6 +1,6 @@
 # Publication companion
 
-Version `2026.09.10-s1` provides the presentation code for the R3.7 public-aligned preparation candidate. It uses the immutable numerical release `baseline-2026-09-09-rc1`. Final scientific and artwork review is still pending; this is not a final submission release.
+Version `2026.09.10-s2` provides the exact approved presentation code for candidate `CC-FINAL-SUBMISSION-S2-RC2`. It uses the immutable numerical release `baseline-2026-09-09-rc1`. S2 scientific, manuscript and artwork reviews are complete, including human visual approval. This is a presentation-code update; final venue-specific packaging remains separate.
 
 ## Quick start
 
@@ -14,6 +14,7 @@ python -m pip check
 python -B baseline/tools/verify_release.py
 python -B companion/run.py verify
 python -B companion/run.py render
+python -B companion/run.py verify-artwork
 python -B companion/run.py gallery
 ```
 
@@ -32,7 +33,9 @@ The wrapper checks exact Python, NumPy, SciPy and Matplotlib versions, sets one 
 
 Figures 1, 2, 3, 6 and S1 evaluate the existing analytic formulas or free-fermion sums. Figures 4 and 5 read archived interacting-model tables and existing fit coefficients. Rendering performs no interacting-model eigensolve and no new fit. Sixteen checks compare actual plotted coordinates and bars with the archived inputs.
 
-The original rendering implementation is byte-preserved in `scripts/plotting/generate_figures.py`. Use `run.py` as the public entry point. The original script's direct CLI expects manuscript files; the public wrapper instead checks a source-derived, version-bound [figure map](FIGURE_MAP.json). It calls the same renderer functions, parameter presets and exporter without changing their mathematics or visual settings.
+The S2 rendering implementation is byte-preserved in `scripts/plotting/generate_figures.py`. Its predecessor is retained in Git history at commit `7872b313402f8f892a244d10deb6a18e56617b8c`. Use `run.py` as the public entry point. The source script's direct CLI expects manuscript files; the public wrapper instead checks a source-derived, version-bound [figure map](FIGURE_MAP.json). It calls the approved renderer functions, presets and exporter.
+
+S2 adjusts graphical contrast, type size, marker presentation and legend spacing while preserving numerical arrays, normalizations and fit coefficients. All interacting Figure 4 samples remain displayed; the Figure 5 legend identifies retained ranks. [ARTWORK.json](ARTWORK.json) records the seven human-approved PDF identities. `verify-artwork` compares a local figure directory with that exact set and rejects missing, extra or different PDFs. A render's numerical/data checks alone do not imply the human approval of its output bytes.
 
 ## Figure and evidence map
 
@@ -58,6 +61,6 @@ The gallery command is the fully public document build tested by companion CI. F
 
 ## Scope and licensing
 
-Input and coordinate checks do not certify spectral completeness, remove historical evidence gaps, or approve publication artwork. Potts retained ordering and full-spectrum ordering have different certified ranges; conditional enclosures keep their spectral premises. See the [baseline limitations](../baseline/docs/KNOWN_LIMITATIONS.md).
+Input and coordinate checks do not certify spectral completeness or remove historical evidence gaps. Human artwork approval applies to the exact S2 PDF hashes; the identity check verifies whether local outputs match that approved set. Potts retained ordering and full-spectrum ordering have different certified ranges; conditional enclosures keep their spectral premises. See the [baseline limitations](../baseline/docs/KNOWN_LIMITATIONS.md).
 
 The newly distributed project scripts, wrapper, documentation, and project-generated schema projection are covered by the repository MIT License. Installed dependencies retain their own licenses. No manuscript text is distributed or relicensed by this companion.

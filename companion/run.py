@@ -61,9 +61,31 @@ def verify():
     contract = read(HERE/'FIGURE_MAP.json')
     if contract['renderer_sha256'] != sha(HERE/'scripts/plotting/generate_figures.py'):
         raise ValueError('Figure map is bound to a different renderer')
+    artwork = read(HERE/'ARTWORK.json')
+    if sha(HERE/'ARTWORK.json') != origin['artwork_identity_sha256']:
+        raise ValueError('Approved artwork identity record changed')
+    if artwork['renderer_sha256'] != contract['renderer_sha256']:
+        raise ValueError('Approved artwork is bound to a different renderer')
+    expected = [(r['selector'], r['output_stem']+'.pdf') for r in contract['figures']]
+    if [(r['selector'], r['pdf']) for r in artwork['figures']] != expected:
+        raise ValueError('Approved artwork inventory differs from figure map')
     return {'status':'PASS', 'baseline_inputs':len(inputs['files']), 'lossless_projections':1,
             'frozen_sources':len(origin['scripts']), 'numerical_baseline':inputs['tag'],
             'scope':'Input identity and decimal-string mapping; no numerical qualification.'}
+
+
+def verify_artwork(figure_dir):
+    verify()
+    expected = read(HERE/'ARTWORK.json')['figures']
+    names = {r['pdf'] for r in expected}
+    observed = {p.name for p in figure_dir.glob('*.pdf')}
+    if observed != names:
+        raise ValueError('Figure PDF inventory differs from the approved S2 set')
+    for row in expected:
+        if sha(figure_dir/row['pdf']) != row['pdf_sha256']:
+            raise ValueError('Figure PDF differs from approved S2 artwork: '+row['pdf'])
+    return {'status':'PASS','figures':len(expected),'artwork_version':'2026.09.10-s2',
+            'scope':'Exact output identity with the author-approved S2 figure set; not a new human review or venue approval.'}
 
 def renderer():
     import numpy, scipy, matplotlib
@@ -155,7 +177,7 @@ def gallery(args):
         shutil.copy2(args.figure_dir/name,out/name)
         lines += [r'\section*{Figure '+row['selector']+'}',
                   r'\noindent Channel Concentration: reproducible figure gallery.\\',
-                  r'Preparation companion; final artwork review is pending.\par',
+                  r'S2 presentation companion; see ARTWORK.json for approved PDF identities.\par',
                   r'\includegraphics[width=\textwidth,height=0.82\textheight,keepaspectratio]{'+name+'}',
                   r'\clearpage']
     lines += [r'\end{document}']
@@ -173,6 +195,8 @@ def main():
     parser=argparse.ArgumentParser(description=__doc__)
     sub=parser.add_subparsers(dest='command',required=True)
     sub.add_parser('verify',help='Verify shared baseline inputs and the CFT projection using the standard library')
+    p=sub.add_parser('verify-artwork',help='Compare rendered PDFs with the exact author-approved S2 figure set')
+    p.add_argument('--figure-dir',type=Path,default=REPO/'build/companion/figures')
     p=sub.add_parser('render',help='Render seven figures without an interacting-model solve or a refit')
     p.add_argument('--mode',choices=['fast','publication'],default='publication')
     p.add_argument('--output',type=Path,default=REPO/'build/companion')
@@ -182,6 +206,7 @@ def main():
     args=parser.parse_args()
     try:
         if args.command=='verify': print(json.dumps(verify(),indent=2))
+        elif args.command=='verify-artwork': print(json.dumps(verify_artwork(args.figure_dir),indent=2))
         elif args.command=='render': render(args)
         else: gallery(args)
     except (ValueError,FileExistsError,RuntimeError) as error:
