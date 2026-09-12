@@ -53,7 +53,7 @@ Repository CI checks baseline integrity and bounded software regressions on Linu
 
 ## Manuscript and versioning
 
-The presentation companion `2026.09.10-s2` matches the author-approved S2 manuscript candidate. Scientific and full-manuscript review is complete at the stated scope, and all seven final figures have passed machine, caption-consistency and human visual review. [Exact artwork identities](companion/ARTWORK.json) bind that approval to specific PDF bytes. All seven figures can be regenerated from public inputs.
+The presentation companion `2026.09.12-figure-names` aligns renderer names and output filenames with manuscript Figures 1-6 and S1. It preserves all seven author-approved S2 PDF identities and all numerical inputs. [The figure map](companion/README.md#figure-and-evidence-map) lists the current names; [exact artwork identities](companion/ARTWORK.json) retain the original approval binding. All seven figures can be regenerated from public inputs. The filename update does not assert a new scientific review of subsequent manuscript revisions.
 
 The update preserves the numerical baseline and adds no interacting-model eigensolves or fits. The manuscript text remains outside this public companion. Versioned archival citation and dedicated PRB/arXiv submission packages remain subsequent preparation steps; no new release, DOI, arXiv identifier or journal acceptance is asserted.
 

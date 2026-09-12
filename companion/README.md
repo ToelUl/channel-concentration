@@ -33,7 +33,7 @@ The wrapper checks exact Python, NumPy, SciPy and Matplotlib versions, sets one 
 
 Figures 1, 2, 3, 6 and S1 evaluate the existing analytic formulas or free-fermion sums. Figures 4 and 5 read archived interacting-model tables and existing fit coefficients. Rendering performs no interacting-model eigensolve and no new fit. Sixteen checks compare actual plotted coordinates and bars with the archived inputs.
 
-The S2 rendering implementation is byte-preserved in `scripts/plotting/generate_figures.py`. Its predecessor is retained in Git history at commit `7872b313402f8f892a244d10deb6a18e56617b8c`. Use `run.py` as the public entry point. The source script's direct CLI expects manuscript files; the public wrapper instead checks a source-derived, version-bound [figure map](FIGURE_MAP.json). It calls the approved renderer functions, presets and exporter.
+The rendering functions and exporter retain the approved S2 implementation; the `2026.09.12-figure-names` update changes registry output filenames to match manuscript numbering. The exact predecessor is retained at commit `5a4e07dd444c7eca34d1d349d1e7d3e090b514a6`. Use `run.py` as the public entry point. The source script's direct CLI expects manuscript files; the public wrapper instead checks a source-derived, version-bound [figure map](FIGURE_MAP.json). It also rejects mismatches between figure numbers, renderer names and output filenames.
 
 S2 adjusts graphical contrast, type size, marker presentation and legend spacing while preserving numerical arrays, normalizations and fit coefficients. All interacting Figure 4 samples remain displayed; the Figure 5 legend identifies retained ranks. [ARTWORK.json](ARTWORK.json) records the seven human-approved PDF identities. `verify-artwork` compares a local figure directory with that exact set and rejects missing, extra or different PDFs. A render's numerical/data checks alone do not imply the human approval of its output bytes.
 
@@ -49,7 +49,19 @@ S2 adjusts graphical contrast, type size, marker presentation and legend spacing
 | 6 | XY directional profiles | Analytic formulas and free-fermion sums |
 | S1 | Weak-quench extraction | Analytic formulas and free-fermion sums |
 
-Legacy output filenames are retained. In particular, current Figure 4 uses `fig6_interacting_benchmarks`, current Figure 5 uses `figS1_potts_ideal_ladder_weights`, current Figure 6 uses `fig4_xy_directional_profiles`, and Figure S1 uses `fig5_weak_quench_extraction`. Use `FIGURE_MAP.json`, not filename numbers, to locate the intended figure.
+Output names now match figure numbers and renderer names:
+
+| Figure | PDF / PNG stem | Renderer |
+|---|---|---|
+| 1 | `fig1_tfim_critical_concentration` | `plot_fig1_tfim_critical_concentration` |
+| 2 | `fig2_scaling_and_envelope` | `plot_fig2_scaling_and_envelope` |
+| 3 | `fig3_lifshitz_anisotropy_scaling` | `plot_fig3_lifshitz_anisotropy_scaling` |
+| 4 | `fig4_interacting_benchmarks` | `plot_fig4_interacting_benchmarks` |
+| 5 | `fig5_distribution_comparisons` | `plot_fig5_distribution_comparisons` |
+| 6 | `fig6_xy_directional_profiles` | `plot_fig6_xy_directional_profiles` |
+| S1 | `figS1_weak_quench_extraction` | `plot_figS1_weak_quench_extraction` |
+
+Use a fresh output directory after upgrading. Earlier commits and sealed numerical archives retain their historical filenames. The standalone supplement numbers its sole figure as 1; its shared identity and combined-manuscript number are S1. All seven approved PDF hashes remain unchanged.
 
 [INPUTS.json](INPUTS.json) maps 42 shared input/support records to unchanged public baseline files. The small file in `inputs/cft/` is an explicitly identified schema projection. Its high-precision decimal strings and recorded agreement flags are checked against the original public source. See [the table and evidence guide](../docs/EVIDENCE_MAP.md) for the historical and analytic distinctions.
 

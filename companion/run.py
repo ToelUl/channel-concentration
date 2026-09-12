@@ -59,6 +59,11 @@ def verify():
         if r['routes_agree_1e-20'] is not projected[legacy]['routes_agree_1e-20']:
             raise ValueError('CFT route-agreement flag changed')
     contract = read(HERE/'FIGURE_MAP.json')
+    for row in contract['figures']:
+        if not row['output_stem'].startswith('fig'+row['selector']+'_'):
+            raise ValueError('Figure number and output filename disagree: '+row['selector'])
+        if row['renderer'] != 'plot_'+row['output_stem']:
+            raise ValueError('Figure renderer and output filename disagree: '+row['selector'])
     if contract['renderer_sha256'] != sha(HERE/'scripts/plotting/generate_figures.py'):
         raise ValueError('Figure map is bound to a different renderer')
     artwork = read(HERE/'ARTWORK.json')
@@ -84,7 +89,7 @@ def verify_artwork(figure_dir):
     for row in expected:
         if sha(figure_dir/row['pdf']) != row['pdf_sha256']:
             raise ValueError('Figure PDF differs from approved S2 artwork: '+row['pdf'])
-    return {'status':'PASS','figures':len(expected),'artwork_version':'2026.09.10-s2',
+    return {'status':'PASS','figures':len(expected),'artwork_version':read(HERE/'ARTWORK.json')['version'],
             'scope':'Exact output identity with the author-approved S2 figure set; not a new human review or venue approval.'}
 
 def renderer():

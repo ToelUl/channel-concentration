@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026.09.12-figure-names - Manuscript numbering alignment
+
+- Renamed the four legacy output stems for Figures 4, 5, 6 and S1 to match the current manuscript and existing renderer functions.
+- Updated the figure map, artwork inventory, packaging paths and English documentation.
+- Added refusal checks and regression tests for figure-number and renderer/filename mismatches.
+- Kept all renderer function bodies, seven approved PDF hashes, numerical inputs and the immutable baseline unchanged. Existing scripts using old filenames should adopt the current figure map and a fresh output directory.
+
 ## 2026.09.10-s2 — Approved presentation successor
 
 - Adopted the exact S2 renderer, source-derived figure mappings and seven human-approved PDF identities.

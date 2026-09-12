@@ -25,10 +25,10 @@ FIGURE_BASENAMES = (
     "fig1_tfim_critical_concentration",
     "fig2_scaling_and_envelope",
     "fig3_lifshitz_anisotropy_scaling",
-    "fig4_xy_directional_profiles",
-    "fig5_weak_quench_extraction",
-    "fig6_interacting_benchmarks",
-    "figS1_potts_ideal_ladder_weights",
+    "fig6_xy_directional_profiles",
+    "figS1_weak_quench_extraction",
+    "fig4_interacting_benchmarks",
+    "fig5_distribution_comparisons",
 )
 RUNTIME_BASENAMES = (
     "aps10pt4-2.rtx",

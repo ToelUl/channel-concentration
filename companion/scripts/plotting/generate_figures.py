@@ -4,8 +4,8 @@
 
 Use --list or --describe <selector|stable-key|TeX-label> to locate a figure.
 Public plot_fig* functions follow the CURRENT manuscript order below.  Their
-legacy PDF/PNG filenames are intentionally not renumbered: FIGURE_SPECS is the
-single runtime authority for selector, renderer, TeX binding, and output alias.
+PDF/PNG filenames follow the same figure numbers: FIGURE_SPECS is the
+single runtime authority for selector, renderer, TeX binding, and output stem.
 Each renderer returns a FigureResult; only the common exporter writes files.
 
 Current manuscript order:
@@ -1366,7 +1366,7 @@ def plot_figS1_weak_quench_extraction(context: PlotContext) -> FigureResult:
 
 
 # -----------------------------------------------------------------------------
-# SINGLE runtime figure registry -- legacy output aliases are deliberately frozen
+# SINGLE runtime figure registry -- output names match manuscript figure numbers
 # -----------------------------------------------------------------------------
 FIGURE_SPECS: tuple[FigureSpec, ...] = (
     FigureSpec(
@@ -1401,7 +1401,7 @@ FIGURE_SPECS: tuple[FigureSpec, ...] = (
     FigureSpec(
         key="interacting_benchmarks", selector="4", title="Potts and NNN-TFIM finite-size comparisons",
         renderer=plot_fig4_interacting_benchmarks,
-        output_stem="fig6_interacting_benchmarks", tex_label="fig:interacting-benchmarks",
+        output_stem="fig4_interacting_benchmarks", tex_label="fig:interacting-benchmarks",
         tex_source="paper/main.tex",
         documents=(("paper/main.tex", "4"), ("arxiv-combined", "4")),
         panels=(("a", "Potts finite-size values and fixed references"),
@@ -1413,7 +1413,7 @@ FIGURE_SPECS: tuple[FigureSpec, ...] = (
     FigureSpec(
         key="ranked_response_distributions", selector="5", title="Potts and NNN-TFIM ranked weights",
         renderer=plot_fig5_distribution_comparisons,
-        output_stem="figS1_potts_ideal_ladder_weights", tex_label="fig:potts-weight-comparators",
+        output_stem="fig5_distribution_comparisons", tex_label="fig:potts-weight-comparators",
         tex_source="paper/main.tex",
         documents=(("paper/main.tex", "5"), ("arxiv-combined", "5")),
         panels=(("a", "Certified Potts ranks 1--15; inset ranks 2--15"),
@@ -1427,7 +1427,7 @@ FIGURE_SPECS: tuple[FigureSpec, ...] = (
     FigureSpec(
         key="xy_directional_profiles", selector="6", title="XY directional profiles (main appendix)",
         renderer=plot_fig6_xy_directional_profiles,
-        output_stem="fig4_xy_directional_profiles", tex_label="fig:xy-directional-profiles",
+        output_stem="fig6_xy_directional_profiles", tex_label="fig:xy-directional-profiles",
         tex_source="paper/main.tex",
         documents=(("paper/main.tex", "6"), ("arxiv-combined", "6")),
         panels=(("a", "Gapped XY polar profile"), ("b", "Regulated near-Lifshitz polar profile")),
@@ -1436,7 +1436,7 @@ FIGURE_SPECS: tuple[FigureSpec, ...] = (
     FigureSpec(
         key="weak_quench_extraction", selector="S1", title="Weak one-sided quench extraction",
         renderer=plot_figS1_weak_quench_extraction,
-        output_stem="fig5_weak_quench_extraction", tex_label="fig:quench",
+        output_stem="figS1_weak_quench_extraction", tex_label="fig:quench",
         tex_source="supplement_numerical/weak_quench_module.tex",
         documents=(("supplement_numerical/main.tex", "1"), ("arxiv-combined", "S1")),
         panels=(("a", "Normalized excitation weights"), ("b", "Counting ratio versus amplitude")),

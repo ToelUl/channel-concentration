@@ -23,6 +23,20 @@ class IntegrityTests(unittest.TestCase):
     def test_pristine_copy(self):
         self.assertEqual(run.verify()['baseline_inputs'],42)
 
+    def test_legacy_filename_number_is_refused(self):
+        p=self.here/'FIGURE_MAP.json'; value=json.loads(p.read_text())
+        value['figures'][3]['output_stem']='fig6_interacting_benchmarks'
+        p.write_text(json.dumps(value))
+        with self.assertRaisesRegex(ValueError,'number and output filename disagree'):
+            run.verify()
+
+    def test_renderer_filename_mismatch_is_refused(self):
+        p=self.here/'FIGURE_MAP.json'; value=json.loads(p.read_text())
+        value['figures'][4]['renderer']='plot_figS1_distribution_comparisons'
+        p.write_text(json.dumps(value))
+        with self.assertRaisesRegex(ValueError,'renderer and output filename disagree'):
+            run.verify()
+
     def test_changed_baseline_is_refused(self):
         p=self.repo/'baseline/data/figure-inputs/interacting_benchmarks.csv'
         p.write_bytes(p.read_bytes()+b'\n')
