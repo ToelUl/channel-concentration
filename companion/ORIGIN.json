@@ -1,7 +1,7 @@
 {
   "schema": "publication-companion-origin/1.0",
-  "version": "2026.09.10-s2",
-  "status": "S2_REVIEW_COMPLETE_HUMAN_ARTWORK_APPROVED",
+  "version": "2026.09.12-figure-names",
+  "status": "NUMBER_ALIGNED_OUTPUTS_WITH_UNCHANGED_APPROVED_ARTWORK",
   "parent_source_sha256": "42072d0078acd9c227ec9d1a53bb1058c950eabaadcc361f62f1043c69526a0a",
   "scripts": [
     {
@@ -16,19 +16,19 @@
     },
     {
       "path": "scripts/packaging/build_arxiv_bundle.py",
-      "sha256": "d87fddb3942a3cd61d562fbefdf7d9dfdbd309768d22abaef5a98dac597181d2",
+      "sha256": "da22021c72630eaca9c5f624508b917e7557a3c9bd6d0952660910b3f909d7b8",
       "origin": "scripts/packaging/build_arxiv_bundle.py"
     },
     {
       "path": "scripts/plotting/generate_figures.py",
-      "sha256": "9a3702a1ea9319417fe9ddd149ad814eb96ad51b063cfe92124285b3c2f5875b",
+      "sha256": "54d51573fd29ddbd3b64f6cd8f8907186cc883318f18761850d0835acc90f9f3",
       "origin": "scripts/plotting/generate_figures.py"
     }
   ],
-  "renderer_changes": "EXACT_APPROVED_S2_PRESENTATION_SUCCESSOR",
+  "renderer_changes": "REGISTRY_OUTPUT_STEMS_ONLY_ALL_RENDERER_FUNCTIONS_UNCHANGED",
   "new_interacting_eigensolves": 0,
   "new_fits": 0,
   "publication_artwork_approval": true,
-  "predecessor_companion_commit": "7872b313402f8f892a244d10deb6a18e56617b8c",
-  "artwork_identity_sha256": "0837180aeb8146a09293b7aafbc948fef3941e04fc4c709cade9b7271381659a"
+  "predecessor_companion_commit": "5a4e07dd444c7eca34d1d349d1e7d3e090b514a6",
+  "artwork_identity_sha256": "a7aae90604b66500580331174fc593e4d135720c20315416ccf10c2009979bf6"
 }

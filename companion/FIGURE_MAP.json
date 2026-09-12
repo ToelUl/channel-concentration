@@ -1,19 +1,19 @@
 {
   "schema": "publication-figure-map/1.0",
-  "renderer_sha256": "9a3702a1ea9319417fe9ddd149ad814eb96ad51b063cfe92124285b3c2f5875b",
-  "source_validation": "PASS_EXACT_APPROVED_S2_SOURCE_MAPPING",
+  "renderer_sha256": "54d51573fd29ddbd3b64f6cd8f8907186cc883318f18761850d0835acc90f9f3",
+  "source_validation": "NUMBER_ALIGNED_LOCAL_R3_SOURCE_MAPPING",
   "source_documents": [
     {
       "path": "paper/main.tex",
-      "sha256": "82758cd4ecd4c96c59986709b047b4774471060429d7e75ff4e20e510490c37f"
+      "sha256": "4dffeb3286f0628e85a15503e6c2eea52d5fa4f600a0c9ec3636af78f0b0e8f3"
     },
     {
       "path": "supplement_numerical/main.tex",
-      "sha256": "ea92d2f7726f2af1bdf1e448cb21d687cc8e5d25def6d527a8ee61b04b882a7d"
+      "sha256": "66d34b908eb5536d5da6f29bc8f692fb18f8d9b5a9e72375ad2e0bae2e44116d"
     },
     {
       "path": "supplement_numerical/weak_quench_module.tex",
-      "sha256": "ff6d311d9674c6e62c207746e571256b8e1188f1cfc9c955c40542528c42d527"
+      "sha256": "63e8f85e204ed403eac27449c6d2224af9a3214e0a70591817fc055e3bc45b8d"
     }
   ],
   "figures": [
@@ -85,7 +85,7 @@
       "key": "interacting_benchmarks",
       "title": "Potts and NNN-TFIM finite-size comparisons",
       "renderer": "plot_fig4_interacting_benchmarks",
-      "output_stem": "fig6_interacting_benchmarks",
+      "output_stem": "fig4_interacting_benchmarks",
       "tex_label": "fig:interacting-benchmarks",
       "tex_source": "paper/main.tex",
       "documents": [
@@ -111,7 +111,7 @@
       "key": "ranked_response_distributions",
       "title": "Potts and NNN-TFIM ranked weights",
       "renderer": "plot_fig5_distribution_comparisons",
-      "output_stem": "figS1_potts_ideal_ladder_weights",
+      "output_stem": "fig5_distribution_comparisons",
       "tex_label": "fig:potts-weight-comparators",
       "tex_source": "paper/main.tex",
       "documents": [
@@ -138,7 +138,7 @@
       "key": "xy_directional_profiles",
       "title": "XY directional profiles (main appendix)",
       "renderer": "plot_fig6_xy_directional_profiles",
-      "output_stem": "fig4_xy_directional_profiles",
+      "output_stem": "fig6_xy_directional_profiles",
       "tex_label": "fig:xy-directional-profiles",
       "tex_source": "paper/main.tex",
       "documents": [
@@ -159,7 +159,7 @@
       "key": "weak_quench_extraction",
       "title": "Weak one-sided quench extraction",
       "renderer": "plot_figS1_weak_quench_extraction",
-      "output_stem": "fig5_weak_quench_extraction",
+      "output_stem": "figS1_weak_quench_extraction",
       "tex_label": "fig:quench",
       "tex_source": "supplement_numerical/weak_quench_module.tex",
       "documents": [
@@ -198,25 +198,25 @@
     {
       "document": "paper/main.tex",
       "label": "fig:interacting-benchmarks",
-      "stem": "fig6_interacting_benchmarks",
+      "stem": "fig4_interacting_benchmarks",
       "number": "4"
     },
     {
       "document": "paper/main.tex",
       "label": "fig:potts-weight-comparators",
-      "stem": "figS1_potts_ideal_ladder_weights",
+      "stem": "fig5_distribution_comparisons",
       "number": "5"
     },
     {
       "document": "paper/main.tex",
       "label": "fig:xy-directional-profiles",
-      "stem": "fig4_xy_directional_profiles",
+      "stem": "fig6_xy_directional_profiles",
       "number": "6"
     },
     {
       "document": "supplement_numerical/main.tex",
       "label": "fig:quench",
-      "stem": "fig5_weak_quench_extraction",
+      "stem": "figS1_weak_quench_extraction",
       "number": "1"
     }
   ],
