@@ -87,7 +87,7 @@ The presentation companion `2026.09.12-figure-names` aligns renderer names and o
 
 The update preserves the numerical baseline and adds no interacting-model eigensolves or fits. The manuscript text remains outside this public companion. Versioned archival citation and dedicated PRB/arXiv submission packages remain subsequent preparation steps; no new release, DOI, arXiv identifier or journal acceptance is asserted.
 
-The `baseline/` directory is immutable. Historical records, including their original-language text and pre-publication status statements, describe the snapshot when it was sealed. Current English entry points are provided above. Updates to public documentation belong outside the frozen baseline.
+The `baseline/` directory is immutable. Its README was sealed on 9 September 2026, before the numerical prerelease was posted. Its "Not yet published" line and note about open whole-manuscript acceptance describe that checkpoint; they are not a live status report for this repository or later manuscript revisions. The [numerical prerelease](https://github.com/ToelUl/channel-concentration/releases/tag/baseline-2026-09-09-rc1) is now public. See the [baseline overview](docs/BASELINE.md#historical-records) and [verification scope](docs/VERIFICATION.md) for the current English explanation. The original-language baseline records retain their sealed hashes.
 
 Changes to computations, input selection, or fitting windows require a new numerical or analysis version with an explicit difference record. Presentation and documentation revisions must retain the identity of the numerical evidence they use.
 
