@@ -12,4 +12,4 @@ date-released: 2026-09-09
 repository-code: "https://github.com/ToelUl/channel-concentration"
 url: "https://github.com/ToelUl/channel-concentration"
 license: MIT
-abstract: "Immutable numerical evidence baseline with Potts producer 0.5.0.dev0, NNN producer 0.5.1.dev0, and reader 0.5.2.dev0. Presentation updates are versioned separately. S2 manuscript and artwork review is complete; venue packaging remains separate. No DOI is asserted."
+abstract: "Immutable numerical evidence baseline with Potts producer 0.5.0.dev0, NNN producer 0.5.1.dev0, and reader 0.5.2.dev0. The release and manifest identify the archived inputs, results, software, and verification receipts. Presentation and manuscript versions are identified separately."

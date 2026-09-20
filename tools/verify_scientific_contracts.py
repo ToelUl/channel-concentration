@@ -25,6 +25,14 @@ os.environ['OPENBLAS_NUM_THREADS'] = '1'
 os.environ['OMP_NUM_THREADS'] = '1'
 os.environ['MKL_NUM_THREADS'] = '1'
 
+# Registered ceilings for the finite grids below. The S3 reference run gave
+# 0.001089 (Fig. 2, L=2048), 0.000114 (Fig. 3 anisotropy, L=16384), and
+# 6.48e-9 (Fig. 3 field, L=16384). These relaxed regression guards are not
+# general asymptotic error bounds or manuscript uncertainty estimates.
+FIG2_MAX_ERROR_2048 = 0.0025
+FIG3_ANISOTROPY_MAX_ERROR_16384 = 0.00025
+FIG3_FIELD_MAX_ERROR_16384 = 1e-7
+
 
 def read_json(path: Path):
     return json.loads(path.read_text(encoding='utf-8'))
@@ -54,6 +62,15 @@ def renderer():
 
     run.verify()
     return run.renderer()[0]
+
+
+def tfim_critical_closed_moments(size: int) -> tuple[float, float, float]:
+    """Manuscript NS half-grid P2, P4, and P6, independently of mode sums."""
+    p2 = size * (size - 1) / 32
+    p4 = size * (size - 1) * (size*size + size - 3) / 1536
+    p6 = (size * (size - 1) *
+          (2*size**4 + 2*size**3 - 8*size**2 - 8*size + 15) / 122880)
+    return p2, p4, p6
 
 
 def analytic_contracts() -> list[dict]:
@@ -113,8 +130,10 @@ def analytic_contracts() -> list[dict]:
         expected = [float(mod.Phi(mu, nmax=50000)) for mu in (-2.0, 0.0, 2.0)]
         errors.append(max(abs(a-b) for a, b in zip(observed, expected)))
     require(errors[1] < errors[0], 'Fig2 lattice-to-scaling error decreases')
+    require(errors[1] < FIG2_MAX_ERROR_2048,
+            'Fig2 L=2048 absolute scaling error ceiling')
     checks.append({'contract': 'Fig2 envelope and selected scaling convergence',
-                   'errors': errors})
+                   'errors': errors, 'largest_size_error_ceiling': FIG2_MAX_ERROR_2048})
 
     # Figure 3: the normalized field response is undefined at the singular
     # exact point, even though a punctured scaling limit exists.
@@ -127,18 +146,31 @@ def analytic_contracts() -> list[dict]:
     require(float(np.sum(exact_field)) == 0.0,
             'Fig3 exact Lifshitz field P2 vanishes')
     errors = []
+    anisotropy_errors = []
+    field_errors = []
     for size in (4096, 16384):
-        pair = []
+        anisotropy_pair = []
+        field_pair = []
         for w in (0.5, 2.0):
             gamma = w*math.pi/size
-            pair.extend((abs(mod.KF_point(1.0, gamma, (0.0, 1.0), size)
-                             - float(mod.Phi(2*w, nmax=50000))),
-                         abs(mod.KF_point(1.0, gamma, (1.0, 0.0), size)
-                             - float(mod.Psi(w, nmax=50000)))))
-        errors.append(max(pair))
+            anisotropy_pair.append(abs(mod.KF_point(1.0, gamma, (0.0, 1.0), size)
+                                       - float(mod.Phi(2*w, nmax=50000))))
+            field_pair.append(abs(mod.KF_point(1.0, gamma, (1.0, 0.0), size)
+                                  - float(mod.Psi(w, nmax=50000))))
+        anisotropy_errors.append(max(anisotropy_pair))
+        field_errors.append(max(field_pair))
+        errors.append(max(anisotropy_errors[-1], field_errors[-1]))
     require(errors[1] < errors[0], 'Fig3 directional scaling error decreases')
+    require(anisotropy_errors[1] < FIG3_ANISOTROPY_MAX_ERROR_16384,
+            'Fig3 L=16384 anisotropy absolute scaling error ceiling')
+    require(field_errors[1] < FIG3_FIELD_MAX_ERROR_16384,
+            'Fig3 L=16384 field absolute scaling error ceiling')
     checks.append({'contract': 'Fig3 punctured endpoint and directional scaling',
-                   'errors': errors})
+                   'errors': errors, 'anisotropy_errors': anisotropy_errors,
+                   'field_errors': field_errors,
+                   'largest_size_error_ceilings': {
+                       'anisotropy': FIG3_ANISOTROPY_MAX_ERROR_16384,
+                       'field': FIG3_FIELD_MAX_ERROR_16384}})
 
     # Figure 6: compare the publication grid with a separately archived scan,
     # and test the underlying function, not a mirrored polar drawing.
@@ -165,8 +197,17 @@ def analytic_contracts() -> list[dict]:
     k = mod.ns_momenta(size)
     x = mod.channel_weights(1.0, 1.0, k, 1.0, 0.0)
     p2, p4, p6 = float(np.sum(x)), float(np.sum(x*x)), float(np.sum(x*x*x))
-    kf = p4/p2**2
-    c2 = 6*kf*(p4/p2 - p6/p4)
+    closed_p2, closed_p4, closed_p6 = tfim_critical_closed_moments(size)
+    for title, actual, expected in (('P2', p2, closed_p2),
+                                    ('P4', p4, closed_p4),
+                                    ('P6', p6, closed_p6)):
+        near(actual, expected, 2e-9 * max(1, abs(expected)),
+             f'S1 critical closed {title} L={size}')
+    kf = closed_p4/closed_p2**2
+    c2 = 6*kf*(closed_p4/closed_p2 - closed_p6/closed_p4)
+    c2_direct = 6*(p4/p2**2)*(p4/p2 - p6/p4)
+    near(c2_direct, c2, 2e-9 * max(1, abs(c2)),
+         f'S1 critical closed c2 L={size}')
     errors = []
     for delta in (0.002, 0.001, 0.0005):
         probabilities = mod.weak_quench_probabilities_h(1.0, 1.0, delta, size)
@@ -182,7 +223,8 @@ def analytic_contracts() -> list[dict]:
     require(errors[-1] < errors[0] and errors[-1] < 0.002*abs(c2),
             f'S1 critical quadratic-drift coefficient c2={c2:.8g} errors={errors}')
     checks.append({'contract': 'S1 weak-quench counting and quadratic drift',
-                   'coefficient': c2, 'errors': errors})
+                   'closed_coefficient': c2, 'direct_coefficient': c2_direct,
+                   'errors': errors})
     return checks
 
 
@@ -331,9 +373,24 @@ def interacting_contracts() -> list[dict]:
     return checks
 
 
+def refinement_contracts() -> list[dict]:
+    """Run the independent standard-library R3 interval checker."""
+    script = ROOT/'r3_support/verify_refinement_budgets.py'
+    receipt = ROOT/'r3_support/expected_bound_enclosures.json'
+    check = subprocess.run([sys.executable, '-B', str(script)], cwd=ROOT,
+                           capture_output=True, text=True, timeout=120)
+    require(check.returncode == 0 and
+            'PASS; reviewed receipt matched expected_bound_enclosures.json' in check.stdout,
+            'R3 conditional refinement budgets and reviewed receipt')
+    return [{'contract': 'R3 conditional refinement budgets',
+             'receipt_sha256': digest(receipt),
+             'scope': 'CFT reference families and finite rational examples; '
+                      'lattice matching and fine-channel support remain premises'}]
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--scope', choices=('analytic', 'interacting', 'all'),
+    parser.add_argument('--scope', choices=('analytic', 'interacting', 'refinement', 'all'),
                         default='all')
     args = parser.parse_args()
     try:
@@ -347,6 +404,8 @@ def main():
             checks.extend(analytic_contracts())
         if args.scope in ('interacting', 'all'):
             checks.extend(interacting_contracts())
+        if args.scope in ('refinement', 'all'):
+            checks.extend(refinement_contracts())
         print(json.dumps({'status': 'PASS', 'scope': args.scope, 'checks': checks,
                           'claim_ceiling': 'Selected bounded contracts; no large campaign, '
                                            'thermodynamic convergence, or manuscript proof.'},

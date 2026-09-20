@@ -16,6 +16,95 @@ class ScientificContractRefusalTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Fig1 TFIM P2'):
                 contracts.analytic_contracts()
 
+    def test_fig2_absolute_scaling_drift_is_refused(self):
+        actual = contracts.renderer()
+        changed = types.SimpleNamespace(**vars(actual))
+        original = actual.KF_point
+
+        def drift(h, gamma, tangent, size):
+            offset = {512: 0.1, 2048: 0.01}.get(size, 0.0)
+            return original(h, gamma, tangent, size) + offset
+
+        changed.KF_point = drift
+        with patch.object(contracts, 'renderer', return_value=changed):
+            with self.assertRaisesRegex(ValueError, 'Fig2 L=2048 absolute'):
+                contracts.analytic_contracts()
+
+    def test_fig3_field_absolute_scaling_drift_is_refused(self):
+        actual = contracts.renderer()
+        changed = types.SimpleNamespace(**vars(actual))
+        original = actual.KF_point
+
+        def drift(h, gamma, tangent, size):
+            offset = ({4096: 0.01, 16384: 0.00001}.get(size, 0.0)
+                      if tangent == (1.0, 0.0) else 0.0)
+            return original(h, gamma, tangent, size) + offset
+
+        changed.KF_point = drift
+        with patch.object(contracts, 'renderer', return_value=changed):
+            with self.assertRaisesRegex(ValueError, 'Fig3 L=16384 field absolute'):
+                contracts.analytic_contracts()
+
+    def test_fig3_anisotropy_absolute_scaling_drift_is_refused(self):
+        actual = contracts.renderer()
+        changed = types.SimpleNamespace(**vars(actual))
+        original = actual.KF_point
+
+        def drift(h, gamma, tangent, size):
+            offset = ({4096: 0.01, 16384: 0.001}.get(size, 0.0)
+                      if tangent == (0.0, 1.0) else 0.0)
+            return original(h, gamma, tangent, size) + offset
+
+        changed.KF_point = drift
+        with patch.object(contracts, 'renderer', return_value=changed):
+            with self.assertRaisesRegex(ValueError, 'Fig3 L=16384 anisotropy absolute'):
+                contracts.analytic_contracts()
+
+    def test_fig3_singular_field_endpoint_is_refused(self):
+        actual = contracts.renderer()
+        changed = types.SimpleNamespace(**vars(actual))
+        original = actual.channel_weights
+
+        def false_endpoint(h, gamma, momenta, yh, yg):
+            result = original(h, gamma, momenta, yh, yg)
+            return result + 1e-6 if (h, gamma, yh, yg) == (1.0, 0.0, 1.0, 0.0) else result
+
+        changed.channel_weights = false_endpoint
+        with patch.object(contracts, 'renderer', return_value=changed):
+            with self.assertRaisesRegex(ValueError, 'exact Lifshitz field P2 vanishes'):
+                contracts.analytic_contracts()
+
+    def test_fig6_tangent_sign_violation_is_refused(self):
+        actual = contracts.renderer()
+        changed = types.SimpleNamespace(**vars(actual))
+        original = actual.KF_point
+
+        def broken_sign(h, gamma, tangent, size):
+            result = original(h, gamma, tangent, size)
+            return result + 0.01 if size == 128 and tangent[0] < 0 else result
+
+        changed.KF_point = broken_sign
+        with patch.object(contracts, 'renderer', return_value=changed):
+            with self.assertRaisesRegex(ValueError, 'Fig6 tangent scale/sign/period'):
+                contracts.analytic_contracts()
+
+    def test_s1_closed_sixth_moment_drift_is_refused(self):
+        original = contracts.tfim_critical_closed_moments
+
+        def altered(size):
+            p2, p4, p6 = original(size)
+            return p2, p4, 1.01*p6
+
+        with patch.object(contracts, 'tfim_critical_closed_moments', side_effect=altered):
+            with self.assertRaisesRegex(ValueError, 'S1 critical closed P6'):
+                contracts.analytic_contracts()
+
+    def test_failed_refinement_receipt_is_refused(self):
+        failed = types.SimpleNamespace(returncode=1, stdout='', stderr='failed')
+        with patch.object(contracts.subprocess, 'run', return_value=failed):
+            with self.assertRaisesRegex(ValueError, 'R3 conditional refinement'):
+                contracts.refinement_contracts()
+
     def test_potts_top_ten_boundary_violation_is_refused(self):
         original = contracts.read_json(
             contracts.BASELINE/'data/potts-derived/projector-response-enclosures.json')

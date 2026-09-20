@@ -1,6 +1,6 @@
 # Figure guide: paper result to public computation and evidence
 
-This guide is the human route through Figures 1–6 and S1. The [machine figure map](../companion/FIGURE_MAP.json) binds selectors, renderers, filenames, and direct inputs; the [evidence guide](EVIDENCE_MAP.md) explains evidence classes; the [companion guide](../companion/README.md) explains the commands. The immutable numerical authority is `baseline-2026-09-09-rc1`. Manuscript labels below are human navigation hints from the R6a consensus source, not a claim that this public repository contains that source or its final version.
+This guide is the human route through Figures 1–6 and S1. The [machine figure map](../companion/FIGURE_MAP.json) binds selectors, renderers, filenames, and direct inputs; the [evidence guide](EVIDENCE_MAP.md) explains evidence classes; the [companion guide](../companion/README.md) explains the commands. The immutable numerical authority is `baseline-2026-09-09-rc1`. R6a denotes the author's collaborator-consensus manuscript source. Its labels below are human navigation hints, not a claim that this public repository contains that source or its final version.
 
 Run `python -B companion/run.py verify` before using the companion. The publication command for an individual figure is `python -B companion/run.py render --fig <selector>` with a fresh output directory. Integrity, scientific-contract, and exact artwork checks answer different questions; see [verification](VERIFICATION.md). No rendering command performs an interacting eigensolve or a new fit.
 
@@ -22,7 +22,7 @@ Run `python -B companion/run.py verify` before using the companion. The publicat
 - Manuscript anchors: `sec:tfim`, `sec:tfim:twothirds`, `sec:xy:xx-theorem`, `fig:twothirds`; the exact NS and XX half-size derivations are in `app:tfim-scaling` and `app:xx-pairing-theorem`.
 - Renderer and parameters: `plot_fig1_tfim_critical_concentration`; publication sizes `L=16,24,32,48,64,96,128,192,256,384,512,768,1024` plus analytic ladder display. See `get_params('publication')` in the frozen renderer for the exact grid.
 - Upstream route: closed-form TFIM/XX finite-size formulas and free-fermion mode sums; no archived interacting table feeds this figure. The packaged historical `xx_pairing_theorem_checks.csv` is a related check, not a direct plot input.
-- Verification and scope: companion identity/artwork checks bind the renderer and PDFs; the bounded scientific contracts compare direct sums, closed forms, and the distribution-level half-size identity. Those numerical checks test selected sizes and do not replace the theorem's assumptions.
+- Verification and scope: companion identity/artwork checks bind the renderer and PDFs; analytic artist checks bind the complete panel-(b) soft-ladder bar heights to their limiting formulas. Bounded scientific contracts compare direct sums, closed forms, and the distribution-level half-size identity. Those numerical checks test selected sizes and do not replace the theorem's assumptions.
 
 ## Figure 2 — TFIM scaling and conditional ladder envelope {#figure-2}
 
@@ -42,7 +42,7 @@ Run `python -B companion/run.py verify` before using the companion. The publicat
 - Manuscript anchors: `sec:tfim:scaling`, `eq:Phi`, `sec:tfim:envelope`, `eq:envelope`, `fig:collapse`; the conditional RG discussion is under `app:rg-envelope`.
 - Renderer and parameters: `plot_fig2_scaling_and_envelope`; publication `L=512,2048,8192,32768`, `mu` samples from `-6` to `6`, 401-point curve grid, and 50,000-term `Phi` helper. The envelope panel uses its own exponent grid.
 - Upstream route: exact lattice free-fermion weights and analytic odd-ladder sums; no external plot input. The exact endpoint is `Phi(0)=2/3`. A finite `Phi(0,nmax=50000)` value is a truncated numerical helper, not the exact endpoint oracle.
-- Verification and scope: the scientific-contract verifier checks selected lattice-to-scaling values and finite odd-ladder sums with explicit truncation-tail bounds. The envelope applies to its stated single-ladder premises; the plot does not itself establish that every interacting model follows it.
+- Verification and scope: the scientific-contract verifier checks selected lattice-to-scaling values, a registered absolute error ceiling at `L=2048`, and finite odd-ladder sums with explicit truncation-tail bounds. Analytic artist checks bind all four plotted finite-size marker series to separate NS-mode evaluations. The ceiling is a guard on the specified grid, not a universal error estimate. The envelope applies to its stated single-ladder premises; the plot does not itself establish that every interacting model follows it.
 
 ## Figure 3 — Lifshitz directional selectivity {#figure-3}
 
@@ -62,7 +62,7 @@ Run `python -B companion/run.py verify` before using the companion. The publicat
 - Manuscript anchors: `sec:lifshitz`, `sec:lifshitz:scaling`, `eq:lifshitz-scaling`, `eq:Psi`, `sec:lifshitz:order`, `fig:lifshitz`.
 - Renderer and parameters: `plot_fig3_lifshitz_anisotropy_scaling`; publication fixed `L=65536`, scaling sizes `4096,16384,65536`, nine displayed `w` values, and a 320-point geometric `w` curve. See frozen `get_params` for gamma grid and exact cutoffs.
 - Upstream route: XY free-fermion mode weights and the `Phi(2w)` / `Psi(w)` scaling expressions; no archived table is read to draw the figure.
-- Verification and scope: the contract checks selected lattice-to-scaling points, `Psi(0)=lambda_D(12)/lambda_D(6)^2`, and the field-direction singular endpoint. At exactly `(h,gamma)=(1,0)` the field-direction `P2` vanishes, so normalized concentration is undefined; the shown limit is punctured. Moving-path asymptotics remain derivations outside routine CI.
+- Verification and scope: the contract checks selected lattice-to-scaling points, separate finite-grid anisotropy and field error ceilings, `Psi(0)=lambda_D(12)/lambda_D(6)^2`, and the field-direction singular endpoint. Analytic artist checks bind all six plotted finite-size marker series to separate NS-mode evaluations. At exactly `(h,gamma)=(1,0)` the field-direction `P2` vanishes, so normalized concentration is undefined; the shown limit is punctured. Moving-path asymptotics remain derivations outside routine CI.
 
 ## Figure 4 — Interacting finite-size comparisons {#figure-4}
 
@@ -126,7 +126,7 @@ Run `python -B companion/run.py verify` before using the companion. The publicat
 - Manuscript anchors: `sec:directional`, `eq:KF-directional`, `eq:tangent-angle-varphi`, `fig:xy-directional-profiles` in the main appendix.
 - Renderer and parameters: `plot_fig6_xy_directional_profiles`; publication L2000, gapped point `(h,gamma)=(0.8,0.5)`, near-Lifshitz regularization `s=0.05`, and 241 tangent samples from 0 to pi.
 - Upstream route: XY free-fermion directional weights evaluated by the renderer. Related supporting record `baseline/data/figure-inputs/xy_directional_scan.csv` uses the same gapped publication point and grid but is not a direct render input.
-- Verification and scope: full-curve comparison with that archived scan and independent checks of scale, sign, and pi-periodicity of the underlying physics function are active. Mirroring a rendered polar curve alone is not an independent invariant check.
+- Verification and scope: the gapped full curve is compared with the archived scan, while the near-Lifshitz polar curve is bound to a separate NS-mode evaluation. Independent checks of scale, sign, and pi-periodicity act on the underlying physics function; mirroring a rendered curve alone is not an independent invariant check.
 
 ## Figure S1 — Weak one-sided quench extraction {#figure-s1}
 
@@ -146,7 +146,7 @@ Run `python -B companion/run.py verify` before using the companion. The publicat
 - Manuscript anchors: `supp:sec:operational-access`, `supp:eq:quench-KF`, `app:weak-quench`, `app:weak-quench-budget`, `fig:quench`.
 - Renderer and parameters: `plot_figS1_weak_quench_extraction`; publication L256, initial `h0=1`, `gamma=1`, displayed delta values `0.0005,0.0015,0.003`, 48-point delta grid `0.0002–0.0035`, and first 100 displayed ranks.
 - Upstream route: exact BdG pair probabilities and free-fermion counting identities; no table is read to draw S1. Related supporting records: `baseline/data/figure-inputs/weak_quench_delta_budget.csv` and `weak_quench_fixed_u_feasibility.csv` document finite-amplitude and fixed-u limits.
-- Verification and scope: bounded checks cover `mean(N)-Var(N)=sum_k p_k^2`, normalized distribution convergence, and the critical-TFIM quadratic drift. The renderer currently evaluates an algebraically equivalent difference of moments; the separate scientific oracle checks its values while the frozen renderer remains unchanged. Finite delta and finite size retain the documented budget limits.
+- Verification and scope: bounded checks cover `mean(N)-Var(N)=sum_k p_k^2`, normalized distribution convergence, and the critical-TFIM quadratic drift using independently evaluated closed `P2`, `P4`, and `P6` moments. Analytic artist checks bind the full plotted normalized-weight series for the quadratic prediction and three amplitudes to separate mode formulas. The renderer currently evaluates an algebraically equivalent difference of moments; the frozen renderer remains unchanged. Finite delta and finite size retain the documented budget limits.
 
 ## Where to go next
 

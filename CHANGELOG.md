@@ -1,5 +1,32 @@
 # Changelog
 
+## Unreleased — current public companion
+
+This entry records the S3 public integration and the subsequent author-led
+local repair candidate. Its version name and exact commit will be fixed only
+after the manuscript and public project are reconciled.
+
+- Added the [Figure guide](docs/FIGURE_GUIDE.md), figure `describe` and selected
+  rendering commands, bounded scientific contracts, analytic artist checks,
+  and the public R3 conditional-refinement checker and reviewed receipt.
+- Added the hosted S1 portability contract, which distinguishes
+  `PORTABLE_S1_CHECK` from exact approval of the seven PDFs. Added current
+  companion CI alongside the existing baseline regressions.
+- Clarified the separate identities of the immutable numerical release,
+  author-approved S2 renderer/artwork, and current public wrapper. Updated
+  reader-facing verification, evidence, version, and citation guidance.
+- Expanded analytic artist checks to the soft-ladder bars, finite-size Figure
+  2 and 3 marker series, the near-Lifshitz polar profile, and normalized S1
+  weights. Registered finite-grid scaling-error ceilings and an independent
+  closed-form weak-quench coefficient oracle, with seeded refusal checks.
+- Kept the numerical baseline, its release, archived central values, frozen
+  renderer implementation, and seven author-approved PDF identities unchanged.
+  These bounded checks do not rerun large interacting campaigns, establish
+  lattice refinement premises, or prove thermodynamic convergence.
+
+No versioned current-companion release, DOI, or manuscript-source distribution
+is asserted by this unreleased entry.
+
 ## 2026.09.12-figure-names - Manuscript numbering alignment
 
 - Renamed the four legacy output stems for Figures 4, 5, 6 and S1 to match the current manuscript and existing renderer functions.

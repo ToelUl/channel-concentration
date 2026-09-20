@@ -1,6 +1,15 @@
 # Publication companion
 
-Version `2026.09.10-s2` provides the exact approved presentation code for candidate `CC-FINAL-SUBMISSION-S2-RC2`. It uses the immutable numerical release `baseline-2026-09-09-rc1`. S2 scientific, manuscript and artwork reviews are complete, including human visual approval. This is a presentation-code update; final venue-specific packaging remains separate.
+The current public wrapper supplies figure lookup, selected rendering, and
+bounded verification for the manuscript's public companion. Its rendering
+functions and seven approved PDF identities come from the author-approved S2
+presentation version `2026.09.10-s2`; that label identifies the renderer and
+artwork authority, not the current wrapper. The wrapper also includes the
+later figure-name alignment and S3 public navigation and verification
+integration (S3 is the project's public-support integration stage).
+It uses the separate immutable numerical release `baseline-2026-09-09-rc1`.
+Cite the exact repository commit used for companion outputs until a versioned
+current-companion release is made after the author-led final local revision.
 
 ## Quick start
 
@@ -38,7 +47,16 @@ The wrapper checks exact Python, NumPy, SciPy and Matplotlib versions, sets one 
 
 ## What is computed
 
-Figures 1, 2, 3, 6 and S1 evaluate the existing analytic formulas or free-fermion sums. Figures 4 and 5 read archived interacting-model tables and existing fit coefficients. Rendering performs no interacting-model eigensolve and no new fit. A complete seven-figure render applies sixteen interacting coordinate/bar checks and eleven analytic coordinate checks; a selected render runs only the relevant checks. The separate `python -B tools/verify_scientific_contracts.py` command checks selected physics formulas and archived evidence semantics independent of PDF identity.
+Figures 1, 2, 3, 6 and S1 evaluate the existing analytic formulas or
+free-fermion sums. Figures 4 and 5 read archived interacting-model tables and
+existing fit coefficients. Rendering performs no interacting-model eigensolve
+and no new fit. A complete seven-figure render applies sixteen interacting
+coordinate/bar checks and 38 analytic coordinate checks; a selected render
+runs only the relevant checks. The separate
+`python -B tools/verify_scientific_contracts.py` command checks selected
+physics formulas, archived evidence semantics, and the conditional R3
+refinement-budget receipt independently of PDF identity. The specialist R3
+checker remains directly runnable from `r3_support/`.
 
 The rendering functions and exporter retain the approved S2 implementation; the `2026.09.12-figure-names` update changes registry output filenames to match manuscript numbering. The exact predecessor is retained at commit `5a4e07dd444c7eca34d1d349d1e7d3e090b514a6`. Use `run.py` as the public entry point. The source script's direct CLI expects manuscript files; the public wrapper instead checks a source-derived, version-bound [figure map](FIGURE_MAP.json). It also rejects mismatches between figure numbers, renderer names and output filenames.
 

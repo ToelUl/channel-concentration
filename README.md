@@ -15,7 +15,7 @@ This repository provides computational sources, numerical settings, Potts and ne
 | Find or regenerate a particular figure | [Companion commands](companion/README.md) and `python -B companion/run.py describe 4` |
 | Inspect the numerical evidence | [Evidence classes](docs/EVIDENCE_MAP.md) and [baseline overview](docs/BASELINE.md) |
 | Check files or run bounded scientific checks | [Verification scope](docs/VERIFICATION.md) and the supported commands below |
-| Inspect the R3 conditional refinement bounds | [Refinement budget check](r3_support/README.md) |
+| Inspect conditional refinement bounds | [Refinement budget check](r3_support/README.md) |
 | Understand evidence limits | [Known limitations](baseline/docs/KNOWN_LIMITATIONS.md) |
 
 ### Paper figure index
@@ -32,13 +32,8 @@ This repository provides computational sources, numerical settings, Potts and ne
 
 The [Figure guide](docs/FIGURE_GUIDE.md) gives the scientific role, direct inputs, supporting records, and evidence limits for each figure.
 
-## Start here
+## Reference documents
 
-- [Baseline overview](docs/BASELINE.md)
-- [Verification summary](docs/VERIFICATION.md)
-- [Publication companion: regenerate seven figures and build a gallery](companion/README.md)
-- [Table and evidence guide](docs/EVIDENCE_MAP.md)
-- [Paper figure guide](docs/FIGURE_GUIDE.md)
 - [Installation and reproduction](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/docs/REPRODUCE.md)
 - [Scientific and computational limitations](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/docs/KNOWN_LIMITATIONS.md)
 - [Source and packaging provenance](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/docs/PROVENANCE.md)
@@ -51,12 +46,20 @@ From the repository root:
 ```sh
 python -B baseline/tools/verify_release.py
 python -B tools/verify_scientific_contracts.py
-python -B r3_support/verify_refinement_budgets.py
 python -B companion/run.py describe 4
 python -B companion/run.py render --fig 4 --output build/figure-4
 ```
 
-The first command checks the distributed baseline against its manifest without numerical calculation. The second runs bounded analytic, small symmetry, and archived-record scientific contracts; it neither reruns the large interacting campaigns nor changes the frozen baseline. The third recomputes conditional R3 CFT refinement budgets and matches a reviewed interval receipt; it does not establish the lattice matching or support assumptions. The remaining commands locate and regenerate one figure in a fresh output directory. Follow the reproduction guide for the numerical production and its archived acceptance scope.
+The first command checks the distributed baseline against its manifest without
+numerical calculation. The second runs all public bounded scientific
+contracts, including conditional R3 CFT refinement budgets and their reviewed
+interval receipt; it neither reruns the large interacting campaigns nor
+establishes lattice matching or support assumptions. Use
+`python -B tools/verify_scientific_contracts.py --scope refinement` for that
+subset, or run its independent `r3_support/verify_refinement_budgets.py`
+module directly. The remaining commands locate and regenerate one figure in a
+fresh output directory. Follow the reproduction guide for numerical production
+and its archived acceptance scope.
 
 The numerical runtime is Linux/WSL with Python 3.12.13 and the supplied fixed dependencies. Strict current-result readers also check the recorded platform and BLAS identity. A successful file check on another operating system does not establish numerical runtime compatibility.
 
@@ -83,9 +86,24 @@ Repository CI checks baseline integrity and bounded software regressions on Linu
 
 ## Manuscript and versioning
 
-The presentation companion `2026.09.12-figure-names` aligns renderer names and output filenames with manuscript Figures 1-6 and S1. It preserves all seven author-approved S2 PDF identities and all numerical inputs. [The figure map](companion/README.md#figure-and-evidence-map) lists the current names; [exact artwork identities](companion/ARTWORK.json) retain the original approval binding. All seven figures can be regenerated from public inputs. The filename update does not assert a new scientific review of subsequent manuscript revisions.
+The immutable numerical release, approved figure presentation, and current
+public wrapper have separate identities. S2 names the author's approved
+renderer and seven PDF artwork identities (`2026.09.10-s2`). The subsequent
+`2026.09.12-figure-names` change aligned renderer names and output filenames
+with manuscript Figures 1-6 and S1. S3 names the later public navigation and
+bounded-verification integration; it is not yet a versioned companion release.
+[The figure map](companion/README.md#figure-and-evidence-map) lists current
+names and preserves its earlier source-mapping provenance; [exact artwork
+identities](companion/ARTWORK.json) retain the S2 approval binding. All seven
+figures can be regenerated from public inputs. These public checks do not
+assert a new scientific review of subsequent manuscript revisions.
 
-The update preserves the numerical baseline and adds no interacting-model eigensolves or fits. The manuscript text remains outside this public companion. Versioned archival citation and dedicated PRB/arXiv submission packages remain subsequent preparation steps; no new release, DOI, arXiv identifier or journal acceptance is asserted.
+The current wrapper preserves the numerical baseline and adds no
+interacting-model eigensolves or fits. The manuscript text remains outside
+this public companion. The author-led final local revision and cross-artifact
+reconciliation precede a current-companion release and dedicated PRB/arXiv
+packages; no new release, DOI, arXiv identifier or journal acceptance is
+asserted here.
 
 The `baseline/` directory is immutable. Its README was sealed on 9 September 2026, before the numerical prerelease was posted. Its "Not yet published" line and note about open whole-manuscript acceptance describe that checkpoint; they are not a live status report for this repository or later manuscript revisions. The [numerical prerelease](https://github.com/ToelUl/channel-concentration/releases/tag/baseline-2026-09-09-rc1) is now public. See the [baseline overview](docs/BASELINE.md#historical-records) and [verification scope](docs/VERIFICATION.md) for the current English explanation. The original-language baseline records retain their sealed hashes.
 
