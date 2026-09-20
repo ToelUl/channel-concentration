@@ -1,5 +1,5 @@
 """Exercise refusal paths in the public wrapper without changing the baseline."""
-import importlib.util,json,shutil,tempfile,unittest,hashlib
+import copy,importlib.util,json,shutil,tempfile,unittest,hashlib
 from pathlib import Path
 
 SOURCE=Path(__file__).resolve().parents[1]
@@ -117,5 +117,40 @@ class IntegrityTests(unittest.TestCase):
         (out/'unexpected.pdf').write_bytes(b'extra')
         with self.assertRaisesRegex(ValueError,'inventory differs'):
             run.verify_artwork(out)
+
+
+class HostedS1CoordinateTests(unittest.TestCase):
+    def setUp(self):
+        self.reference=json.loads((SOURCE/'reference/S1-approved-plot-data.json').read_text())
+        self.observed=copy.deepcopy(self.reference)
+
+    def test_exact_and_observed_scale_roundoff_pass(self):
+        self.assertEqual(run.compare_s1_plot_data(self.reference,self.observed)['y_values'],450)
+        self.observed[0]['lines'][0]['y'][0] *= 1+6e-12
+        self.assertEqual(run.compare_s1_plot_data(self.reference,self.observed)['different_y_values'],1)
+
+    def test_changed_x_is_refused_even_within_y_tolerance(self):
+        self.observed[0]['lines'][0]['x'][0] += 1e-12
+        with self.assertRaisesRegex(ValueError,'non-y value differs'):
+            run.compare_s1_plot_data(self.reference,self.observed)
+
+    def test_meaningful_y_change_is_refused(self):
+        self.observed[0]['lines'][0]['y'][0] *= 1+1e-9
+        with self.assertRaisesRegex(ValueError,'exceeds portability tolerance'):
+            run.compare_s1_plot_data(self.reference,self.observed)
+
+    def test_changed_label_or_point_count_is_refused(self):
+        self.observed[0]['lines'][0]['label']='wrong curve'
+        with self.assertRaisesRegex(ValueError,'plot-data value differs'):
+            run.compare_s1_plot_data(self.reference,self.observed)
+        self.observed=copy.deepcopy(self.reference)
+        self.observed[0]['lines'][0]['y'].pop()
+        with self.assertRaisesRegex(ValueError,'plot-data length differs'):
+            run.compare_s1_plot_data(self.reference,self.observed)
+
+    def test_nonfinite_y_is_refused(self):
+        self.observed[0]['lines'][0]['y'][0]=float('nan')
+        with self.assertRaisesRegex(ValueError,'numeric type or finiteness'):
+            run.compare_s1_plot_data(self.reference,self.observed)
 
 if __name__=='__main__':unittest.main()
