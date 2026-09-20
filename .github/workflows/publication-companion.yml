@@ -46,7 +46,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y qemu-user
-          qemu-x86_64 -cpu Icelake-Server python -B companion/run.py render --fig S1 --output build/emulated-s1
+          qemu-x86_64 -cpu Icelake-Server "$(command -v python)" -B companion/run.py render --fig S1 --output build/emulated-s1
           sha256sum build/emulated-s1/figures/figS1_weak_quench_extraction.pdf
       - name: Preserve rendered evidence on artwork mismatch
         if: failure()
