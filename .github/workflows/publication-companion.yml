@@ -42,13 +42,6 @@ jobs:
           python -B companion/tests/check_artist_refusal.py
       - name: Verify exact S2 artwork identities
         run: python -B companion/run.py verify-artwork
-      - name: Diagnose AVX-512 Figure S1 rendering
-        if: always()
-        run: |
-          sudo apt-get update
-          sudo apt-get install --no-install-recommends -y qemu-user
-          qemu-x86_64 -cpu Icelake-Server "$(command -v python)" -B companion/run.py render --fig S1 --output build/emulated-s1
-          sha256sum build/emulated-s1/figures/figS1_weak_quench_extraction.pdf
       - name: Preserve rendered evidence on artwork mismatch
         if: failure()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -59,9 +52,6 @@ jobs:
             build/companion/plot-data/S1.json
             build/companion/figures/*.pdf
             build/companion/figures/*.png
-            build/emulated-s1/render-receipt.json
-            build/emulated-s1/plot-data/S1.json
-            build/emulated-s1/figures/figS1_weak_quench_extraction.pdf
           if-no-files-found: ignore
       - name: Install minimal LaTeX gallery dependencies
         run: |
