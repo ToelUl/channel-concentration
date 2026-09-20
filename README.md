@@ -7,12 +7,38 @@ Numerical methods and versioned evidence for channel concentration in quantum ma
 
 This repository provides computational sources, numerical settings, Potts and next-nearest-neighbor (NNN) results, bounded regression tests, and source-to-result provenance. The numerical evidence is preserved independently of manuscript revisions.
 
+## What do you want to do?
+
+| Task | Start here |
+| --- | --- |
+| Trace a result from the paper | [Figure guide](docs/FIGURE_GUIDE.md) |
+| Find or regenerate a particular figure | [Companion commands](companion/README.md) and `python -B companion/run.py describe 4` |
+| Inspect the numerical evidence | [Evidence classes](docs/EVIDENCE_MAP.md) and [baseline overview](docs/BASELINE.md) |
+| Check files or run bounded scientific checks | [Verification scope](docs/VERIFICATION.md) and the supported commands below |
+| Inspect the R3 conditional refinement bounds | [Refinement budget check](r3_support/README.md) |
+| Understand evidence limits | [Known limitations](baseline/docs/KNOWN_LIMITATIONS.md) |
+
+### Paper figure index
+
+| Figure | Topic | Computation class |
+| --- | --- | --- |
+| [1](docs/FIGURE_GUIDE.md#figure-1) | TFIM–XX response and concentration | Analytic closed form |
+| [2](docs/FIGURE_GUIDE.md#figure-2) | TFIM scaling and envelope | Analytic free fermion |
+| [3](docs/FIGURE_GUIDE.md#figure-3) | Lifshitz directional scaling | Analytic free fermion |
+| [4](docs/FIGURE_GUIDE.md#figure-4) | Potts and NNN finite-size comparisons | Archived interacting hybrid |
+| [5](docs/FIGURE_GUIDE.md#figure-5) | Ranked response distributions | Archived interacting distributions |
+| [6](docs/FIGURE_GUIDE.md#figure-6) | XY directional profiles | Analytic free fermion |
+| [S1](docs/FIGURE_GUIDE.md#figure-s1) | Weak one-sided quench | Analytic free fermion |
+
+The [Figure guide](docs/FIGURE_GUIDE.md) gives the scientific role, direct inputs, supporting records, and evidence limits for each figure.
+
 ## Start here
 
 - [Baseline overview](docs/BASELINE.md)
 - [Verification summary](docs/VERIFICATION.md)
 - [Publication companion: regenerate seven figures and build a gallery](companion/README.md)
 - [Table and evidence guide](docs/EVIDENCE_MAP.md)
+- [Paper figure guide](docs/FIGURE_GUIDE.md)
 - [Installation and reproduction](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/docs/REPRODUCE.md)
 - [Scientific and computational limitations](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/docs/KNOWN_LIMITATIONS.md)
 - [Source and packaging provenance](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/docs/PROVENANCE.md)
@@ -24,9 +50,13 @@ From the repository root:
 
 ```sh
 python -B baseline/tools/verify_release.py
+python -B tools/verify_scientific_contracts.py
+python -B r3_support/verify_refinement_budgets.py
+python -B companion/run.py describe 4
+python -B companion/run.py render --fig 4 --output build/figure-4
 ```
 
-This checks the distributed baseline against its manifest. It does not run numerical calculations. Follow the reproduction guide for installation, small fresh checks, and reading the archived results.
+The first command checks the distributed baseline against its manifest without numerical calculation. The second runs bounded analytic, small symmetry, and archived-record scientific contracts; it neither reruns the large interacting campaigns nor changes the frozen baseline. The third recomputes conditional R3 CFT refinement budgets and matches a reviewed interval receipt; it does not establish the lattice matching or support assumptions. The remaining commands locate and regenerate one figure in a fresh output directory. Follow the reproduction guide for the numerical production and its archived acceptance scope.
 
 The numerical runtime is Linux/WSL with Python 3.12.13 and the supplied fixed dependencies. Strict current-result readers also check the recorded platform and BLAS identity. A successful file check on another operating system does not establish numerical runtime compatibility.
 

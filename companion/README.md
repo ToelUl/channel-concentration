@@ -13,14 +13,20 @@ python -m pip install -r companion/requirements.txt
 python -m pip check
 python -B baseline/tools/verify_release.py
 python -B companion/run.py verify
+python -B companion/run.py describe 4
+python -B companion/run.py render --fig 4 --output build/figure-4
 python -B companion/run.py render
 python -B companion/run.py verify-artwork
 python -B companion/run.py gallery
 ```
 
+`describe` accepts a figure number (`4`), stable key (`interacting_benchmarks`), or TeX label (`fig:interacting-benchmarks`). It reports a locator and reproduction command without requiring manuscript source or plotting packages. Use the [Figure guide](../docs/FIGURE_GUIDE.md) for the scientific role, direct inputs, supporting records, and evidence limits.
+
+`render --fig` accepts one or more selectors, such as `--fig 1 2 S1`. It writes only those figures and their semantic plot-data exports to a new output directory, checks the relevant interacting or analytic artist coordinates, and records the selection in `render-receipt.json`. It does **not** assert full seven-figure artwork approval; `verify-artwork` continues to require the exact complete approved set. The default `render` still creates all seven figures.
+
 The gallery command also needs `pdflatex` with the standard `article`, `geometry`, and `graphicx` packages. It builds a seven-page figure gallery, not the manuscript or an arXiv submission. The standard-library `verify` command works independently of the plotting dependencies.
 
-Rendering writes seven vector PDFs and seven PNGs to `build/companion/figures/`, together with input, coordinate-check, and rendering receipts. The gallery is `build/gallery/gallery.pdf`. Use a new output directory for another run:
+Default rendering writes seven vector PDFs and seven PNGs to `build/companion/figures/`, together with input, coordinate-check, and rendering receipts. Selected rendering writes only the requested outputs. The gallery is `build/gallery/gallery.pdf`. Use a new output directory for another run:
 
 ```sh
 python -B companion/run.py render --output build/companion-second
@@ -31,7 +37,7 @@ The wrapper checks exact Python, NumPy, SciPy and Matplotlib versions, sets one 
 
 ## What is computed
 
-Figures 1, 2, 3, 6 and S1 evaluate the existing analytic formulas or free-fermion sums. Figures 4 and 5 read archived interacting-model tables and existing fit coefficients. Rendering performs no interacting-model eigensolve and no new fit. Sixteen checks compare actual plotted coordinates and bars with the archived inputs.
+Figures 1, 2, 3, 6 and S1 evaluate the existing analytic formulas or free-fermion sums. Figures 4 and 5 read archived interacting-model tables and existing fit coefficients. Rendering performs no interacting-model eigensolve and no new fit. A complete seven-figure render applies sixteen interacting coordinate/bar checks and eleven analytic coordinate checks; a selected render runs only the relevant checks. The separate `python -B tools/verify_scientific_contracts.py` command checks selected physics formulas and archived evidence semantics independent of PDF identity.
 
 The rendering functions and exporter retain the approved S2 implementation; the `2026.09.12-figure-names` update changes registry output filenames to match manuscript numbering. The exact predecessor is retained at commit `5a4e07dd444c7eca34d1d349d1e7d3e090b514a6`. Use `run.py` as the public entry point. The source script's direct CLI expects manuscript files; the public wrapper instead checks a source-derived, version-bound [figure map](FIGURE_MAP.json). It also rejects mismatches between figure numbers, renderer names and output filenames.
 
@@ -64,6 +70,8 @@ Output names now match figure numbers and renderer names:
 Use a fresh output directory after upgrading. Earlier commits and sealed numerical archives retain their historical filenames. The standalone supplement numbers its sole figure as 1; its shared identity and combined-manuscript number are S1. All seven approved PDF hashes remain unchanged.
 
 [INPUTS.json](INPUTS.json) maps 42 shared input/support records to unchanged public baseline files. The small file in `inputs/cft/` is an explicitly identified schema projection. Its high-precision decimal strings and recorded agreement flags are checked against the original public source. See [the table and evidence guide](../docs/EVIDENCE_MAP.md) for the historical and analytic distinctions.
+
+The [Figure guide](../docs/FIGURE_GUIDE.md) is the complete human figure-to-code route. This page stays focused on commands, output locations, and identity checks.
 
 ## Document generation sources
 

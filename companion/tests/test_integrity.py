@@ -23,6 +23,33 @@ class IntegrityTests(unittest.TestCase):
     def test_pristine_copy(self):
         self.assertEqual(run.verify()['baseline_inputs'],42)
 
+    def test_describe_aliases_bind_to_same_figure(self):
+        for identifier in ('1','tfim_critical_concentration','fig:twothirds'):
+            locator=run.describe(identifier)
+            self.assertEqual(locator['selector'],'1')
+            self.assertEqual(locator['computation_class'],'analytic-closed-form')
+            self.assertEqual(locator['figure_guide'],'docs/FIGURE_GUIDE.md#figure-1')
+
+    def test_invalid_figure_is_refused(self):
+        with self.assertRaisesRegex(ValueError,'Unknown or ambiguous figure'):
+            run.resolve_figure('7')
+
+    def test_changed_computation_class_is_refused(self):
+        path=self.here/'FIGURE_MAP.json'
+        obj=json.loads(path.read_text())
+        obj['figures'][0]['computation_class']='archived-interacting-hybrid'
+        path.write_text(json.dumps(obj))
+        with self.assertRaisesRegex(ValueError,'computation class'):
+            run.verify()
+
+    def test_other_figure_metadata_is_hash_bound_for_describe(self):
+        path=self.here/'FIGURE_MAP.json'
+        obj=json.loads(path.read_text())
+        obj['figures'][0]['title']='misleading title'
+        path.write_text(json.dumps(obj))
+        with self.assertRaisesRegex(ValueError,'Figure map identity'):
+            run.describe('1')
+
     def test_legacy_filename_number_is_refused(self):
         p=self.here/'FIGURE_MAP.json'; value=json.loads(p.read_text())
         value['figures'][3]['output_stem']='fig6_interacting_benchmarks'

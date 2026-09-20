@@ -2,6 +2,17 @@
 
 This English summary describes the recorded checks for numerical release `baseline-2026-09-09-rc1`. It does not replace or modify the original verification receipts. The public release and its hosted CI status were checked on 2026-09-10.
 
+## Three verification scopes
+
+| Scope | Public command | What it establishes |
+| --- | --- | --- |
+| Integrity | `python -B baseline/tools/verify_release.py` and `python -B companion/run.py verify` | Frozen file, input, renderer, figure-map, and projection identities. It does not independently recalculate the science. |
+| Scientific contracts | `python -B tools/verify_scientific_contracts.py` | Selected exact formulas, bounded fresh small-sector checks, archived PRG/response thresholds, and rank semantics. It does not rerun large campaigns or prove full manuscript claims. |
+| R3 conditional theory check | `python -B r3_support/verify_refinement_budgets.py` | Recomputed outward intervals, character and tail checks, and exact rational finite-refinement examples. Lattice grouped matching and fine-channel support are unverified premises. |
+| Artwork identity | `python -B companion/run.py verify-artwork` after complete publication rendering | Exact match of all seven PDFs to the author-approved S2 artwork hashes. It is not a new human review or final venue approval. |
+
+Full rendering also exports plot data and checks sixteen interacting coordinates/bars and eleven selected analytic coordinate contracts. A one-figure render checks only its relevant coordinates and never passes the seven-PDF artwork check. The `exact fast` route in the numerical release shows that a bounded analytic computation route executes; it is not a complete independent proof of every manuscript analytic identity. The scientific-contract command makes selected contracts active, with the stated finite-size scope.
+
 ## Clean installation and bounded tests
 
 The local packaging verification used new environments and installed the fixed dependencies without changing the original producer environments. Wheels and source distributions for all three versions installed successfully. Detached tests loaded the installed packages from `site-packages`.

@@ -36,6 +36,10 @@ jobs:
           python -B -m pip check
       - name: Render and check seven figures
         run: python -B companion/run.py render
+      - name: Check a selected interacting figure and seeded coordinate failures
+        run: |
+          python -B companion/run.py render --fig 4 --output build/selected-figure-4
+          python -B companion/tests/check_artist_refusal.py
       - name: Verify exact S2 artwork identities
         run: python -B companion/run.py verify-artwork
       - name: Install minimal LaTeX gallery dependencies
