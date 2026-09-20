@@ -23,7 +23,9 @@ The final NNN invocation resumed existing results for 69 unique tasks and calcul
 
 ## Historical records
 
-Files inside `baseline/` retain the original sealed content. Some historical descriptions predate public release, and two archived documents contain Chinese text. They remain unchanged to preserve their hashes. The current README and this English documentation provide a complete entry path without requiring those historical documents.
+Files inside `baseline/` retain their original sealed content. Its README was written for the 9 September 2026 numerical candidate before public release. The line "Not yet published" describes that earlier checkpoint; release `baseline-2026-09-09-rc1` is now public. The Chinese note that overall manuscript acceptance still had open items is likewise a dated statement about the manuscript review at that checkpoint. It does not report the status of later manuscript or artwork revisions, and the numerical release alone does not certify a final manuscript.
+
+Two archived documents contain Chinese text. They remain unchanged to preserve their manifest-bound hashes. Use the current [repository entry](../README.md), [verification summary](VERIFICATION.md), and [companion guide](../companion/README.md) for English descriptions of the public checks and later figure identities. The manuscript revision status remains separate from this numerical archive.
 
 The baseline is numerical evidence, not a claim that every historical validation record is available. Preserve all qualifications in the [limitations document](https://github.com/ToelUl/channel-concentration/blob/6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da/baseline/docs/KNOWN_LIMITATIONS.md), including conditional numerical premises and historical gaps.
 

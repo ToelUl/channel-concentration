@@ -2,6 +2,18 @@
 
 This English summary describes the recorded checks for numerical release `baseline-2026-09-09-rc1`. It does not replace or modify the original verification receipts. The public release and its hosted CI status were checked on 2026-09-10.
 
+## Three verification scopes
+
+| Scope | Public command | What it establishes |
+| --- | --- | --- |
+| Integrity | `python -B baseline/tools/verify_release.py` and `python -B companion/run.py verify` | Frozen file, input, renderer, figure-map, and projection identities. It does not independently recalculate the science. |
+| Scientific contracts | `python -B tools/verify_scientific_contracts.py` | Selected exact formulas, bounded fresh small-sector checks, archived PRG/response thresholds, and rank semantics. It does not rerun large campaigns or prove full manuscript claims. |
+| R3 conditional theory check | `python -B r3_support/verify_refinement_budgets.py` | Recomputed outward intervals, character and tail checks, and exact rational finite-refinement examples. Lattice grouped matching and fine-channel support are unverified premises. |
+| Approved artwork identity | `python -B companion/run.py verify-artwork` after complete publication rendering in the author-approved environment | Exact match of all seven PDFs to the author-approved S2 artwork hashes. It is not a new human review or final venue approval. |
+| Hosted artwork contract | `python -B companion/run.py verify-hosted-artwork` after complete publication rendering | Six PDFs match their approved hashes exactly. S1 must match its frozen plot-data structure and x coordinates, all y coordinates within a documented narrow relative tolerance, and its approved-render PNG hash. The result explicitly distinguishes `EXACT_7_OF_7` from `PORTABLE_S1_CHECK`; the latter is not seven-PDF exact reproduction or a new artwork approval. |
+
+Full rendering also exports plot data and checks sixteen interacting coordinates/bars and eleven selected analytic coordinate contracts. A one-figure render checks only its relevant coordinates and never passes the seven-PDF artwork check. The `exact fast` route in the numerical release shows that a bounded analytic computation route executes; it is not a complete independent proof of every manuscript analytic identity. The scientific-contract command makes selected contracts active, with the stated finite-size scope.
+
 ## Clean installation and bounded tests
 
 The local packaging verification used new environments and installed the fixed dependencies without changing the original producer environments. Wheels and source distributions for all three versions installed successfully. Detached tests loaded the installed packages from `site-packages`.
@@ -42,4 +54,4 @@ No missing historical receipt is certified by these tests. Conditional enclosure
 
 ## S2 presentation successor
 
-The S2 update carries the author-approved renderer and exact seven-PDF artwork identities in `companion/ARTWORK.json`. Run `companion/run.py verify-artwork` after publication-mode rendering to compare with that set. The existing coordinate checks retain their numerical scope; human approval and full-manuscript review are author-side records, not conclusions supplied by CI. The source manuscript remains private. No baseline dataset, producer, cutoff, fitting window or computation result changes in this presentation update.
+The S2 update carries the author-approved renderer and exact seven-PDF artwork identities in `companion/ARTWORK.json`. Run `companion/run.py verify-artwork` after publication-mode rendering in the author-approved environment to compare with that set. Standard hosted CI instead runs `verify-hosted-artwork` because the NumPy CPU path can change the last digits of S1 vector coordinates on different runners. Its S1 y tolerance is `rtol=1e-11`, `atol=0`; all S1 x coordinates and figure structure remain exact. The frozen S1 plot-data reference came from a local 7/7 exact render. The existing coordinate checks retain their numerical scope; human approval and full-manuscript review are author-side records, not conclusions supplied by CI. The source manuscript remains private. No baseline dataset, producer, cutoff, fitting window or computation result changes in this presentation update.

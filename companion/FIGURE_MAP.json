@@ -19,6 +19,7 @@
   "figures": [
     {
       "selector": "1",
+      "computation_class": "analytic-closed-form",
       "key": "tfim_critical_concentration",
       "title": "TFIM--XX response, ladders, and concentration",
       "renderer": "plot_fig1_tfim_critical_concentration",
@@ -40,6 +41,7 @@
     },
     {
       "selector": "2",
+      "computation_class": "analytic-free-fermion",
       "key": "scaling_and_envelope",
       "title": "TFIM collapse and odd-ladder envelope",
       "renderer": "plot_fig2_scaling_and_envelope",
@@ -61,6 +63,7 @@
     },
     {
       "selector": "3",
+      "computation_class": "analytic-free-fermion",
       "key": "lifshitz_anisotropy_scaling",
       "title": "Lifshitz anisotropy and scaling",
       "renderer": "plot_fig3_lifshitz_anisotropy_scaling",
@@ -82,6 +85,7 @@
     },
     {
       "selector": "4",
+      "computation_class": "archived-interacting-hybrid",
       "key": "interacting_benchmarks",
       "title": "Potts and NNN-TFIM finite-size comparisons",
       "renderer": "plot_fig4_interacting_benchmarks",
@@ -108,6 +112,7 @@
     },
     {
       "selector": "5",
+      "computation_class": "archived-interacting-distribution",
       "key": "ranked_response_distributions",
       "title": "Potts and NNN-TFIM ranked weights",
       "renderer": "plot_fig5_distribution_comparisons",
@@ -135,6 +140,7 @@
     },
     {
       "selector": "6",
+      "computation_class": "analytic-free-fermion",
       "key": "xy_directional_profiles",
       "title": "XY directional profiles (main appendix)",
       "renderer": "plot_fig6_xy_directional_profiles",
@@ -156,6 +162,7 @@
     },
     {
       "selector": "S1",
+      "computation_class": "analytic-free-fermion-quench",
       "key": "weak_quench_extraction",
       "title": "Weak one-sided quench extraction",
       "renderer": "plot_figS1_weak_quench_extraction",

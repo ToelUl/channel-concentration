@@ -2,6 +2,8 @@
 
 The numerical authority is `baseline-2026-09-09-rc1`, commit `6fa71d1fc3d894d76a1b4ac8a17b37cc454d51da`. The companion's [INPUTS.json](../companion/INPUTS.json) supplies exact public paths, hashes, candidate aliases and source roles. [FIGURE_MAP.json](../companion/FIGURE_MAP.json) records the source-derived figure identity.
 
+For a figure-by-figure path from the paper to renderer, direct inputs, related records, and limitations, use the [Figure guide](FIGURE_GUIDE.md). This page defines the evidence roles used across those paths.
+
 ## Evidence classes
 
 | Class | Interpretation |
@@ -10,6 +12,9 @@ The numerical authority is `baseline-2026-09-09-rc1`, commit `6fa71d1fc3d894d76a
 | Historical reference | Preserve the reported values and explicitly recorded gaps; availability of a display table does not establish missing historical controls |
 | Analytic result or definition | Supported by its derivation and stated assumptions; file hashes and numerical tests are not a new proof |
 | Consumer projection | A separately identified representation of an archived input; validate both original source identity and the transformation |
+| Conditional enclosure | An interval for a specified response under stated spectral premises; its width is not a finite-size extrapolation error |
+| Diagnostic evidence | A finite-size trend, retained-level comparison, or fit coordinate with its documented window and unresolved tail; no thermodynamic or universal claim follows automatically |
+| Conditional analytic budget | The [R3 interval receipt](../r3_support/README.md) checks CFT reference-family constants and finite rational examples; lattice grouped matching and actual fine-channel support remain separate premises |
 
 The R3.7 alignment table audit covered 16 tables and 396 cells: 331 cells received scoped source/display checks, 30 were classified as analytic-contract review, and 35 historical operator-table cells remained reference-only. These are distinct categories, not 396 independently recomputed numerical results. The subsequent S2 scientific review retained these classifications and their stated limitations; artwork approval does not change them.
 
