@@ -43,7 +43,6 @@ jobs:
       - name: Verify exact S2 artwork identities
         run: python -B companion/run.py verify-artwork
       - name: Diagnose AVX-512 Figure S1 rendering
-        if: failure()
         run: |
           sudo apt-get update
           sudo apt-get install --no-install-recommends -y qemu-user
