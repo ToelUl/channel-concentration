@@ -42,6 +42,17 @@ jobs:
           python -B companion/tests/check_artist_refusal.py
       - name: Verify exact S2 artwork identities
         run: python -B companion/run.py verify-artwork
+      - name: Preserve rendered evidence on artwork mismatch
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: failed-companion-render-${{ github.run_attempt }}
+          path: |
+            build/companion/render-receipt.json
+            build/companion/plot-data/S1.json
+            build/companion/figures/*.pdf
+            build/companion/figures/*.png
+          if-no-files-found: ignore
       - name: Install minimal LaTeX gallery dependencies
         run: |
           sudo apt-get update
