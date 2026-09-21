@@ -3,7 +3,10 @@
 This summary separates checks for numerical release
 `baseline-2026-09-09-rc1` from later public-companion checks. It does not
 replace or modify the original numerical verification receipts. The release
-and its hosted CI status were checked on 2026-09-10.
+and its hosted CI status were checked on 2026-09-10. The author-approved local
+publication-companion candidate is `companion-2026-09-21-rc1`; its own
+exact-commit verification and generated receipts remain distinct from the
+historical hosted results below.
 
 ## Verification scopes
 
@@ -58,6 +61,22 @@ The [baseline integrity and bounded regressions workflow](https://github.com/Toe
 
 Hosted CI does not reproduce the original platform/BLAS identity, perform all strict current-result routes, rerun large campaigns, or verify a final manuscript or publication artwork.
 
+## Publication-companion release closure
+
+The local candidate `companion-2026-09-21-rc1` has a separate public-facing
+identity from the numerical baseline and the S2 artwork authority. The
+[release closure guide](../release/README.md) defines a deterministic manifest
+over every regular tracked file in the exact content commit. A generated
+manuscript-binding asset then records the frozen TeX and PDF identities,
+Figure Map, approved artwork, numerical baseline, figure-label checks, and
+named PASS receipts without claiming to hash itself through that commit.
+
+Naming this candidate is not a hosted verification result. The final report
+must disclose any failed, skipped, platform-dependent, or portability-limited
+check; neither the release notes nor the binding may turn such a result into a
+PASS. No tag, GitHub release, DOI, or archive publication is implied by this
+local candidate.
+
 ## Hosted CI: S3 public companion
 
 The [companion workflow](https://github.com/ToelUl/channel-concentration/actions/runs/35532993239)
@@ -73,8 +92,9 @@ independently establish success at the merge commit. The companion job
 rendered seven figures and checked the hosted artwork contract; the science
 job ran bounded contracts, the direct R3 receipt check, refusal tests, and
 documentation checks. These checks do not verify a final manuscript or
-reproduce the original large numerical campaigns. Later local revisions
-require their own affected checks and, when published, fresh hosted results.
+reproduce the original large numerical campaigns. The later
+`companion-2026-09-21-rc1` local candidate requires its own exact-commit checks
+and, if published, fresh hosted results.
 
 ## Evidence and limits
 

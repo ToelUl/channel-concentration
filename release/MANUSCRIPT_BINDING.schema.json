@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ToelUl/channel-concentration/blob/main/release/MANUSCRIPT_BINDING.schema.json",
+  "title": "Channel Concentration manuscript binding",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "release_name",
+    "release_content",
+    "numerical_baseline",
+    "manuscript",
+    "figure_mapping",
+    "artwork",
+    "verification_receipts",
+    "scope"
+  ],
+  "properties": {
+    "schema": {"const": "channel-concentration-manuscript-binding/1.0"},
+    "release_name": {"type": "string", "pattern": "^[a-z0-9][a-z0-9.-]+$"},
+    "release_content": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repository", "commit", "tree", "manifest_sha256"],
+      "properties": {
+        "repository": {"type": "string", "format": "uri"},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "tree": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "numerical_baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tag", "commit", "manifest_sha256", "tag_ref_status"],
+      "properties": {
+        "tag": {"type": "string", "minLength": 1},
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "tag_ref_status": {"enum": ["PRESENT_MATCH", "PRESENT_MISMATCH", "NOT_PRESENT_LOCALLY"]}
+      }
+    },
+    "manuscript": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_sha256", "sources", "pdfs"],
+      "properties": {
+        "target_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "sources": {"$ref": "#/$defs/artifactArray"},
+        "pdfs": {"$ref": "#/$defs/artifactArray"}
+      }
+    },
+    "figure_mapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["figure_map_sha256", "source_validation", "figures", "status"],
+      "properties": {
+        "figure_map_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "source_validation": {"type": "string", "minLength": 1},
+        "figures": {
+          "type": "array",
+          "minItems": 7,
+          "maxItems": 7,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["selector", "tex_source", "tex_label", "output_stem", "label_count", "include_count", "status"],
+            "properties": {
+              "selector": {"type": "string"},
+              "tex_source": {"type": "string"},
+              "tex_label": {"type": "string"},
+              "output_stem": {"type": "string"},
+              "label_count": {"const": 1},
+              "include_count": {"const": 1},
+              "status": {"const": "PASS"}
+            }
+          }
+        },
+        "status": {"const": "PASS"}
+      }
+    },
+    "artwork": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identity_sha256", "version", "human_review_status", "exact_pdf_count", "status"],
+      "properties": {
+        "identity_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "version": {"type": "string"},
+        "human_review_status": {"type": "string"},
+        "exact_pdf_count": {"const": 7},
+        "status": {"const": "PASS"}
+      }
+    },
+    "verification_receipts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "sha256", "status"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "status": {"const": "PASS"},
+          "receipt_schema": {"type": "string"}
+        }
+      }
+    },
+    "scope": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "artifactArray": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "bytes", "sha256"],
+        "properties": {
+          "name": {"type": "string", "minLength": 1},
+          "bytes": {"type": "integer", "minimum": 0},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+        }
+      }
+    }
+  }
+}

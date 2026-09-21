@@ -8,8 +8,10 @@ artwork authority, not the current wrapper. The wrapper also includes the
 later figure-name alignment and S3 public navigation and verification
 integration (S3 is the project's public-support integration stage).
 It uses the separate immutable numerical release `baseline-2026-09-09-rc1`.
-Cite the exact repository commit used for companion outputs until a versioned
-current-companion release is made after the author-led final local revision.
+The author-approved local release candidate is
+`companion-2026-09-21-rc1`. Cite that name together with the exact repository
+content commit and generated manifest; cite the numerical baseline separately.
+The candidate name does not assert that a public tag or GitHub release exists.
 
 ## Quick start
 

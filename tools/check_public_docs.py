@@ -5,7 +5,7 @@ from urllib.parse import unquote
 
 ROOT=Path(__file__).resolve().parents[1]
 files=[*ROOT.glob('*.md'),*ROOT.glob('*.cff')]
-for name in ['docs','companion','r3_support','.github']:
+for name in ['docs','companion','r3_support','release','.github']:
     files.extend(p for p in (ROOT/name).rglob('*') if p.suffix in {'.md','.cff','.yml','.yaml'})
 errors=[]
 for path in files:

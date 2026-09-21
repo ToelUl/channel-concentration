@@ -1,10 +1,11 @@
 # Changelog
 
-## Unreleased — current public companion
+## companion-2026-09-21-rc1 — Publication companion release candidate
 
-This entry records the S3 public integration and the subsequent author-led
-local repair candidate. Its version name and exact commit will be fixed only
-after the manuscript and public project are reconciled.
+This author-approved local release candidate records the S3 public integration,
+the subsequent bounded repairs, and alignment with the frozen final-local
+manuscript identities. Its exact content commit is recorded only by the
+generated release manifest after this source commit is fixed.
 
 - Added the [Figure guide](docs/FIGURE_GUIDE.md), figure `describe` and selected
   rendering commands, bounded scientific contracts, analytic artist checks,
@@ -19,6 +20,10 @@ after the manuscript and public project are reconciled.
   hashes and recorded the validated label, filename, numbering, and caption
   role for every figure. The frozen final build uses all seven approved S2 PDF
   identities exactly; manuscript prose remains outside this repository.
+- Added deterministic exact-commit release-manifest and manuscript-binding
+  generators, JSON schemas, candidate metadata, and non-circular output
+  safeguards. The generated binding is a release asset, not a tracked file in
+  the content commit that it identifies.
 - Added the hosted S1 portability contract, which distinguishes
   `PORTABLE_S1_CHECK` from exact approval of the seven PDFs. Added current
   companion CI alongside the existing baseline regressions.
@@ -34,8 +39,9 @@ after the manuscript and public project are reconciled.
   These bounded checks do not rerun large interacting campaigns, establish
   lattice refinement premises, or prove thermodynamic convergence.
 
-No versioned current-companion release, DOI, or manuscript-source distribution
-is asserted by this unreleased entry.
+This entry names a local release candidate. It does not assert that a public
+tag or GitHub release exists, assign a DOI, distribute manuscript source, or
+claim journal acceptance.
 
 ## 2026.09.12-figure-names - Manuscript numbering alignment
 

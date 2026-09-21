@@ -16,6 +16,7 @@ This repository provides computational sources, numerical settings, Potts and ne
 | Inspect the numerical evidence | [Evidence classes](docs/EVIDENCE_MAP.md) and [baseline overview](docs/BASELINE.md) |
 | Check files or run bounded scientific checks | [Verification scope](docs/VERIFICATION.md) and the supported commands below |
 | Inspect conditional refinement bounds | [Refinement budget check](r3_support/README.md) |
+| Inspect the companion release identity | [Release closure assets](release/README.md) |
 | Understand evidence limits | [Known limitations](baseline/docs/KNOWN_LIMITATIONS.md) |
 
 ### Paper figure index
@@ -91,7 +92,10 @@ public wrapper have separate identities. S2 names the author's approved
 renderer and seven PDF artwork identities (`2026.09.10-s2`). The subsequent
 `2026.09.12-figure-names` change aligned renderer names and output filenames
 with manuscript Figures 1-6 and S1. S3 names the later public navigation and
-bounded-verification integration; it is not yet a versioned companion release.
+bounded-verification integration; it is an internal integration stage, not a
+release name. That integration, the bounded repairs, and final-source
+alignment now form the author-approved local release candidate
+`companion-2026-09-21-rc1`.
 [The figure map](companion/README.md#figure-and-evidence-map) lists current
 names and records the frozen final-local source hashes plus validated figure
 labels, numbering, and caption roles without distributing manuscript prose; [exact artwork
@@ -99,14 +103,15 @@ identities](companion/ARTWORK.json) retain the S2 approval binding. All seven
 figures can be regenerated from public inputs. These public checks do not
 assert a new scientific review of subsequent manuscript revisions.
 
-The current wrapper preserves the numerical baseline and adds no
+The release candidate preserves the numerical baseline and adds no
 interacting-model eigensolves or fits. The manuscript text remains outside
 this public companion. Its data-availability statement identifies the public
 snapshot `4bf5a0c9d94bc12128b90ef7479b831401adbb99` and separately cites the
-immutable numerical release; the later publication-closure companion will be
-bound to its own exact content commit rather than silently changing that
-historical snapshot. Until that release is fixed, no new release, DOI, arXiv
-identifier or journal acceptance is asserted here.
+immutable numerical release. The candidate is bound to its own exact content
+commit by a generated manifest after the source commit is fixed; this does not
+silently change the historical snapshot. The candidate name does not assert
+that a public tag or GitHub release exists, and no new DOI, arXiv identifier,
+or journal acceptance is asserted here.
 
 The `baseline/` directory is immutable. Its README was sealed on 9 September 2026, before the numerical prerelease was posted. Its "Not yet published" line and note about open whole-manuscript acceptance describe that checkpoint; they are not a live status report for this repository or later manuscript revisions. The [numerical prerelease](https://github.com/ToelUl/channel-concentration/releases/tag/baseline-2026-09-09-rc1) is now public. See the [baseline overview](docs/BASELINE.md#historical-records) and [verification scope](docs/VERIFICATION.md) for the current English explanation. The original-language baseline records retain their sealed hashes.
 
@@ -114,9 +119,17 @@ Changes to computations, input selection, or fitting windows require a new numer
 
 ## Citation
 
-Cite the specific numerical release, its commit, and the baseline manifest SHA256. The repository's [CITATION.cff](https://github.com/ToelUl/channel-concentration/blob/main/CITATION.cff) describes the evidence baseline; software-specific citation files are included in the versioned sources. No dataset DOI has been assigned in the cited release record.
+Cite the publication companion by release name, exact content commit, and
+generated release-manifest SHA256. The repository's
+[CITATION.cff](CITATION.cff) describes the companion candidate. Cite the
+immutable numerical evidence separately by its release, commit, and baseline
+manifest SHA256; the example [BibTeX entry](docs/CITATION.bib) records that
+baseline identity. Software-specific citation files remain in the versioned
+sources. No dataset DOI has been assigned in the cited baseline record.
 
-An example [BibTeX entry](docs/CITATION.bib) is provided. Cite the exact commit used for companion outputs separately from the immutable numerical baseline.
+The [release closure guide](release/README.md) explains the exact-commit
+manifest and manuscript-binding assets. A candidate name alone is not a
+substitute for the content commit recorded by those assets.
 
 ## License and support
 
