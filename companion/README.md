@@ -1,6 +1,18 @@
 # Publication companion
 
-Version `2026.09.10-s2` provides the exact approved presentation code for candidate `CC-FINAL-SUBMISSION-S2-RC2`. It uses the immutable numerical release `baseline-2026-09-09-rc1`. S2 scientific, manuscript and artwork reviews are complete, including human visual approval. This is a presentation-code update; final venue-specific packaging remains separate.
+The current public wrapper supplies figure lookup, selected rendering, and
+bounded verification for the manuscript's public companion. Its rendering
+functions and seven approved PDF identities come from the author-approved S2
+presentation version `2026.09.10-s2`; that label identifies the renderer and
+artwork authority, not the current wrapper. The wrapper also includes the
+later figure-name alignment and S3 public navigation and verification
+integration (S3 is the project's public-support integration stage).
+It uses the separate immutable numerical release `baseline-2026-09-09-rc1`.
+The author-approved GitHub prerelease candidate is
+`companion-2026-09-21-rc1`. Cite that name together with the exact repository
+content commit and generated manifest; cite the numerical baseline separately.
+The GitHub release page, tag, and attached manifest identify its publication
+status and exact content commit.
 
 ## Quick start
 
@@ -21,7 +33,7 @@ python -B companion/run.py verify-hosted-artwork
 python -B companion/run.py gallery
 ```
 
-`describe` accepts a figure number (`4`), stable key (`interacting_benchmarks`), or TeX label (`fig:interacting-benchmarks`). It reports a locator and reproduction command without requiring manuscript source or plotting packages. Use the [Figure guide](../docs/FIGURE_GUIDE.md) for the scientific role, direct inputs, supporting records, and evidence limits.
+`describe` accepts a figure number (`4`), stable key (`interacting_benchmarks`), or TeX label (`fig:interacting-benchmarks`). It reports the same machine-readable `code_routes` stored in `FIGURE_MAP.json`, together with the locator and reproduction command, without requiring manuscript source or plotting packages. Each route identifies a stage, repository-relative source path, Python symbol, role, and execution class. Use the [Figure guide](../docs/FIGURE_GUIDE.md) for the clickable scientific-computation, transformation/archive, and publication-renderer route plus the evidence limits.
 
 `render --fig` accepts one or more selectors, such as `--fig 1 2 S1`. It writes only those figures and their semantic plot-data exports to a new output directory, checks the relevant interacting or analytic artist coordinates, and records the selection in `render-receipt.json`. It does **not** assert full seven-figure artwork approval. Both artwork verification commands require a complete publication render. The default `render` still creates all seven figures.
 
@@ -38,9 +50,26 @@ The wrapper checks exact Python, NumPy, SciPy and Matplotlib versions, sets one 
 
 ## What is computed
 
-Figures 1, 2, 3, 6 and S1 evaluate the existing analytic formulas or free-fermion sums. Figures 4 and 5 read archived interacting-model tables and existing fit coefficients. Rendering performs no interacting-model eigensolve and no new fit. A complete seven-figure render applies sixteen interacting coordinate/bar checks and eleven analytic coordinate checks; a selected render runs only the relevant checks. The separate `python -B tools/verify_scientific_contracts.py` command checks selected physics formulas and archived evidence semantics independent of PDF identity.
+Figures 1, 2, 3, 6 and S1 evaluate the existing analytic formulas or
+free-fermion sums. Figures 4 and 5 read archived interacting-model tables and
+existing fit coefficients. Rendering performs no interacting-model eigensolve
+and no new fit. A complete seven-figure render applies sixteen interacting
+coordinate/bar checks and 38 analytic coordinate checks; a selected render
+runs only the relevant checks. The separate
+`python -B tools/verify_scientific_contracts.py` command checks selected
+physics formulas, archived evidence semantics, and the conditional R3
+refinement-budget receipt independently of PDF identity. The specialist R3
+checker remains directly runnable from `r3_support/`.
 
-The rendering functions and exporter retain the approved S2 implementation; the `2026.09.12-figure-names` update changes registry output filenames to match manuscript numbering. The exact predecessor is retained at commit `5a4e07dd444c7eca34d1d349d1e7d3e090b514a6`. Use `run.py` as the public entry point. The source script's direct CLI expects manuscript files; the public wrapper instead checks a source-derived, version-bound [figure map](FIGURE_MAP.json). It also rejects mismatches between figure numbers, renderer names and output filenames.
+The Figure 4 and 5 code routes deliberately separate three operations. The
+historical producer/campaign entries can perform expensive eigensolves; the
+postprocessors and `baseline/tools/replay_current.py` consume archived outputs;
+and `render --fig` only reads the resulting frozen tables. The Figure 5 CFT
+route is a checked projection of existing evidence, not a new lattice
+calculation. A code-route link therefore records provenance and execution
+class; it is not an instruction to run every upstream stage.
+
+The rendering functions and exporter retain the approved S2 implementation; the `2026.09.12-figure-names` update changes registry output filenames to match manuscript numbering. The exact predecessor is retained at commit `5a4e07dd444c7eca34d1d349d1e7d3e090b514a6`. Use `run.py` as the public entry point. The source script's direct CLI expects manuscript files; the public wrapper instead checks a hash-bound [figure map](FIGURE_MAP.json). That map records the frozen final-local source hashes and validated figure labels, filenames, numbering, and caption roles without distributing manuscript prose. It also rejects mismatches between figure numbers, renderer names and output filenames.
 
 S2 adjusts graphical contrast, type size, marker presentation and legend spacing while preserving numerical arrays, normalizations and fit coefficients. All interacting Figure 4 samples remain displayed; the Figure 5 legend identifies retained ranks. [ARTWORK.json](ARTWORK.json) records the seven human-approved PDF identities. `verify-artwork` compares a local figure directory with that exact set and rejects missing, extra or different PDFs. It remains the author-side 7/7 exact check. A render's numerical/data checks alone do not imply the human approval of its output bytes.
 
@@ -74,7 +103,7 @@ Use a fresh output directory after upgrading. Earlier commits and sealed numeric
 
 [INPUTS.json](INPUTS.json) maps 42 shared input/support records to unchanged public baseline files. The small file in `inputs/cft/` is an explicitly identified schema projection. Its high-precision decimal strings and recorded agreement flags are checked against the original public source. See [the table and evidence guide](../docs/EVIDENCE_MAP.md) for the historical and analytic distinctions.
 
-The [Figure guide](../docs/FIGURE_GUIDE.md) is the complete human figure-to-code route. This page stays focused on commands, output locations, and identity checks.
+The [Figure guide](../docs/FIGURE_GUIDE.md) is the complete clickable human figure-to-code route. [FIGURE_MAP.json](FIGURE_MAP.json) is its machine-readable counterpart, and `describe` exposes the same route inventory. Route-integrity checks require all seven publication renderers, parse every referenced Python symbol, and require every direct Figure 4–5 input to have an identified producer, postprocessor, projection, or archived replay route. This page stays focused on commands, output locations, and identity checks.
 
 ## Document generation sources
 

@@ -1,15 +1,15 @@
 cff-version: 1.2.0
-message: "Cite the numerical evidence release and its manifest SHA256. Software-specific citation files are included with each version."
-title: "Channel Concentration numerical evidence baseline"
-type: dataset
+message: "Cite this publication companion by release name, exact content commit, and release-manifest SHA256. Cite the immutable numerical baseline separately."
+title: "Channel Concentration publication companion"
+type: software
 authors:
   - family-names: Lee
     given-names: Qian-Rui
   - family-names: Wang
     given-names: Daw-Wei
-version: 2026.09.09-rc1
-date-released: 2026-09-09
+version: companion-2026-09-21-rc1
+date-released: "2026-09-21"
 repository-code: "https://github.com/ToelUl/channel-concentration"
-url: "https://github.com/ToelUl/channel-concentration"
+url: "https://github.com/ToelUl/channel-concentration/releases/tag/companion-2026-09-21-rc1"
 license: MIT
-abstract: "Immutable numerical evidence baseline with Potts producer 0.5.0.dev0, NNN producer 0.5.1.dev0, and reader 0.5.2.dev0. Presentation updates are versioned separately. S2 manuscript and artwork review is complete; venue packaging remains separate. No DOI is asserted."
+abstract: "Author-approved GitHub prerelease candidate for figure lookup, selected rendering, bounded scientific verification, and source-to-result provenance. It preserves the immutable numerical release baseline-2026-09-09-rc1 and the approved S2 artwork identities while identifying the companion by a separate release name and generated exact-commit manifest. It does not distribute manuscript prose or assign a DOI."

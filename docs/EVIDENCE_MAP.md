@@ -16,7 +16,15 @@ For a figure-by-figure path from the paper to renderer, direct inputs, related r
 | Diagnostic evidence | A finite-size trend, retained-level comparison, or fit coordinate with its documented window and unresolved tail; no thermodynamic or universal claim follows automatically |
 | Conditional analytic budget | The [R3 interval receipt](../r3_support/README.md) checks CFT reference-family constants and finite rational examples; lattice grouped matching and actual fine-channel support remain separate premises |
 
-The R3.7 alignment table audit covered 16 tables and 396 cells: 331 cells received scoped source/display checks, 30 were classified as analytic-contract review, and 35 historical operator-table cells remained reference-only. These are distinct categories, not 396 independently recomputed numerical results. The subsequent S2 scientific review retained these classifications and their stated limitations; artwork approval does not change them.
+Here R3 denotes the refinement-bound verification lineage; R3.7 denotes an
+earlier source/table alignment audit. S2 denotes the author's approved
+presentation and artwork identity. The R3.7 audit covered 16 tables and 396
+cells: 331 cells received scoped source/display checks, 30 were classified as
+analytic-contract review, and 35 historical operator-table cells remained
+reference-only. These are distinct categories, not 396 independently
+recomputed numerical results. The subsequent S2 scientific review retained
+these classifications and their stated limitations; artwork approval does
+not change them.
 
 ## Reading numerical tables
 
@@ -25,6 +33,9 @@ The R3.7 alignment table audit covered 16 tables and 396 cells: 331 cells receiv
 - TFIM control errors use separate P2, P4 and K_F quantities and the documented finite-size/grouping scope.
 - Projector-response enclosures are conditional on their spectral premises. Their interval widths are not finite-size extrapolation errors.
 - The archived Potts ordering separates the first fifteen retained clusters; protection against omitted channels applies to the first ten ranks.
-- The missing independent historical parity records remain unavailable. A successful integrity check does not recreate them.
+- The missing independent historical parity records remain unavailable. The
+  current baseline-external verifier separately runs a bounded nonzero-`J2`
+  full-space versus parity-sector matrix-projection regression. That current
+  control does not recreate the historical receipt or rerun the large campaign.
 
 Use the [baseline limitations](../baseline/docs/KNOWN_LIMITATIONS.md), [provenance](../baseline/docs/PROVENANCE.md), and [reproduction guide](../baseline/docs/REPRODUCE.md) with the exact release. No new fitting window, input selection or numerical acceptance threshold is introduced by the companion.

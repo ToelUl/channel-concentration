@@ -1,0 +1,33 @@
+{
+  "schema": "channel-concentration-manuscript-target/1.0",
+  "status": "FROZEN_FINAL_LOCAL_20260921",
+  "sources": [
+    {
+      "name": "paper/main.tex",
+      "sha256": "70b4e34225d983852cc4055a43a5a7e46e34a5aec0766d8f5bba88d0e88a631d"
+    },
+    {
+      "name": "supplement_numerical/main.tex",
+      "sha256": "1f9d9c32a8b1576e68def871814f9b38288af9e8c096e8854cda596bcc2bd745"
+    },
+    {
+      "name": "supplement_numerical/weak_quench_module.tex",
+      "sha256": "0826ad66245c92b3f2b168ac2a42496ca21a7e895527ecaacad5d20b7f1788b9"
+    }
+  ],
+  "pdfs": [
+    {
+      "name": "paper/main.pdf",
+      "sha256": "e429641b370db70479245c0526527860626fd2a0e1ca505a3ca21af27f61dbf2"
+    },
+    {
+      "name": "supplement_numerical/main.pdf",
+      "sha256": "ddde355094bddf408dcb82b38eee1a2ff1e98787516b12c76d205f4c6ab1dc65"
+    },
+    {
+      "name": "combined/main.pdf",
+      "sha256": "459e41089b50ae64af291a8cd008ddd3d8bdccf6fac96b0056a0cce51daa13d9"
+    }
+  ],
+  "scope": "Hash-only identity for the frozen final-local manuscript sources and PDFs; manuscript content is not distributed by this repository."
+}

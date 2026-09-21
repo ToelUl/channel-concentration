@@ -37,6 +37,14 @@ def verify_analytic_artists(plot_dir: Path, data: Path, selectors=None) -> dict:
         numer = np.sum(odd**(-4)/(odd**2+4*w*w)**4)
         return float(numer/denom**2)
 
+    def finite_kf(h, gamma, yh, yg, size):
+        """Direct NS-mode response from the analytic gradient, outside renderer."""
+        momenta = (2*np.arange(size//2, dtype=float)+1)*math.pi/size
+        sine, gap = np.sin(momenta), h-np.cos(momenta)
+        denominator = gap*gap+(gamma*sine)**2
+        response = (yh*(-gamma*sine)+yg*(gap*sine))**2/(4*denominator**2)
+        return float(np.sum(response*response)/np.sum(response)**2)
+
     if '1' in selected:
         axes = read('1')
         total, concentration = axes[0]['lines'], axes[2]['lines']
@@ -49,6 +57,11 @@ def verify_analytic_artists(plot_dir: Path, data: Path, selectors=None) -> dict:
         check('Fig1 XX closed P2 coordinates', total[1]['y'], xx_p2)
         check('Fig1 TFIM closed K coordinates', concentration[0]['y'], tfim_p4/tfim_p2**2)
         check('Fig1 XX closed K coordinates', concentration[1]['y'], xx_p4/xx_p2**2)
+        n = np.arange(5, dtype=float)
+        ladder = (8/math.pi**2)/(2*n+1)**2
+        check('Fig1 TFIM and two XX soft-ladder bar heights',
+              [bar['height'] for bar in axes[1]['bars']],
+              np.concatenate((ladder, ladder/2, ladder/2)))
 
     if '2' in selected:
         axes = read('2')
@@ -64,6 +77,13 @@ def verify_analytic_artists(plot_dir: Path, data: Path, selectors=None) -> dict:
                           ((1-2**(-p))*zeta(p, 1))**2) for p in powers]
         check('Fig2 odd-ladder envelope selected coordinates',
               [envelope['y'][i] for i in indices], expected)
+        mu_grid = np.linspace(-6.0, 6.0, 61)
+        for index, size in enumerate((512, 2048, 8192, 32768), start=2):
+            markers = axes[0]['lines'][index]
+            check(f'Fig2 L={size} marker mu grid', markers['x'], mu_grid)
+            check(f'Fig2 L={size} finite-size marker series', markers['y'],
+                  [finite_kf(1+mu*math.pi/size, 1.0, 1.0, 0.0, size)
+                   for mu in mu_grid])
 
     if '3' in selected:
         axes = read('3')
@@ -75,6 +95,20 @@ def verify_analytic_artists(plot_dir: Path, data: Path, selectors=None) -> dict:
         check('Fig3 field scaling selected coordinates',
               [field['y'][i] for i in indices],
               [psi(field['x'][i]) for i in indices])
+        w_grid = np.array((0.25, 0.5, 1.0, 2.0, 4.0, 8.0, 15.0, 25.0, 45.0))
+        for index, size in enumerate((4096, 16384, 65536)):
+            field_markers, anisotropy_markers = axes[1]['lines'][3+2*index:5+2*index]
+            check(f'Fig3 L={size} field marker w grid', field_markers['x'], w_grid)
+            check(f'Fig3 L={size} anisotropy marker w grid',
+                  anisotropy_markers['x'], w_grid)
+            check(f'Fig3 L={size} field finite-size marker series',
+                  field_markers['y'],
+                  [finite_kf(1.0, w*math.pi/size, 1.0, 0.0, size)
+                   for w in w_grid])
+            check(f'Fig3 L={size} anisotropy finite-size marker series',
+                  anisotropy_markers['y'],
+                  [finite_kf(1.0, w*math.pi/size, 0.0, 1.0, size)
+                   for w in w_grid])
 
     if '6' in selected:
         axes = read('6')
@@ -88,6 +122,18 @@ def verify_analytic_artists(plot_dir: Path, data: Path, selectors=None) -> dict:
         maximum = max(float(row['K_F']) for row in archived)
         check('Fig6 archived full semicircle radius coordinates', curve['y'][:241],
               [float(row['K_F'])/maximum for row in archived])
+        half_angles = np.linspace(0, math.pi, 241)
+        near_values = np.array([finite_kf(1.05, 0.05, math.cos(angle),
+                                          math.sin(angle), 2000)
+                                for angle in half_angles])
+        near_normalized = near_values/np.max(near_values)
+        near_angles = np.r_[half_angles[:-1], half_angles[:-1]+math.pi, 0.0]
+        near_radii = np.r_[near_normalized[:-1], near_normalized[:-1],
+                           near_normalized[0]]
+        check('Fig6 near-Lifshitz full polar angle grid', axes[1]['lines'][0]['x'],
+              near_angles)
+        check('Fig6 near-Lifshitz full polar radius', axes[1]['lines'][0]['y'],
+              near_radii)
 
     if 'S1' in selected:
         axes = read('S1')
@@ -103,6 +149,17 @@ def verify_analytic_artists(plot_dir: Path, data: Path, selectors=None) -> dict:
             expected.append(float(np.sum(probability**2)/np.sum(probability)**2))
         check('FigS1 weak-quench selected ratio coordinates',
               [ratio['y'][i] for i in indices], expected, rtol=2e-9, atol=2e-9)
+        weights = (np.sin(momenta)/(2*(1-np.cos(momenta))**2
+                   +2*np.sin(momenta)**2))**2
+        # The expression above is the critical-field derivative weight,
+        # algebraically independent of the renderer's theta-gradient helper.
+        check('FigS1 normalized quadratic weight series',
+              axes[0]['lines'][0]['y'], (weights/np.sum(weights))[:100])
+        for line, delta in zip(axes[0]['lines'][1:], (0.0005, 0.0015, 0.003)):
+            final = np.arctan2(np.sin(momenta), 1+delta-np.cos(momenta))
+            probability = np.sin((final-initial)/2)**2
+            check(f'FigS1 delta={delta} normalized excitation weight series',
+                  line['y'], (probability/np.sum(probability))[:100])
 
     if not all(row['passed'] for row in checks):
         raise ValueError('Analytic rendered coordinates differ from independent oracles: '

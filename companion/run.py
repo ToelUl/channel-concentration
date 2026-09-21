@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import ast
 import hashlib
 import importlib.util
 import json
@@ -24,7 +25,10 @@ COMPUTATION_CLASSES = {
     '6': 'analytic-free-fermion',
     'S1': 'analytic-free-fermion-quench',
 }
-FIGURE_MAP_SHA256 = '271386896c9d0f0f6eb29dc45598e76b1dd98c02746a6cfb39484a94170b36a9'
+REQUIRED_CODE_ROUTE_KEYS = {'stage', 'path', 'symbol', 'role', 'execution_class'}
+REQUIRED_CODE_ROUTE_STAGES = {'scientific-computation', 'publication-renderer'}
+MIDDLE_CODE_ROUTE_STAGES = {'data-transformation', 'archived-input', 'evidence-projection'}
+FIGURE_MAP_SHA256 = '9fd71395386e785b3b9851ab378e632fed2b0021d84ee3a30f60799fdb03f5a8'
 S1_REFERENCE_SHA256 = '91582fff7e7a5ea88865752e03ed58555752a3066c15eda0e0281dbb93f83051'
 S1_PNG_SHA256 = '4e69fd422ee534520e8e1ad4929c446a3ad37e73c85a2c2a19afd69690e5c508'
 S1_Y_RTOL = 1e-11
@@ -47,6 +51,71 @@ def checked_path(relative):
     if any(p.is_symlink() for p in [candidate, *candidate.parents] if p != REPO.parent):
         raise ValueError('Symbolic links are not accepted: '+relative)
     return resolved
+
+def checked_repo_file(relative):
+    if not isinstance(relative, str) or not relative or '\\' in relative:
+        raise ValueError('Code route path must be a non-empty repository-relative POSIX path')
+    candidate = REPO.joinpath(*relative.split('/'))
+    resolved = candidate.resolve()
+    if Path(relative).is_absolute() or not resolved.is_relative_to(REPO) or not candidate.is_file():
+        raise ValueError('Missing or unsafe code route path: '+relative)
+    if any(p.is_symlink() for p in [candidate, *candidate.parents] if p != REPO.parent):
+        raise ValueError('Symbolic links are not accepted in code routes: '+relative)
+    return resolved
+
+def verify_code_routes(contract):
+    symbol_cache = {}
+    for figure in contract['figures']:
+        selector = figure['selector']
+        routes = figure.get('code_routes')
+        if not isinstance(routes, list) or not routes:
+            raise ValueError('Figure code routes are missing: '+selector)
+        stages = {route.get('stage') for route in routes if isinstance(route, dict)}
+        if not REQUIRED_CODE_ROUTE_STAGES.issubset(stages) or not stages.intersection(MIDDLE_CODE_ROUTE_STAGES):
+            raise ValueError('Figure code route layers are incomplete: '+selector)
+        renderer_routes = [route for route in routes if route.get('stage') == 'publication-renderer']
+        if len(renderer_routes) != 1 or renderer_routes[0].get('symbol') != figure['renderer']:
+            raise ValueError('Figure publication renderer route differs from its registry: '+selector)
+        artifact_names = set()
+        for route in routes:
+            if not isinstance(route, dict) or not REQUIRED_CODE_ROUTE_KEYS.issubset(route):
+                raise ValueError('Figure code route fields are incomplete: '+selector)
+            if any(not isinstance(route[key], str) or not route[key].strip()
+                   for key in REQUIRED_CODE_ROUTE_KEYS):
+                raise ValueError('Figure code route fields must be non-empty strings: '+selector)
+            source = checked_repo_file(route['path'])
+            if source.suffix != '.py':
+                raise ValueError('Figure code route is not a Python source file: '+route['path'])
+            if source not in symbol_cache:
+                try:
+                    tree = ast.parse(source.read_text(encoding='utf-8'), filename=str(source))
+                except (SyntaxError, UnicodeError) as error:
+                    raise ValueError('Figure code route source cannot be parsed: '+route['path']) from error
+                symbol_cache[source] = {
+                    node.name for node in ast.walk(tree)
+                    if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef))
+                }
+            if route['symbol'] not in symbol_cache[source]:
+                raise ValueError('Figure code route symbol is missing: '+route['path']+' :: '+route['symbol'])
+            artifacts = route.get('artifacts', [])
+            if not isinstance(artifacts, list) or any(not isinstance(item, str) for item in artifacts):
+                raise ValueError('Figure code route artifacts are invalid: '+selector)
+            for artifact in artifacts:
+                checked_repo_file(artifact)
+                artifact_names.add(Path(artifact).name)
+        if selector in {'4', '5'}:
+            direct_names = {Path(item).name for item in figure['data_inputs'] + figure['evidence_inputs']}
+            if not direct_names.issubset(artifact_names):
+                missing = sorted(direct_names - artifact_names)
+                raise ValueError('Interacting figure input lacks a producer or postprocessor route: '+', '.join(missing))
+            if not any(route['execution_class'] == 'historical-expensive-campaign' for route in routes):
+                raise ValueError('Interacting figure lacks an explicit historical campaign disposition: '+selector)
+            if not any(route['stage'] in {'data-transformation', 'evidence-projection'} for route in routes):
+                raise ValueError('Interacting figure lacks a postprocessor or projection route: '+selector)
+            if not any(route['path'] == 'baseline/tools/replay_current.py'
+                       and route['symbol'] == 'main' and route['stage'] == 'archived-input'
+                       for route in routes):
+                raise ValueError('Interacting figure lacks the bounded archived replay route: '+selector)
 
 def verify():
     origin = read(HERE/'ORIGIN.json')
@@ -79,12 +148,15 @@ def verify():
     for row in contract['figures']:
         if row.get('computation_class') != COMPUTATION_CLASSES[row['selector']]:
             raise ValueError('Figure computation class differs from its contract: '+row['selector'])
+        if not isinstance(row.get('caption_role'), str) or not row['caption_role'].strip():
+            raise ValueError('Figure caption role is missing: '+row['selector'])
         if not row['output_stem'].startswith('fig'+row['selector']+'_'):
             raise ValueError('Figure number and output filename disagree: '+row['selector'])
         if row['renderer'] != 'plot_'+row['output_stem']:
             raise ValueError('Figure renderer and output filename disagree: '+row['selector'])
+    verify_code_routes(contract)
     if sha(HERE/'FIGURE_MAP.json') != FIGURE_MAP_SHA256:
-        raise ValueError('Figure map identity differs from the reviewed S3 metadata')
+        raise ValueError('Figure map identity differs from the reviewed metadata')
     if contract['renderer_sha256'] != sha(HERE/'scripts/plotting/generate_figures.py'):
         raise ValueError('Figure map is bound to a different renderer')
     artwork = read(HERE/'ARTWORK.json')
@@ -220,7 +292,8 @@ def renderer():
              'output_stem':s.output_stem,'tex_label':s.tex_label,'tex_source':s.tex_source,
              'documents':[list(x) for x in s.documents], 'data_inputs':list(s.data_inputs),
              'evidence_inputs':list(s.evidence_inputs)} for s in mod.FIGURE_SPECS]
-    expected_identity=[{key:value for key,value in row.items() if key!='computation_class'}
+    expected_identity=[{key:value for key,value in row.items()
+                        if key not in ('computation_class', 'caption_role', 'code_routes')}
                        for row in expected_map]
     if actual != expected_identity:
         raise ValueError('Frozen figure registry differs from the source-derived map')
@@ -241,7 +314,9 @@ def describe(identifier):
     row=resolve_figure(identifier)
     selector=row['selector']
     return {'selector':selector,'key':row['key'],'title':row['title'],
+            'caption_role':row['caption_role'],
             'computation_class':row['computation_class'],'renderer':row['renderer'],
+            'code_routes':row['code_routes'],
             'direct_data_inputs':row['data_inputs'],
             'direct_evidence_inputs':row['evidence_inputs'],
             'output_stem':row['output_stem'],

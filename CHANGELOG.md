@@ -1,5 +1,48 @@
 # Changelog
 
+## companion-2026-09-21-rc1 — Publication companion release candidate
+
+This author-approved GitHub prerelease candidate records the S3 public integration,
+the subsequent bounded repairs, and alignment with the frozen final-local
+manuscript identities. Its exact content commit is recorded only by the
+generated release manifest after this source commit is fixed.
+
+- Added the [Figure guide](docs/FIGURE_GUIDE.md), figure `describe` and selected
+  rendering commands, bounded scientific contracts, analytic artist checks,
+  and the public R3 conditional-refinement checker and reviewed receipt.
+- Added complete figure-to-code navigation for Figures 1–6 and S1. The Figure
+  guide now links directly to scientific calculations, transformations or
+  archived-input routes, and publication renderers; `FIGURE_MAP.json` and
+  `describe` expose the same machine-readable routes. Integrity tests require
+  every source path and Python symbol and trace every direct Figure 4–5 input
+  to a producer, postprocessor, projection, or bounded archived replay.
+- Rebound the figure map to the three frozen final-local manuscript-source
+  hashes and recorded the validated label, filename, numbering, and caption
+  role for every figure. The frozen final build uses all seven approved S2 PDF
+  identities exactly; manuscript prose remains outside this repository.
+- Added deterministic exact-commit release-manifest and manuscript-binding
+  generators, JSON schemas, candidate metadata, and non-circular output
+  safeguards. The generated binding is a release asset, not a tracked file in
+  the content commit that it identifies.
+- Added the hosted S1 portability contract, which distinguishes
+  `PORTABLE_S1_CHECK` from exact approval of the seven PDFs. Added current
+  companion CI alongside the existing baseline regressions.
+- Clarified the separate identities of the immutable numerical release,
+  author-approved S2 renderer/artwork, and current public wrapper. Updated
+  reader-facing verification, evidence, version, and citation guidance.
+- Expanded analytic artist checks to the soft-ladder bars, finite-size Figure
+  2 and 3 marker series, the near-Lifshitz polar profile, and normalized S1
+  weights. Registered finite-grid scaling-error ceilings and an independent
+  closed-form weak-quench coefficient oracle, with seeded refusal checks.
+- Kept the numerical baseline, its release, archived central values, frozen
+  renderer implementation, and seven author-approved PDF identities unchanged.
+  These bounded checks do not rerun large interacting campaigns, establish
+  lattice refinement premises, or prove thermodynamic convergence.
+
+This entry defines the GitHub prerelease candidate. The release page and tag
+record its publication status. It does not assign a DOI, distribute manuscript
+source, or claim journal acceptance.
+
 ## 2026.09.12-figure-names - Manuscript numbering alignment
 
 - Renamed the four legacy output stems for Figures 4, 5, 6 and S1 to match the current manuscript and existing renderer functions.

@@ -18,11 +18,14 @@ ORIGINAL = args.plot_dir
 DATA = ROOT/'baseline/data/figure-inputs'
 
 
-def expect_refusal(selector, verifier):
+def expect_refusal(selector, verifier, *, axis=0, line=0, bar=None):
     with tempfile.TemporaryDirectory() as temporary:
         path = Path(temporary)/f'{selector}.json'
         value = json.loads((ORIGINAL/f'{selector}.json').read_text(encoding='utf-8'))
-        value[0]['lines'][0]['y'][0] += 0.1
+        if bar is None:
+            value[axis]['lines'][line]['y'][0] += 0.1
+        else:
+            value[axis]['bars'][bar]['height'] += 0.1
         path.write_text(json.dumps(value), encoding='utf-8')
         try:
             verifier(Path(temporary), DATA, {selector})
@@ -32,5 +35,10 @@ def expect_refusal(selector, verifier):
 
 
 expect_refusal('1', verify_analytic_artists)
+expect_refusal('1', verify_analytic_artists, axis=1, bar=0)
+expect_refusal('2', verify_analytic_artists, line=2)
+expect_refusal('3', verify_analytic_artists, axis=1, line=3)
+expect_refusal('6', verify_analytic_artists, axis=1)
+expect_refusal('S1', verify_analytic_artists, line=1)
 expect_refusal('4', verify_artists)
 print('PASS: seeded analytic and interacting coordinate changes were refused')
