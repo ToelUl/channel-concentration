@@ -1,5 +1,5 @@
 {
-  "schema": "publication-figure-map/1.0",
+  "schema": "publication-figure-map/1.1",
   "renderer_sha256": "54d51573fd29ddbd3b64f6cd8f8907186cc883318f18761850d0835acc90f9f3",
   "source_validation": "NUMBER_ALIGNED_LOCAL_R3_SOURCE_MAPPING",
   "source_documents": [
@@ -36,6 +36,29 @@
           "1"
         ]
       ],
+      "code_routes": [
+        {
+          "stage": "scientific-computation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "plot_fig1_tfim_critical_concentration",
+          "role": "Evaluate the exact finite-size TFIM/XX moments and limiting soft-ladder weights used as plotted coordinates.",
+          "execution_class": "lightweight-analytic"
+        },
+        {
+          "stage": "data-transformation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "get_params",
+          "role": "Bind the publication size grid and display parameters consumed by the analytic calculation.",
+          "execution_class": "parameter-binding"
+        },
+        {
+          "stage": "publication-renderer",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "plot_fig1_tfim_critical_concentration",
+          "role": "Assemble and render the three publication panels without reading an archived numerical table.",
+          "execution_class": "publication-render"
+        }
+      ],
       "data_inputs": [],
       "evidence_inputs": []
     },
@@ -57,6 +80,36 @@
           "arxiv-combined",
           "2"
         ]
+      ],
+      "code_routes": [
+        {
+          "stage": "scientific-computation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "Phi",
+          "role": "Evaluate the parameter-free TFIM scaling function from the odd-mode sum.",
+          "execution_class": "lightweight-analytic"
+        },
+        {
+          "stage": "scientific-computation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "KFcrit_p",
+          "role": "Evaluate the ideal odd-ladder concentration envelope as a function of exponent.",
+          "execution_class": "lightweight-analytic"
+        },
+        {
+          "stage": "data-transformation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "channel_weights",
+          "role": "Convert finite-size Bogoliubov-angle gradients into the channel weights used for the plotted marker series.",
+          "execution_class": "lightweight-analytic"
+        },
+        {
+          "stage": "publication-renderer",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "plot_fig2_scaling_and_envelope",
+          "role": "Assemble and render the scaling-collapse and envelope panels.",
+          "execution_class": "publication-render"
+        }
       ],
       "data_inputs": [],
       "evidence_inputs": []
@@ -80,6 +133,36 @@
           "3"
         ]
       ],
+      "code_routes": [
+        {
+          "stage": "scientific-computation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "KF_point",
+          "role": "Evaluate finite-size directional concentrations from exact free-fermion channel weights.",
+          "execution_class": "lightweight-analytic"
+        },
+        {
+          "stage": "scientific-computation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "Psi",
+          "role": "Evaluate the Lifshitz field-direction scaling function; the same module's Phi symbol supplies the anisotropy direction.",
+          "execution_class": "lightweight-analytic"
+        },
+        {
+          "stage": "data-transformation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "get_params",
+          "role": "Bind the fixed-size and scaling-window grids used to form the displayed curves and markers.",
+          "execution_class": "parameter-binding"
+        },
+        {
+          "stage": "publication-renderer",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "plot_fig3_lifshitz_anisotropy_scaling",
+          "role": "Assemble and render the directional-selectivity and Lifshitz-scaling panels.",
+          "execution_class": "publication-render"
+        }
+      ],
       "data_inputs": [],
       "evidence_inputs": []
     },
@@ -101,6 +184,75 @@
           "arxiv-combined",
           "4"
         ]
+      ],
+      "code_routes": [
+        {
+          "stage": "scientific-computation",
+          "path": "baseline/software/src/cc_repro/_resources/original/scripts/simulation/simulate_interacting_benchmarks.py",
+          "symbol": "main",
+          "role": "Historical Potts interacting campaign entry point retained in the immutable baseline; it can perform eigensolves and is not a routine figure command.",
+          "execution_class": "historical-expensive-campaign"
+        },
+        {
+          "stage": "scientific-computation",
+          "path": "baseline/software/src/cc_repro/_resources/original/scripts/simulation/reproduce_nnn_tfim_expensive.py",
+          "symbol": "main",
+          "role": "NNN-TFIM publication campaign entry point that produces the archived PRG, response, exact-TFIM, and benchmark rows.",
+          "execution_class": "historical-expensive-campaign",
+          "artifacts": [
+            "baseline/data/figure-inputs/interacting_benchmarks.csv"
+          ]
+        },
+        {
+          "stage": "data-transformation",
+          "path": "baseline/software/src/cc_repro/_resources/original/scripts/cleanroom/regenerate_potts_fss.py",
+          "symbol": "main",
+          "role": "Regenerate the fixed-grid Potts finite-size table from archived campaign outputs without changing the frozen plotted values.",
+          "execution_class": "archived-postprocess",
+          "artifacts": [
+            "baseline/data/figure-inputs/potts_outcome_aware_fss.csv"
+          ]
+        },
+        {
+          "stage": "data-transformation",
+          "path": "baseline/software/src/cc_repro/_resources/original/scripts/analysis/derive_potts_theory_guided_7over5.py",
+          "symbol": "main",
+          "role": "Derive the fixed 7/5 guide fit and its provenance receipt from archived Potts inputs.",
+          "execution_class": "archived-postprocess",
+          "artifacts": [
+            "baseline/data/figure-inputs/potts_theory_guided_7over5_receipt.json"
+          ]
+        },
+        {
+          "stage": "data-transformation",
+          "path": "baseline/software/src/cc_repro/_resources/original/scripts/reproducibility/reproduce_numerics.py",
+          "symbol": "compute_envelope_table",
+          "role": "Evaluate the analytic envelope reference table read by the renderer.",
+          "execution_class": "lightweight-analytic",
+          "artifacts": [
+            "baseline/data/figure-inputs/envelope_predictions_table.csv"
+          ]
+        },
+        {
+          "stage": "archived-input",
+          "path": "baseline/tools/replay_current.py",
+          "symbol": "main",
+          "role": "Restore immutable campaign outputs and replay selected postprocessors in a new workspace; this route performs no new eigensolve.",
+          "execution_class": "bounded-replay-no-eigensolve",
+          "artifacts": [
+            "baseline/data/figure-inputs/interacting_benchmarks.csv",
+            "baseline/data/figure-inputs/potts_outcome_aware_fss.csv",
+            "baseline/data/figure-inputs/potts_theory_guided_7over5_receipt.json",
+            "baseline/data/figure-inputs/envelope_predictions_table.csv"
+          ]
+        },
+        {
+          "stage": "publication-renderer",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "plot_fig4_interacting_benchmarks",
+          "role": "Read the four frozen inputs, reuse the archived fit coefficients, and render both publication panels without refitting or eigensolving.",
+          "execution_class": "publication-render"
+        }
       ],
       "data_inputs": [
         "interacting_benchmarks.csv",
@@ -128,6 +280,72 @@
           "arxiv-combined",
           "5"
         ]
+      ],
+      "code_routes": [
+        {
+          "stage": "scientific-computation",
+          "path": "baseline/software/src/cc_repro/_resources/original/scripts/simulation/simulate_interacting_benchmarks.py",
+          "symbol": "main",
+          "role": "Historical retained-eigenpair Potts campaign entry point; it can perform eigensolves and is preserved only as the producer route behind the archive.",
+          "execution_class": "historical-expensive-campaign"
+        },
+        {
+          "stage": "scientific-computation",
+          "path": "baseline/software/src/cc_repro/_resources/original/scripts/simulation/reproduce_nnn_tfim_expensive.py",
+          "symbol": "main",
+          "role": "NNN-TFIM campaign entry point that creates the archived checkpoints and ranked response inputs.",
+          "execution_class": "historical-expensive-campaign"
+        },
+        {
+          "stage": "data-transformation",
+          "path": "baseline/software/src/cc_repro/_resources/original/scripts/analysis/derive_potts_certified_ranked_weights.py",
+          "symbol": "main",
+          "role": "Convert archived Potts retained-projector evidence into the certified L=14 ranked-weight table.",
+          "execution_class": "archived-postprocess",
+          "artifacts": [
+            "baseline/data/figure-inputs/potts_L14_certified_ranked_weights.csv"
+          ]
+        },
+        {
+          "stage": "data-transformation",
+          "path": "baseline/software/src/cc_repro/_resources/original/scripts/analysis/derive_nnn_ranked_distribution_convergence.py",
+          "symbol": "main",
+          "role": "Postprocess archived NNN checkpoints into the ranked-distribution table and receipt, including same-size exact-TFIM comparisons.",
+          "execution_class": "archived-postprocess",
+          "artifacts": [
+            "baseline/data/figure-inputs/nnn_ranked_distribution_convergence.csv",
+            "baseline/data/figure-inputs/nnn_ranked_distribution_convergence_receipt.json"
+          ]
+        },
+        {
+          "stage": "evidence-projection",
+          "path": "companion/run.py",
+          "symbol": "verify",
+          "role": "Verify the lossless decimal-string projection of pre-existing CFT evidence used by the renderer; this is not a lattice computation.",
+          "execution_class": "verification-only",
+          "artifacts": [
+            "companion/inputs/cft/cft_kf_results.json"
+          ]
+        },
+        {
+          "stage": "archived-input",
+          "path": "baseline/tools/replay_current.py",
+          "symbol": "main",
+          "role": "Restore immutable Potts/NNN runs and replay the ranked postprocessors in a new workspace with no new eigensolve.",
+          "execution_class": "bounded-replay-no-eigensolve",
+          "artifacts": [
+            "baseline/data/figure-inputs/potts_L14_certified_ranked_weights.csv",
+            "baseline/data/figure-inputs/nnn_ranked_distribution_convergence.csv",
+            "baseline/data/figure-inputs/nnn_ranked_distribution_convergence_receipt.json"
+          ]
+        },
+        {
+          "stage": "publication-renderer",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "plot_fig5_distribution_comparisons",
+          "role": "Read the frozen ranked tables and verified CFT projection and render the comparison panels without recomputing spectra.",
+          "execution_class": "publication-render"
+        }
       ],
       "data_inputs": [
         "potts_L14_certified_ranked_weights.csv",
@@ -157,6 +375,29 @@
           "6"
         ]
       ],
+      "code_routes": [
+        {
+          "stage": "scientific-computation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "KF_point",
+          "role": "Evaluate directional channel concentration from exact XY free-fermion mode sums.",
+          "execution_class": "lightweight-analytic"
+        },
+        {
+          "stage": "data-transformation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "channel_weights",
+          "role": "Convert tangent directions into channel weights before polar normalization and mirroring.",
+          "execution_class": "lightweight-analytic"
+        },
+        {
+          "stage": "publication-renderer",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "plot_fig6_xy_directional_profiles",
+          "role": "Assemble, normalize, mirror, and render the gapped and regulated near-Lifshitz polar profiles.",
+          "execution_class": "publication-render"
+        }
+      ],
       "data_inputs": [],
       "evidence_inputs": []
     },
@@ -178,6 +419,36 @@
           "arxiv-combined",
           "S1"
         ]
+      ],
+      "code_routes": [
+        {
+          "stage": "scientific-computation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "weak_quench_probabilities_h",
+          "role": "Evaluate the exact one-sided BdG pair-excitation probabilities for each quench amplitude.",
+          "execution_class": "lightweight-analytic"
+        },
+        {
+          "stage": "scientific-computation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "R_from_probabilities",
+          "role": "Convert Bernoulli-mode probabilities into the counting ratio, mean, and variance.",
+          "execution_class": "lightweight-analytic"
+        },
+        {
+          "stage": "data-transformation",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "channel_weights",
+          "role": "Form the normalized quadratic prediction used as the weak-quench reference distribution.",
+          "execution_class": "lightweight-analytic"
+        },
+        {
+          "stage": "publication-renderer",
+          "path": "companion/scripts/plotting/generate_figures.py",
+          "symbol": "plot_figS1_weak_quench_extraction",
+          "role": "Assemble and render the normalized-weight and counting-ratio panels without an archived plot table.",
+          "execution_class": "publication-render"
+        }
       ],
       "data_inputs": [],
       "evidence_inputs": []

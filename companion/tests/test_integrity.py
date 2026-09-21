@@ -18,6 +18,16 @@ class IntegrityTests(unittest.TestCase):
         for path in paths:
             p=self.repo/path;p.parent.mkdir(parents=True,exist_ok=True)
             shutil.copy2(SOURCE.parent/path,p)
+        figure_map=json.loads((SOURCE/'FIGURE_MAP.json').read_text())
+        code_paths={route['path'] for figure in figure_map['figures'] for route in figure['code_routes']}
+        artifact_paths={artifact for figure in figure_map['figures'] for route in figure['code_routes']
+                        for artifact in route.get('artifacts',[])}
+        for path in code_paths|artifact_paths:
+            source=SOURCE.parent/path
+            target=self.repo/path
+            if target.exists():continue
+            target.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copy2(source,target)
         run.HERE,run.REPO=self.here,self.repo
 
     def test_pristine_copy(self):
@@ -29,6 +39,38 @@ class IntegrityTests(unittest.TestCase):
             self.assertEqual(locator['selector'],'1')
             self.assertEqual(locator['computation_class'],'analytic-closed-form')
             self.assertEqual(locator['figure_guide'],'docs/FIGURE_GUIDE.md#figure-1')
+            self.assertEqual(locator['code_routes'][-1]['symbol'],'plot_fig1_tfim_critical_concentration')
+
+    def test_every_figure_has_complete_code_route_layers(self):
+        figure_map=json.loads((self.here/'FIGURE_MAP.json').read_text())
+        for figure in figure_map['figures']:
+            stages={route['stage'] for route in figure['code_routes']}
+            self.assertIn('scientific-computation',stages)
+            self.assertIn('publication-renderer',stages)
+            self.assertTrue(stages.intersection({'data-transformation','archived-input','evidence-projection'}))
+
+    def test_missing_code_route_path_is_refused(self):
+        path=self.here/'FIGURE_MAP.json';obj=json.loads(path.read_text())
+        obj['figures'][0]['code_routes'][0]['path']='companion/missing.py'
+        path.write_text(json.dumps(obj))
+        with self.assertRaisesRegex(ValueError,'code route path'):
+            run.verify()
+
+    def test_missing_code_route_symbol_is_refused(self):
+        path=self.here/'FIGURE_MAP.json';obj=json.loads(path.read_text())
+        obj['figures'][0]['code_routes'][0]['symbol']='not_a_real_symbol'
+        path.write_text(json.dumps(obj))
+        with self.assertRaisesRegex(ValueError,'code route symbol'):
+            run.verify()
+
+    def test_interacting_input_without_route_is_refused(self):
+        path=self.here/'FIGURE_MAP.json';obj=json.loads(path.read_text())
+        for route in obj['figures'][3]['code_routes']:
+            route['artifacts']=[artifact for artifact in route.get('artifacts',[])
+                                if not artifact.endswith('interacting_benchmarks.csv')]
+        path.write_text(json.dumps(obj))
+        with self.assertRaisesRegex(ValueError,'lacks a producer or postprocessor route'):
+            run.verify()
 
     def test_invalid_figure_is_refused(self):
         with self.assertRaisesRegex(ValueError,'Unknown or ambiguous figure'):

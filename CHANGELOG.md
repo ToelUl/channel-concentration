@@ -9,6 +9,12 @@ after the manuscript and public project are reconciled.
 - Added the [Figure guide](docs/FIGURE_GUIDE.md), figure `describe` and selected
   rendering commands, bounded scientific contracts, analytic artist checks,
   and the public R3 conditional-refinement checker and reviewed receipt.
+- Added complete figure-to-code navigation for Figures 1–6 and S1. The Figure
+  guide now links directly to scientific calculations, transformations or
+  archived-input routes, and publication renderers; `FIGURE_MAP.json` and
+  `describe` expose the same machine-readable routes. Integrity tests require
+  every source path and Python symbol and trace every direct Figure 4–5 input
+  to a producer, postprocessor, projection, or bounded archived replay.
 - Added the hosted S1 portability contract, which distinguishes
   `PORTABLE_S1_CHECK` from exact approval of the seven PDFs. Added current
   companion CI alongside the existing baseline regressions.

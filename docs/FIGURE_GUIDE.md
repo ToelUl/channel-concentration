@@ -1,6 +1,6 @@
 # Figure guide: paper result to public computation and evidence
 
-This guide is the human route through Figures 1–6 and S1. The [machine figure map](../companion/FIGURE_MAP.json) binds selectors, renderers, filenames, and direct inputs; the [evidence guide](EVIDENCE_MAP.md) explains evidence classes; the [companion guide](../companion/README.md) explains the commands. The immutable numerical authority is `baseline-2026-09-09-rc1`. R6a denotes the author's collaborator-consensus manuscript source. Its labels below are human navigation hints, not a claim that this public repository contains that source or its final version.
+This guide is the human route through Figures 1–6 and S1. The [machine figure map](../companion/FIGURE_MAP.json) binds selectors, renderers, filenames, direct inputs, and the same code routes returned by `companion/run.py describe`; the [evidence guide](EVIDENCE_MAP.md) explains evidence classes; the [companion guide](../companion/README.md) explains the commands. The immutable numerical authority is `baseline-2026-09-09-rc1`. R6a denotes the author's collaborator-consensus manuscript source. Its labels below are human navigation hints, not a claim that this public repository contains that source or its final version.
 
 Run `python -B companion/run.py verify` before using the companion. The publication command for an individual figure is `python -B companion/run.py render --fig <selector>` with a fresh output directory. Integrity, scientific-contract, and exact artwork checks answer different questions; see [verification](VERIFICATION.md). No rendering command performs an interacting eigensolve or a new fit.
 
@@ -15,7 +15,14 @@ Run `python -B companion/run.py verify` before using the companion. The publicat
 | Computation class | `analytic-closed-form` |
 | Panels | (a) total-response scaling; (b) one and two soft ladders; (c) exact finite-size concentration. |
 | Direct renderer inputs | None; the renderer evaluates analytic formulas and free-fermion sums. |
+| Source code | [Exact-coordinate calculation and publication renderer](../companion/scripts/plotting/generate_figures.py#L506) |
 | Reproduce | `python -B companion/run.py render --fig 1` |
+
+**Code route**
+
+1. Scientific computation: [`plot_fig1_tfim_critical_concentration`](../companion/scripts/plotting/generate_figures.py#L506) evaluates the closed finite-size TFIM/XX moments and limiting ladder weights directly.
+2. Data transformation: [`get_params`](../companion/scripts/plotting/generate_figures.py#L367) binds the publication size grid; there is no archived numerical input for this figure.
+3. Publication renderer: the same frozen [`plot_fig1_tfim_critical_concentration`](../companion/scripts/plotting/generate_figures.py#L506) function assembles and draws all three panels.
 
 **Technical trace**
 
@@ -35,7 +42,14 @@ Run `python -B companion/run.py verify` before using the companion. The publicat
 | Computation class | `analytic-free-fermion` |
 | Panels | (a) TFIM scaling collapse; (b) envelope versus exponent. |
 | Direct renderer inputs | None. |
+| Source code | [`Phi` and `KFcrit_p`](../companion/scripts/plotting/generate_figures.py#L246), [finite-size channel weights](../companion/scripts/plotting/generate_figures.py#L228), [publication renderer](../companion/scripts/plotting/generate_figures.py#L597) |
 | Reproduce | `python -B companion/run.py render --fig 2` |
+
+**Code route**
+
+1. Scientific computation: [`Phi`](../companion/scripts/plotting/generate_figures.py#L246) evaluates the TFIM scaling function and [`KFcrit_p`](../companion/scripts/plotting/generate_figures.py#L270) evaluates the odd-ladder envelope.
+2. Data transformation: [`channel_weights`](../companion/scripts/plotting/generate_figures.py#L228) turns finite-size Bogoliubov-angle gradients into the plotted marker values.
+3. Publication renderer: [`plot_fig2_scaling_and_envelope`](../companion/scripts/plotting/generate_figures.py#L597) assembles the collapse and envelope panels.
 
 **Technical trace**
 
@@ -55,7 +69,14 @@ Run `python -B companion/run.py verify` before using the companion. The publicat
 | Computation class | `analytic-free-fermion` |
 | Panels | (a) two tangent directions at fixed size; (b) directional scaling functions. |
 | Direct renderer inputs | None. |
+| Source code | [`KF_point`, `Phi`, and `Psi`](../companion/scripts/plotting/generate_figures.py#L238), [publication renderer](../companion/scripts/plotting/generate_figures.py#L683) |
 | Reproduce | `python -B companion/run.py render --fig 3` |
+
+**Code route**
+
+1. Scientific computation: [`KF_point`](../companion/scripts/plotting/generate_figures.py#L238) evaluates the finite-size mode sums, while [`Phi`](../companion/scripts/plotting/generate_figures.py#L246) and [`Psi`](../companion/scripts/plotting/generate_figures.py#L258) evaluate the two scaling functions.
+2. Data transformation: [`get_params`](../companion/scripts/plotting/generate_figures.py#L367) binds the fixed-size and scaling-window grids; no archived plot table is read.
+3. Publication renderer: [`plot_fig3_lifshitz_anisotropy_scaling`](../companion/scripts/plotting/generate_figures.py#L683) assembles the directional and scaling panels.
 
 **Technical trace**
 
@@ -75,7 +96,14 @@ Run `python -B companion/run.py verify` before using the companion. The publicat
 | Computation class | `archived-interacting-hybrid` |
 | Panels | (a) Potts finite-size values and fixed references; (b) NNN-TFIM versus same-size exact TFIM. |
 | Direct renderer inputs | `interacting_benchmarks.csv`, `potts_outcome_aware_fss.csv`, `potts_theory_guided_7over5_receipt.json`, `envelope_predictions_table.csv` in `baseline/data/figure-inputs/`. |
+| Source code | [Potts producer](../baseline/software/src/cc_repro/_resources/original/scripts/simulation/simulate_interacting_benchmarks.py#L881), [NNN producer](../baseline/software/src/cc_repro/_resources/original/scripts/simulation/reproduce_nnn_tfim_expensive.py#L591), [archived replay](../baseline/tools/replay_current.py#L12), [publication renderer](../companion/scripts/plotting/generate_figures.py#L772) |
 | Reproduce | `python -B companion/run.py render --fig 4` |
+
+**Code route**
+
+1. Scientific computation: the preserved [Potts campaign](../baseline/software/src/cc_repro/_resources/original/scripts/simulation/simulate_interacting_benchmarks.py#L881) and [NNN publication campaign](../baseline/software/src/cc_repro/_resources/original/scripts/simulation/reproduce_nnn_tfim_expensive.py#L591) are the producer routes behind the archive. They may perform eigensolves and are not routine figure commands.
+2. Data transformation and archived input: [`regenerate_potts_fss.py`](../baseline/software/src/cc_repro/_resources/original/scripts/cleanroom/regenerate_potts_fss.py#L72), [`derive_potts_theory_guided_7over5.py`](../baseline/software/src/cc_repro/_resources/original/scripts/analysis/derive_potts_theory_guided_7over5.py#L254), and [`compute_envelope_table`](../baseline/software/src/cc_repro/_resources/original/scripts/reproducibility/reproduce_numerics.py#L322) create the frozen inputs. [`replay_current.py`](../baseline/tools/replay_current.py#L12) restores archived runs and checks selected postprocessors without a new eigensolve.
+3. Publication renderer: [`plot_fig4_interacting_benchmarks`](../companion/scripts/plotting/generate_figures.py#L772) reads the four frozen inputs and existing coefficients; `render --fig 4` neither runs the campaigns nor refits the data.
 
 **Technical trace**
 
@@ -98,7 +126,14 @@ Run `python -B companion/run.py verify` before using the companion. The publicat
 | Computation class | `archived-interacting-distribution` |
 | Panels | (a) Potts retained ranks 1–15 with inset 2–15; (b) NNN ranks and a visual exact TFIM L20 overlay. |
 | Direct renderer inputs | `potts_L14_certified_ranked_weights.csv`, `nnn_ranked_distribution_convergence.csv`, `nnn_ranked_distribution_convergence_receipt.json` in `baseline/data/figure-inputs/`; `companion/inputs/cft/cft_kf_results.json` is a direct evidence projection. |
+| Source code | [Potts producer](../baseline/software/src/cc_repro/_resources/original/scripts/simulation/simulate_interacting_benchmarks.py#L881), [NNN producer](../baseline/software/src/cc_repro/_resources/original/scripts/simulation/reproduce_nnn_tfim_expensive.py#L591), [ranked postprocessors](../baseline/software/src/cc_repro/_resources/original/scripts/analysis/derive_potts_certified_ranked_weights.py#L65), [publication renderer](../companion/scripts/plotting/generate_figures.py#L945) |
 | Reproduce | `python -B companion/run.py render --fig 5` |
+
+**Code route**
+
+1. Scientific computation: the preserved [Potts retained-eigenpair campaign](../baseline/software/src/cc_repro/_resources/original/scripts/simulation/simulate_interacting_benchmarks.py#L881) and [NNN publication campaign](../baseline/software/src/cc_repro/_resources/original/scripts/simulation/reproduce_nnn_tfim_expensive.py#L591) are historical producer routes and may perform eigensolves.
+2. Data transformation and archived input: [`derive_potts_certified_ranked_weights.py`](../baseline/software/src/cc_repro/_resources/original/scripts/analysis/derive_potts_certified_ranked_weights.py#L65) and [`derive_nnn_ranked_distribution_convergence.py`](../baseline/software/src/cc_repro/_resources/original/scripts/analysis/derive_nnn_ranked_distribution_convergence.py#L221) create the plotted ranked tables. [`replay_current.py`](../baseline/tools/replay_current.py#L12) checks those postprocessors from archived inputs without a new eigensolve. [`companion/run.py verify`](../companion/run.py#L120) validates the lossless CFT evidence projection; it does not perform a new lattice calculation.
+3. Publication renderer: [`plot_fig5_distribution_comparisons`](../companion/scripts/plotting/generate_figures.py#L945) reads the frozen tables and verified projection and renders the two ranked-distribution panels.
 
 **Technical trace**
 
@@ -119,7 +154,14 @@ Run `python -B companion/run.py verify` before using the companion. The publicat
 | Computation class | `analytic-free-fermion` |
 | Panels | (a) gapped XY polar profile; (b) regulated near-Lifshitz polar profile. |
 | Direct renderer inputs | None. |
+| Source code | [`KF_point` and `channel_weights`](../companion/scripts/plotting/generate_figures.py#L228), [publication renderer](../companion/scripts/plotting/generate_figures.py#L1141) |
 | Reproduce | `python -B companion/run.py render --fig 6` |
+
+**Code route**
+
+1. Scientific computation: [`KF_point`](../companion/scripts/plotting/generate_figures.py#L238) evaluates the XY concentration for each tangent direction from exact mode sums.
+2. Data transformation: [`channel_weights`](../companion/scripts/plotting/generate_figures.py#L228) converts each tangent into channel weights before the renderer normalizes and mirrors the polar curve.
+3. Publication renderer: [`plot_fig6_xy_directional_profiles`](../companion/scripts/plotting/generate_figures.py#L1141) draws the gapped and regulated near-Lifshitz profiles.
 
 **Technical trace**
 
@@ -139,7 +181,14 @@ Run `python -B companion/run.py verify` before using the companion. The publicat
 | Computation class | `analytic-free-fermion-quench` |
 | Panels | (a) normalized excitation weights; (b) counting ratio versus amplitude. |
 | Direct renderer inputs | None. |
+| Source code | [Exact quench probabilities and counting ratio](../companion/scripts/plotting/generate_figures.py#L282), [publication renderer](../companion/scripts/plotting/generate_figures.py#L1275) |
 | Reproduce | `python -B companion/run.py render --fig S1` |
+
+**Code route**
+
+1. Scientific computation: [`weak_quench_probabilities_h`](../companion/scripts/plotting/generate_figures.py#L282) evaluates exact BdG pair probabilities and [`R_from_probabilities`](../companion/scripts/plotting/generate_figures.py#L295) evaluates the counting ratio.
+2. Data transformation: [`channel_weights`](../companion/scripts/plotting/generate_figures.py#L228) forms the normalized quadratic reference distribution; no archived plot table is read.
+3. Publication renderer: [`plot_figS1_weak_quench_extraction`](../companion/scripts/plotting/generate_figures.py#L1275) assembles the normalized-weight and finite-amplitude panels.
 
 **Technical trace**
 
