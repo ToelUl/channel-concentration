@@ -4,7 +4,7 @@
   "sources": [
     {
       "name": "paper/main.tex",
-      "sha256": "5a14758e61e267d4f406fe5c40c8a5caca90adc6f8506dd756abc947a13f9d05"
+      "sha256": "70b4e34225d983852cc4055a43a5a7e46e34a5aec0766d8f5bba88d0e88a631d"
     },
     {
       "name": "supplement_numerical/main.tex",
@@ -18,7 +18,7 @@
   "pdfs": [
     {
       "name": "paper/main.pdf",
-      "sha256": "ac2983cc992481f18ac789d1b65e6152a72bc5b390068402d0cf8f67349e5d14"
+      "sha256": "e429641b370db70479245c0526527860626fd2a0e1ca505a3ca21af27f61dbf2"
     },
     {
       "name": "supplement_numerical/main.pdf",
@@ -26,7 +26,7 @@
     },
     {
       "name": "combined/main.pdf",
-      "sha256": "86f96230f0ad194c95a90c7228d313b0610dbeb32e2d56253c758b35b8e6ba04"
+      "sha256": "459e41089b50ae64af291a8cd008ddd3d8bdccf6fac96b0056a0cce51daa13d9"
     }
   ],
   "scope": "Hash-only identity for the frozen final-local manuscript sources and PDFs; manuscript content is not distributed by this repository."

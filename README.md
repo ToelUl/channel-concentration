@@ -94,7 +94,7 @@ renderer and seven PDF artwork identities (`2026.09.10-s2`). The subsequent
 with manuscript Figures 1-6 and S1. S3 names the later public navigation and
 bounded-verification integration; it is an internal integration stage, not a
 release name. That integration, the bounded repairs, and final-source
-alignment now form the author-approved local release candidate
+alignment now form the author-approved GitHub prerelease candidate
 `companion-2026-09-21-rc1`.
 [The figure map](companion/README.md#figure-and-evidence-map) lists current
 names and records the frozen final-local source hashes plus validated figure
@@ -105,13 +105,13 @@ assert a new scientific review of subsequent manuscript revisions.
 
 The release candidate preserves the numerical baseline and adds no
 interacting-model eigensolves or fits. The manuscript text remains outside
-this public companion. Its data-availability statement identifies the public
-snapshot `4bf5a0c9d94bc12128b90ef7479b831401adbb99` and separately cites the
+this public companion. Its data-availability statement identifies the
+release-specific tag `companion-2026-09-21-rc1` and separately cites the
 immutable numerical release. The candidate is bound to its own exact content
-commit by a generated manifest after the source commit is fixed; this does not
-silently change the historical snapshot. The candidate name does not assert
-that a public tag or GitHub release exists, and no new DOI, arXiv identifier,
-or journal acceptance is asserted here.
+commit by a generated manifest distributed with the prerelease; this does not
+silently change the historical snapshot. The GitHub release page and tag are
+authoritative for publication status. No new DOI, arXiv identifier, or journal
+acceptance is asserted here.
 
 The `baseline/` directory is immutable. Its README was sealed on 9 September 2026, before the numerical prerelease was posted. Its "Not yet published" line and note about open whole-manuscript acceptance describe that checkpoint; they are not a live status report for this repository or later manuscript revisions. The [numerical prerelease](https://github.com/ToelUl/channel-concentration/releases/tag/baseline-2026-09-09-rc1) is now public. See the [baseline overview](docs/BASELINE.md#historical-records) and [verification scope](docs/VERIFICATION.md) for the current English explanation. The original-language baseline records retain their sealed hashes.
 

@@ -1,7 +1,9 @@
-# companion-2026-09-21-rc1 release notes candidate
+# companion-2026-09-21-rc1 prerelease notes
 
-Status: author-approved local release candidate. No public tag, GitHub release,
-DOI, or archive publication is asserted by this file.
+Status: author-approved GitHub prerelease candidate. The tag target, release
+page, and attached assets are authoritative for publication status. No DOI,
+external archive publication, arXiv submission, or journal acceptance is
+asserted by this file.
 
 ## Purpose
 

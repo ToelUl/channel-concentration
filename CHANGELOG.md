@@ -2,7 +2,7 @@
 
 ## companion-2026-09-21-rc1 — Publication companion release candidate
 
-This author-approved local release candidate records the S3 public integration,
+This author-approved GitHub prerelease candidate records the S3 public integration,
 the subsequent bounded repairs, and alignment with the frozen final-local
 manuscript identities. Its exact content commit is recorded only by the
 generated release manifest after this source commit is fixed.
@@ -39,9 +39,9 @@ generated release manifest after this source commit is fixed.
   These bounded checks do not rerun large interacting campaigns, establish
   lattice refinement premises, or prove thermodynamic convergence.
 
-This entry names a local release candidate. It does not assert that a public
-tag or GitHub release exists, assign a DOI, distribute manuscript source, or
-claim journal acceptance.
+This entry defines the GitHub prerelease candidate. The release page and tag
+record its publication status. It does not assign a DOI, distribute manuscript
+source, or claim journal acceptance.
 
 ## 2026.09.12-figure-names - Manuscript numbering alignment
 

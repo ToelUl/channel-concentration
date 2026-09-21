@@ -1,7 +1,10 @@
 {
   "schema": "channel-concentration-release-candidate/1.0",
-  "status": "AUTHOR_APPROVED_LOCAL_RELEASE_CANDIDATE",
+  "status": "AUTHOR_APPROVED_GITHUB_PRERELEASE_CANDIDATE",
   "release_name": "companion-2026-09-21-rc1",
+  "publication_mode": "GITHUB_PRERELEASE",
+  "code_url": "https://github.com/ToelUl/channel-concentration/tree/companion-2026-09-21-rc1",
+  "release_url": "https://github.com/ToelUl/channel-concentration/releases/tag/companion-2026-09-21-rc1",
   "name_approval": {
     "status": "APPROVED",
     "date": "2026-09-21",
@@ -15,5 +18,17 @@
     "manuscript_binding": "GENERATED_AS_RELEASE_ASSET_AFTER_CONTENT_COMMIT"
   },
   "external_actions_performed": false,
-  "external_actions_authorized": false
+  "external_actions_authorized": true,
+  "authorized_external_scope": [
+    "push release-candidate branch",
+    "open and merge pull request after hosted CI passes",
+    "create exact release tag",
+    "publish GitHub prerelease with bounded evidence assets"
+  ],
+  "excluded_external_scope": [
+    "arXiv upload or submission",
+    "journal submission",
+    "DOI minting",
+    "external archive publication"
+  ]
 }

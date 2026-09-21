@@ -4,12 +4,14 @@ This directory stores the schemas, generators, and candidate metadata needed
 to close the current publication companion. It does not contain a completed
 release or manuscript source.
 
-The author-approved local release-candidate name is
+The author-approved GitHub prerelease-candidate name is
 `companion-2026-09-21-rc1`, as recorded in `RELEASE_CANDIDATE.json`. Internal
 stage names such as S2, S3, and R6a are not release names: S2 identifies the
 approved renderer/artwork authority, while the immutable numerical authority
-remains `baseline-2026-09-09-rc1`. Name approval does not authorize or assert
-a public tag, GitHub release, DOI, or archive publication.
+remains `baseline-2026-09-09-rc1`. The author's public-transition authorization
+is limited to the repository branch, pull request, exact tag, and GitHub
+prerelease; it does not authorize a DOI, external archive publication, arXiv
+submission, or journal submission.
 
 The [candidate release notes](RELEASE_NOTES.md) describe only the bounded
 companion content and retain the documented evidence limits.

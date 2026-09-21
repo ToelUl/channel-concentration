@@ -56,7 +56,7 @@ class IntegrityTests(unittest.TestCase):
         self.assertEqual(
             {row['path']:row['sha256'] for row in figure_map['source_documents']},
             {
-                'paper/main.tex':'5a14758e61e267d4f406fe5c40c8a5caca90adc6f8506dd756abc947a13f9d05',
+                'paper/main.tex':'70b4e34225d983852cc4055a43a5a7e46e34a5aec0766d8f5bba88d0e88a631d',
                 'supplement_numerical/main.tex':'1f9d9c32a8b1576e68def871814f9b38288af9e8c096e8854cda596bcc2bd745',
                 'supplement_numerical/weak_quench_module.tex':'0826ad66245c92b3f2b168ac2a42496ca21a7e895527ecaacad5d20b7f1788b9',
             },

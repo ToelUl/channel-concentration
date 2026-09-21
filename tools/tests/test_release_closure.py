@@ -91,7 +91,7 @@ class ReleaseClosureTests(unittest.TestCase):
             self.assertEqual(len({row["name"] for row in group}), 3)
             self.assertTrue(all(len(row["sha256"]) == 64 for row in group))
 
-    def test_candidate_name_is_author_approved_without_external_action(self):
+    def test_candidate_name_is_author_approved_for_prerelease_without_performed_action(self):
         candidate = json.loads(
             (ROOT / "release/RELEASE_CANDIDATE.json").read_text(encoding="utf-8")
         )
@@ -99,7 +99,8 @@ class ReleaseClosureTests(unittest.TestCase):
         self.assertEqual(candidate["name_approval"]["status"], "APPROVED")
         self.assertEqual(candidate["name_approval"]["authority"], "author")
         self.assertFalse(candidate["external_actions_performed"])
-        self.assertFalse(candidate["external_actions_authorized"])
+        self.assertTrue(candidate["external_actions_authorized"])
+        self.assertEqual(candidate["publication_mode"], "GITHUB_PRERELEASE")
 
     def test_release_name_is_consistent_across_public_metadata(self):
         name = "companion-2026-09-21-rc1"
