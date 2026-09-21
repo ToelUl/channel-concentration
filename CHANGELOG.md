@@ -15,6 +15,10 @@ after the manuscript and public project are reconciled.
   `describe` expose the same machine-readable routes. Integrity tests require
   every source path and Python symbol and trace every direct Figure 4–5 input
   to a producer, postprocessor, projection, or bounded archived replay.
+- Rebound the figure map to the three frozen final-local manuscript-source
+  hashes and recorded the validated label, filename, numbering, and caption
+  role for every figure. The frozen final build uses all seven approved S2 PDF
+  identities exactly; manuscript prose remains outside this repository.
 - Added the hosted S1 portability contract, which distinguishes
   `PORTABLE_S1_CHECK` from exact approval of the seven PDFs. Added current
   companion CI alongside the existing baseline regressions.

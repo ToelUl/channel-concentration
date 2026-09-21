@@ -28,7 +28,7 @@ COMPUTATION_CLASSES = {
 REQUIRED_CODE_ROUTE_KEYS = {'stage', 'path', 'symbol', 'role', 'execution_class'}
 REQUIRED_CODE_ROUTE_STAGES = {'scientific-computation', 'publication-renderer'}
 MIDDLE_CODE_ROUTE_STAGES = {'data-transformation', 'archived-input', 'evidence-projection'}
-FIGURE_MAP_SHA256 = 'd55e5210a10ae6978dbc8d14d06c01a04d23e24db8cfb0c65d9f49bcabb06924'
+FIGURE_MAP_SHA256 = '0e3a5ca4622458edd9118122254f15b027c10805a70d217b6a6f76f5dda37683'
 S1_REFERENCE_SHA256 = '91582fff7e7a5ea88865752e03ed58555752a3066c15eda0e0281dbb93f83051'
 S1_PNG_SHA256 = '4e69fd422ee534520e8e1ad4929c446a3ad37e73c85a2c2a19afd69690e5c508'
 S1_Y_RTOL = 1e-11
@@ -148,6 +148,8 @@ def verify():
     for row in contract['figures']:
         if row.get('computation_class') != COMPUTATION_CLASSES[row['selector']]:
             raise ValueError('Figure computation class differs from its contract: '+row['selector'])
+        if not isinstance(row.get('caption_role'), str) or not row['caption_role'].strip():
+            raise ValueError('Figure caption role is missing: '+row['selector'])
         if not row['output_stem'].startswith('fig'+row['selector']+'_'):
             raise ValueError('Figure number and output filename disagree: '+row['selector'])
         if row['renderer'] != 'plot_'+row['output_stem']:
@@ -291,7 +293,7 @@ def renderer():
              'documents':[list(x) for x in s.documents], 'data_inputs':list(s.data_inputs),
              'evidence_inputs':list(s.evidence_inputs)} for s in mod.FIGURE_SPECS]
     expected_identity=[{key:value for key,value in row.items()
-                        if key not in ('computation_class', 'code_routes')}
+                        if key not in ('computation_class', 'caption_role', 'code_routes')}
                        for row in expected_map]
     if actual != expected_identity:
         raise ValueError('Frozen figure registry differs from the source-derived map')
@@ -312,6 +314,7 @@ def describe(identifier):
     row=resolve_figure(identifier)
     selector=row['selector']
     return {'selector':selector,'key':row['key'],'title':row['title'],
+            'caption_role':row['caption_role'],
             'computation_class':row['computation_class'],'renderer':row['renderer'],
             'code_routes':row['code_routes'],
             'direct_data_inputs':row['data_inputs'],

@@ -38,6 +38,7 @@ class IntegrityTests(unittest.TestCase):
             locator=run.describe(identifier)
             self.assertEqual(locator['selector'],'1')
             self.assertEqual(locator['computation_class'],'analytic-closed-form')
+            self.assertIn('soft-ladder',locator['caption_role'])
             self.assertEqual(locator['figure_guide'],'docs/FIGURE_GUIDE.md#figure-1')
             self.assertEqual(locator['code_routes'][-1]['symbol'],'plot_fig1_tfim_critical_concentration')
 
@@ -48,6 +49,19 @@ class IntegrityTests(unittest.TestCase):
             self.assertIn('scientific-computation',stages)
             self.assertIn('publication-renderer',stages)
             self.assertTrue(stages.intersection({'data-transformation','archived-input','evidence-projection'}))
+
+    def test_final_source_mapping_identities(self):
+        figure_map=json.loads((self.here/'FIGURE_MAP.json').read_text())
+        self.assertEqual(figure_map['source_validation'],'FINAL_LOCAL_20260921_HASH_AND_LABEL_MAPPING')
+        self.assertEqual(
+            {row['path']:row['sha256'] for row in figure_map['source_documents']},
+            {
+                'paper/main.tex':'5a14758e61e267d4f406fe5c40c8a5caca90adc6f8506dd756abc947a13f9d05',
+                'supplement_numerical/main.tex':'1f9d9c32a8b1576e68def871814f9b38288af9e8c096e8854cda596bcc2bd745',
+                'supplement_numerical/weak_quench_module.tex':'0826ad66245c92b3f2b168ac2a42496ca21a7e895527ecaacad5d20b7f1788b9',
+            },
+        )
+        self.assertTrue(all(figure['caption_role'].strip() for figure in figure_map['figures']))
 
     def test_missing_code_route_path_is_refused(self):
         path=self.here/'FIGURE_MAP.json';obj=json.loads(path.read_text())

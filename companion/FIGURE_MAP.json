@@ -1,19 +1,20 @@
 {
   "schema": "publication-figure-map/1.1",
   "renderer_sha256": "54d51573fd29ddbd3b64f6cd8f8907186cc883318f18761850d0835acc90f9f3",
-  "source_validation": "NUMBER_ALIGNED_LOCAL_R3_SOURCE_MAPPING",
+  "source_validation": "FINAL_LOCAL_20260921_HASH_AND_LABEL_MAPPING",
+  "source_validation_scope": "Validated against the frozen final local manuscript sources; their hashes, figure labels, filenames, numbering, and caption roles are recorded here, but manuscript prose is not distributed by this repository.",
   "source_documents": [
     {
       "path": "paper/main.tex",
-      "sha256": "4dffeb3286f0628e85a15503e6c2eea52d5fa4f600a0c9ec3636af78f0b0e8f3"
+      "sha256": "5a14758e61e267d4f406fe5c40c8a5caca90adc6f8506dd756abc947a13f9d05"
     },
     {
       "path": "supplement_numerical/main.tex",
-      "sha256": "66d34b908eb5536d5da6f29bc8f692fb18f8d9b5a9e72375ad2e0bae2e44116d"
+      "sha256": "1f9d9c32a8b1576e68def871814f9b38288af9e8c096e8854cda596bcc2bd745"
     },
     {
       "path": "supplement_numerical/weak_quench_module.tex",
-      "sha256": "63e8f85e204ed403eac27449c6d2224af9a3214e0a70591817fc055e3bc45b8d"
+      "sha256": "0826ad66245c92b3f2b168ac2a42496ca21a7e895527ecaacad5d20b7f1788b9"
     }
   ],
   "figures": [
@@ -22,6 +23,7 @@
       "computation_class": "analytic-closed-form",
       "key": "tfim_critical_concentration",
       "title": "TFIM--XX response, ladders, and concentration",
+      "caption_role": "Compare exact TFIM and XX response scaling, resolved soft-ladder multiplicity, and finite-size channel concentration.",
       "renderer": "plot_fig1_tfim_critical_concentration",
       "output_stem": "fig1_tfim_critical_concentration",
       "tex_label": "fig:twothirds",
@@ -67,6 +69,7 @@
       "computation_class": "analytic-free-fermion",
       "key": "scaling_and_envelope",
       "title": "TFIM collapse and odd-ladder envelope",
+      "caption_role": "Show the parameter-free TFIM scaling collapse and the conditional ideal odd-ladder envelope.",
       "renderer": "plot_fig2_scaling_and_envelope",
       "output_stem": "fig2_scaling_and_envelope",
       "tex_label": "fig:collapse",
@@ -119,6 +122,7 @@
       "computation_class": "analytic-free-fermion",
       "key": "lifshitz_anisotropy_scaling",
       "title": "Lifshitz anisotropy and scaling",
+      "caption_role": "Contrast field and anisotropy tangents and state the ordered punctured Lifshitz scaling limits.",
       "renderer": "plot_fig3_lifshitz_anisotropy_scaling",
       "output_stem": "fig3_lifshitz_anisotropy_scaling",
       "tex_label": "fig:lifshitz",
@@ -171,6 +175,7 @@
       "computation_class": "archived-interacting-hybrid",
       "key": "interacting_benchmarks",
       "title": "Potts and NNN-TFIM finite-size comparisons",
+      "caption_role": "Compare accessible-size interacting concentrations with fixed references without asserting thermodynamic convergence.",
       "renderer": "plot_fig4_interacting_benchmarks",
       "output_stem": "fig4_interacting_benchmarks",
       "tex_label": "fig:interacting-benchmarks",
@@ -267,6 +272,7 @@
       "computation_class": "archived-interacting-distribution",
       "key": "ranked_response_distributions",
       "title": "Potts and NNN-TFIM ranked weights",
+      "caption_role": "Expose ranked response rearrangements while preserving the distinct Potts and NNN retained-spectrum limitations.",
       "renderer": "plot_fig5_distribution_comparisons",
       "output_stem": "fig5_distribution_comparisons",
       "tex_label": "fig:potts-weight-comparators",
@@ -361,6 +367,7 @@
       "computation_class": "analytic-free-fermion",
       "key": "xy_directional_profiles",
       "title": "XY directional profiles (main appendix)",
+      "caption_role": "Show absolute and normalized directional concentration at a gapped point and a finite-size-regulated near-Lifshitz point.",
       "renderer": "plot_fig6_xy_directional_profiles",
       "output_stem": "fig6_xy_directional_profiles",
       "tex_label": "fig:xy-directional-profiles",
@@ -406,6 +413,7 @@
       "computation_class": "analytic-free-fermion-quench",
       "key": "weak_quench_extraction",
       "title": "Weak one-sided quench extraction",
+      "caption_role": "Connect independent-mode excitation counting to finite-size channel concentration with the stated finite-amplitude scope.",
       "renderer": "plot_figS1_weak_quench_extraction",
       "output_stem": "figS1_weak_quench_extraction",
       "tex_label": "fig:quench",
@@ -498,5 +506,5 @@
       "number": "1"
     }
   ],
-  "scope": "Exported registry and native source mapping; no manuscript prose is distributed by this companion."
+  "scope": "Exported registry, code routes, and frozen final-local source mapping; no manuscript prose is distributed by this companion."
 }

@@ -93,17 +93,20 @@ renderer and seven PDF artwork identities (`2026.09.10-s2`). The subsequent
 with manuscript Figures 1-6 and S1. S3 names the later public navigation and
 bounded-verification integration; it is not yet a versioned companion release.
 [The figure map](companion/README.md#figure-and-evidence-map) lists current
-names and preserves its earlier source-mapping provenance; [exact artwork
+names and records the frozen final-local source hashes plus validated figure
+labels, numbering, and caption roles without distributing manuscript prose; [exact artwork
 identities](companion/ARTWORK.json) retain the S2 approval binding. All seven
 figures can be regenerated from public inputs. These public checks do not
 assert a new scientific review of subsequent manuscript revisions.
 
 The current wrapper preserves the numerical baseline and adds no
 interacting-model eigensolves or fits. The manuscript text remains outside
-this public companion. The author-led final local revision and cross-artifact
-reconciliation precede a current-companion release and dedicated PRB/arXiv
-packages; no new release, DOI, arXiv identifier or journal acceptance is
-asserted here.
+this public companion. Its data-availability statement identifies the public
+snapshot `4bf5a0c9d94bc12128b90ef7479b831401adbb99` and separately cites the
+immutable numerical release; the later publication-closure companion will be
+bound to its own exact content commit rather than silently changing that
+historical snapshot. Until that release is fixed, no new release, DOI, arXiv
+identifier or journal acceptance is asserted here.
 
 The `baseline/` directory is immutable. Its README was sealed on 9 September 2026, before the numerical prerelease was posted. Its "Not yet published" line and note about open whole-manuscript acceptance describe that checkpoint; they are not a live status report for this repository or later manuscript revisions. The [numerical prerelease](https://github.com/ToelUl/channel-concentration/releases/tag/baseline-2026-09-09-rc1) is now public. See the [baseline overview](docs/BASELINE.md#historical-records) and [verification scope](docs/VERIFICATION.md) for the current English explanation. The original-language baseline records retain their sealed hashes.
 
