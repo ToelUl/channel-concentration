@@ -109,7 +109,11 @@ The [Figure guide](../docs/FIGURE_GUIDE.md) is the complete clickable human figu
 
 `scripts/build_documents_only.py`, `scripts/packaging/build_arxiv_bundle.py`, and `scripts/cleanroom/common.py` preserve the candidate's document-generation implementation. They require the matching author's `paper/`, `supplement_numerical/`, and `figures/` trees in the original project layout. Those manuscript sources are not included in this preparation companion. Do not invoke that author-only route as a standalone public reproduction command.
 
-The gallery command is the fully public document build tested by companion CI. Final manuscript builds, arXiv target-environment checks, and the final submission source release remain separate preparation stages.
+The gallery command is the fully public document build tested by companion CI.
+The manuscript and submission source remain outside this repository. The
+public paper is [arXiv:2609.24905](https://arxiv.org/abs/2609.24905); its exact
+versioned code-and-data companion is the immutable
+[`companion-2026-09-21-rc1` tag](https://github.com/ToelUl/channel-concentration/tree/companion-2026-09-21-rc1).
 
 ## Scope and licensing
 

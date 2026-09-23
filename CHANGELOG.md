@@ -1,5 +1,14 @@
 # Changelog
 
+## Unreleased
+
+- Linked the public manuscript record, arXiv HTML and PDF from the repository
+  overview, and clarified that `companion-2026-09-21-rc1` remains the exact
+  immutable code-and-data version named by the preprint.
+- Replaced submission-preparation wording in the companion guide with the
+  public arXiv status. No numerical evidence, figure artwork, software, or
+  release tag changed.
+
 ## companion-2026-09-21-rc1 — Publication companion release candidate
 
 This author-approved GitHub prerelease candidate records the S3 public integration,

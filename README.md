@@ -7,6 +7,19 @@ Numerical methods and versioned evidence for channel concentration in quantum ma
 
 This repository provides computational sources, numerical settings, Potts and next-nearest-neighbor (NNN) results, bounded regression tests, and source-to-result provenance. The numerical evidence is preserved independently of manuscript revisions.
 
+## Associated preprint
+
+**Qian-Rui Lee and Daw-Wei Wang, “Channel concentration of critical quantum
+geometry,” [arXiv:2609.24905](https://arxiv.org/abs/2609.24905)
+[[HTML](https://arxiv.org/html/2609.24905v1)]
+[[PDF](https://arxiv.org/pdf/2609.24905)].**
+
+The code-and-data version named by the preprint is the immutable
+[`companion-2026-09-21-rc1` tag](https://github.com/ToelUl/channel-concentration/tree/companion-2026-09-21-rc1),
+with its manifest and downloadable assets on the corresponding
+[`companion-2026-09-21-rc1` release page](https://github.com/ToelUl/channel-concentration/releases/tag/companion-2026-09-21-rc1).
+Documentation added later on `main` does not move or modify that tag.
+
 ## What do you want to do?
 
 | Task | Start here |
@@ -105,19 +118,26 @@ assert a new scientific review of subsequent manuscript revisions.
 
 The release candidate preserves the numerical baseline and adds no
 interacting-model eigensolves or fits. The manuscript text remains outside
-this public companion. Its data-availability statement identifies the
-release-specific tag `companion-2026-09-21-rc1` and separately cites the
-immutable numerical release. The candidate is bound to its own exact content
-commit by a generated manifest distributed with the prerelease; this does not
-silently change the historical snapshot. The GitHub release page and tag are
-authoritative for publication status. No new DOI, arXiv identifier, or journal
-acceptance is asserted here.
+this public companion. The manuscript is public as
+[arXiv:2609.24905v1](https://arxiv.org/abs/2609.24905v1), and its
+data-availability statement identifies the release-specific tag
+`companion-2026-09-21-rc1` while separately citing the immutable numerical
+release. The candidate is bound to its own exact content commit by a generated
+manifest distributed with the prerelease; this does not silently change the
+historical snapshot. The GitHub release page and tag are authoritative for the
+companion's publication status. This repository does not claim journal
+acceptance or a separate dataset DOI.
 
 The `baseline/` directory is immutable. Its README was sealed on 9 September 2026, before the numerical prerelease was posted. Its "Not yet published" line and note about open whole-manuscript acceptance describe that checkpoint; they are not a live status report for this repository or later manuscript revisions. The [numerical prerelease](https://github.com/ToelUl/channel-concentration/releases/tag/baseline-2026-09-09-rc1) is now public. See the [baseline overview](docs/BASELINE.md#historical-records) and [verification scope](docs/VERIFICATION.md) for the current English explanation. The original-language baseline records retain their sealed hashes.
 
 Changes to computations, input selection, or fitting windows require a new numerical or analysis version with an explicit difference record. Presentation and documentation revisions must retain the identity of the numerical evidence they use.
 
 ## Citation
+
+Cite the associated manuscript as
+[arXiv:2609.24905](https://arxiv.org/abs/2609.24905). Cite the publication
+companion separately when relying on its code, data, figures, or verification
+records.
 
 Cite the publication companion by release name, exact content commit, and
 generated release-manifest SHA256. The repository's
